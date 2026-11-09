@@ -1,319 +1,181 @@
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="theme-color" content="#0B132B">
-  <meta name="description" content="OdontoSmile, clínica odontológica moderna. Tecnología, cuidado y sonrisas saludables.">
-
-  <title>OdontoSmile | Tu sonrisa, nuestra pasión</title>
-
-  <!-- TIPOGRAFÍAS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-
-  <!-- JAVASCRIPT -->
-  <script src="js/main.js" defer></script>
-</head>
-
-<body>
-
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
-
-  <!-- HEADER -->
-  <header class="site-header">
-
-    <a href="index.html" class="brand">
-      <span class="brand-mark">✦</span>
-      <span class="brand-name">Odonto<span>Smile</span></span>
-    </a>
-
-    <button class="menu-toggle" type="button"
-      aria-label="Abrir menú"
-      aria-expanded="false"
-      aria-controls="main-nav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="main-nav" id="main-nav">
-      <a class="nav-link active" href="index.html">Inicio</a>
-      <a class="nav-link" href="tratamientos.html">Tratamientos</a>
-      <a class="nav-link" href="especialidades.html">Especialidades</a>
-      <a class="nav-link" href="nosotros.html">Nosotros</a>
-      <a class="nav-link" href="contacto.html">Contacto</a>
-      <a class="nav-cta" href="contacto.html#reservar">Agendar cita ↗</a>
-    </nav>
-
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero section-shell">
-
-      <div class="hero-copy reveal">
-
-        <p class="eyebrow">
-          <span class="status-dot"></span>
-          ODONTOLOGÍA · TECNOLOGÍA · BIENESTAR
-        </p>
-
-        <h1>
-          Tu sonrisa,<br>
-          en otra <span>dimensión.</span>
-        </h1>
-
-        <p class="hero-lead">
-          Una experiencia dental de nueva generación.
-          Tecnología avanzada, atención humana y resultados
-          que se sienten tan bien como se ven.
-        </p>
-
-        <div class="hero-actions">
-          <a href="contacto.html#reservar" class="button button-primary">
-            Descubre tu nueva sonrisa ↗
-          </a>
-
-          <a href="tratamientos.html" class="button button-quiet">
-            <span class="play-icon">▶</span>
-            Explorar tratamientos
-          </a>
-        </div>
-
-        <div class="hero-proof">
-          <div class="proof-symbols">
-            <span>✦</span>
-            <span>✧</span>
-            <span>+</span>
-          </div>
-
-          <div>
-            <strong>Sonrisas con confianza</strong>
-            <small>Atención personalizada en cada visita</small>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- IMAGEN -->
-      <div class="hero-visual reveal">
-
-        <div class="visual-glow"></div>
-        <div class="visual-orbit orbit-one"></div>
-        <div class="visual-orbit orbit-two"></div>
-
-        <picture class="hero-picture">
-          <img
-            src="assets/hero-dentist.webp"
-            alt="Profesional odontológico en una clínica moderna"
-            fetchpriority="high">
-        </picture>
-
-        <div class="floating-card card-tech">
-          <span class="mini-icon">⌁</span>
-          <div>
-            <strong>Dental digital</strong>
-            <small>Precisión en cada detalle</small>
-          </div>
-        </div>
-
-        <div class="floating-card card-care">
-          <span class="mini-icon">✦</span>
-          <div>
-            <strong>Atención premium</strong>
-            <small>Tu bienestar es prioridad</small>
-          </div>
-        </div>
-
-        <p class="visual-caption">
-          <span></span>
-          INNOVACIÓN QUE SE NOTA
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- BENEFICIOS -->
-    <section class="trust-strip section-shell">
-
-      <article>
-        <span class="trust-icon">✧</span>
-        <div>
-          <strong>Tecnología avanzada</strong>
-          <small>Diagnóstico preciso</small>
-        </div>
-      </article>
-
-      <article>
-        <span class="trust-icon">⌁</span>
-        <div>
-          <strong>Atención cercana</strong>
-          <small>Tu comodidad primero</small>
-        </div>
-      </article>
-
-      <article>
-        <span class="trust-icon">◈</span>
-        <div>
-          <strong>Planes a tu medida</strong>
-          <small>Tratamientos personalizados</small>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- PRESENTACIÓN -->
-    <section class="intro-section section-shell">
-
-      <div class="section-heading reveal">
-
-        <p class="eyebrow">EL FUTURO DE TU SALUD DENTAL</p>
-
-        <h2>
-          La confianza comienza<br>
-          con una <span>sonrisa.</span>
-        </h2>
-
-        <p>
-          Combinamos ciencia, diseño y calidez humana
-          para transformar tu visita al dentista
-          en una experiencia positiva.
-        </p>
-
-      </div>
-
-      <div class="feature-grid">
-
-        <article class="feature-card reveal">
-          <span class="feature-number">01</span>
-          <div class="feature-icon">⌬</div>
-          <h3>Diagnóstico inteligente</h3>
-          <p>
-            Evaluación cuidadosa y herramientas modernas
-            para acompañarte con claridad.
-          </p>
-          <a href="especialidades.html">Conoce más ↗</a>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="feature-number">02</span>
-          <div class="feature-icon">✧</div>
-          <h3>Sonrisa diseñada para ti</h3>
-          <p>
-            Tratamientos personalizados que respetan
-            tu salud, estilo y objetivos.
-          </p>
-          <a href="tratamientos.html">Ver tratamientos ↗</a>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="feature-number">03</span>
-          <div class="feature-icon">♡</div>
-          <h3>Cuidado sin ansiedad</h3>
-          <p>
-            Un entorno tranquilo, comunicación transparente
-            y acompañamiento cercano.
-          </p>
-          <a href="nosotros.html">Nuestra filosofía ↗</a>
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- LLAMADO A LA ACCIÓN -->
-    <section class="closing-cta section-shell reveal" id="reservar">
-
-      <div>
-        <p class="eyebrow">ESTÁS A UN PASO</p>
-
-        <h2>
-          ¿Listos para una sonrisa<br>
-          <span>extraordinaria?</span>
-        </h2>
-
-        <p>
-          Conversemos sobre lo que necesitas.
-          Tu próxima visita comienza aquí.
-        </p>
-      </div>
-
-      <a href="contacto.html#reservar" class="button button-primary">
-        Agenda tu cita ↗
-      </a>
-
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer section-shell">
-
-    <a href="index.html" class="brand brand-footer">
-      <span class="brand-mark">✧</span>
-      <span class="brand-name">Odonto<span>Smile</span></span>
-    </a>
-
-    <p>Una nueva dimensión del cuidado dental.</p>
-
-    <small>
-      © <span id="year"></span>
-      OdontoSmile. Todos los derechos reservados.
-    </small>
-
-  </footer>
-
-  <!-- PORTAL FLOTANTE -->
-  <div class="smile-portal" id="smile-portal">
-
-    <div class="portal-actions">
-
-      <a class="portal-action action-one"
-         href="contacto.html#reservar">
-        <span>＋</span>
-        <small>Cita Express</small>
-      </a>
-
-      <a class="portal-action action-two"
-         href="contacto.html#urgencias">
-        <span>✚</span>
-        <small>Urgencias 24h</small>
-      </a>
-
-      <a class="portal-action action-three"
-         href="contacto.html#chat">
-        <span>✧</span>
-        <small>Chat Inteligente</small>
-      </a>
-
-    </div>
-
-    <button class="portal-trigger"
-      type="button"
-      aria-expanded="false"
-      aria-label="Abrir Portal de Sonrisas">
-
-      <span class="portal-ring"></span>
-      <span class="portal-symbol">✦</span>
-      <span class="portal-label">Portal de Sonrisas</span>
-
-    </button>
-
-  </div>
-
-  <!-- SUPABASE -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="js/supabase.js"></script>
-
-</body>
-</html>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // =====================================
+  // 1. MENÚ DE NAVEGACIÓN
+  // =====================================
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (menuToggle && mainNav) {
+
+    const closeMenu = () => {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Abrir menú");
+    };
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Cerrar menú" : "Abrir menú"
+      );
+    });
+
+    // Cerrar al seleccionar una página
+    mainNav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener("click", event => {
+      if (
+        !mainNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    });
+
+    // Cerrar con Escape
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    // Cerrar al volver a escritorio
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) {
+        closeMenu();
+      }
+    });
+  }
+
+
+  // =====================================
+  // 2. PORTAL DE SONRISAS
+  // =====================================
+
+  const smilePortal = document.getElementById("smile-portal");
+  const portalTrigger = document.querySelector(".portal-trigger");
+
+  if (smilePortal && portalTrigger) {
+
+    const closePortal = () => {
+      smilePortal.classList.remove("open");
+      portalTrigger.setAttribute("aria-expanded", "false");
+      portalTrigger.setAttribute(
+        "aria-label",
+        "Abrir Portal de Sonrisas"
+      );
+    };
+
+    portalTrigger.addEventListener("click", () => {
+
+      const isOpen = smilePortal.classList.toggle("open");
+
+      portalTrigger.setAttribute("aria-expanded", String(isOpen));
+      portalTrigger.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Cerrar Portal de Sonrisas"
+          : "Abrir Portal de Sonrisas"
+      );
+
+    });
+
+    // Cerrar al seleccionar una opción
+    smilePortal.querySelectorAll(".portal-action").forEach(link => {
+      link.addEventListener("click", closePortal);
+    });
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener("click", event => {
+      if (!smilePortal.contains(event.target)) {
+        closePortal();
+      }
+    });
+
+    // Cerrar con Escape
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closePortal();
+      }
+    });
+
+  }
+
+
+  // =====================================
+  // 3. ANIMACIONES AL DESPLAZARSE
+  // =====================================
+
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+
+      });
+
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -30px 0px"
+    });
+
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
+    });
+
+  } else {
+
+    // Compatibilidad con navegadores antiguos
+    revealElements.forEach(element => {
+      element.classList.add("visible");
+    });
+
+  }
+
+
+  // =====================================
+  // 4. AÑO AUTOMÁTICO DEL FOOTER
+  // =====================================
+
+  const yearElement = document.getElementById("year");
+
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+
+  // =====================================
+  // 5. CERRAR MENÚ AL CAMBIAR DE PÁGINA
+  // =====================================
+
+  window.addEventListener("pageshow", () => {
+
+    if (mainNav && menuToggle) {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    if (smilePortal && portalTrigger) {
+      smilePortal.classList.remove("open");
+      portalTrigger.setAttribute("aria-expanded", "false");
+    }
+
+  });
+
+});
