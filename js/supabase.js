@@ -3,17 +3,17 @@
 // ODONTOSMILE - CONEXIÓN SUPABASE
 // =====================================
 
-const SUPABASE_URL = "TU_URL_DE_SUPABASE";
+const SUPABASE_URL = "https://nwcqmahpabsyhvhujzyp.supabase.co";
 
-const SUPABASE_ANON_KEY = "TU_CLAVE_PUBLICA_ANON";
+const SUPABASE_ANON_KEY = "sb_publishable_mvszHxfWJvzTskJ2-6wlGQ_1_yqhcZR";
 
 let supabaseClient = null;
 
 if (window.supabase) {
 
   if (
-    SUPABASE_URL !== "TU_URL_DE_SUPABASE" &&
-    SUPABASE_ANON_KEY !== "TU_CLAVE_PUBLICA_ANON"
+    SUPABASE_URL !== "https://nwcqmahpabsyhvhujzyp.supabase.co" &&
+    SUPABASE_ANON_KEY !== "sb_publishable_mvszHxfWJvzTskJ2-6wlGQ_1_yqhcZR"
   ) {
 
     supabaseClient = window.supabase.createClient(
