@@ -4,1419 +4,1549 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123B56">
+  <meta name="description" content="OdontoSmile Pasco. Clínica odontológica moderna, tratamientos dentales, tecnología y atención personalizada.">
+  <title>OdontoSmile PASCO | Tu sonrisa, nuestra pasión</title>
 
-  <meta name="theme-color" content="#0B132B">
-  <meta name="description" content="OdontoSmile, clínica odontológica moderna. Tecnología, cuidado y sonrisas saludables.">
-
-  <title>OdontoSmile | Tu sonrisa, nuestra pasión</title>
-
-  <!-- TIPOGRAFÍAS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- ESTILOS INTEGRADOS -->
   <style>
-  :root {
-    --fondo: #0B132B;
-    --fondo-secundario: #111D3A;
-    --superficie: #142343;
-    --turquesa: #00F5D4;
-    --azul: #4682B4;
-    --blanco: #F5FAFF;
-    --gris: #A6B4CC;
-    --borde: rgba(255,255,255,.10);
-    --sombra: 0 20px 55px rgba(0,0,0,.25);
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--fondo);
-    color: var(--blanco);
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  button {
-    font: inherit;
-  }
-
-  .section-shell {
-    width: min(1180px, 90%);
-    margin-inline: auto;
-  }
-
-  .ambient {
-    position: fixed;
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: .12;
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .ambient-one {
-    background: var(--turquesa);
-    top: 100px;
-    left: -220px;
-  }
-
-  .ambient-two {
-    background: var(--azul);
-    right: -220px;
-    top: 550px;
-  }
-
-  /* ENCABEZADO */
-
-  .site-header {
-    width: 100%;
-    min-height: 84px;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(11,19,43,.94);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--borde);
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-  }
-
-  .brand-mark {
-    width: 43px;
-    height: 43px;
-    display: grid;
-    place-items: center;
-    color: var(--turquesa);
-  }
-
-  .brand-mark svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .brand-name {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 25px;
-    font-weight: 700;
-    letter-spacing: -1px;
-  }
-
-  .brand-name span {
-    color: var(--turquesa);
-  }
-
-  .main-nav {
-    display: flex;
-    align-items: center;
-    gap: 27px;
-  }
-
-  .nav-link {
-    color: var(--gris);
-    font-size: 13px;
-    font-weight: 600;
-    transition: .3s;
-  }
-
-  .nav-link:hover {
-    color: var(--turquesa);
-  }
-
-  .nav-cta {
-    background: var(--turquesa);
-    color: #071525;
-    font-size: 13px;
-    font-weight: 800;
-    padding: 12px 19px;
-    border-radius: 8px;
-    transition: .3s;
-  }
-
-  .nav-cta:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,245,212,.2);
-  }
-
-  .menu-toggle {
-    display: none;
-    width: 43px;
-    height: 43px;
-    border: 1px solid var(--borde);
-    border-radius: 9px;
-    background: var(--superficie);
-    cursor: pointer;
-    padding: 10px;
-  }
-
-  .menu-toggle span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: var(--turquesa);
-    margin: 5px 0;
-    transition: .3s;
-  }
-
-  /* HERO */
-
-  .hero {
-    min-height: 650px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 55px;
-    padding-top: 75px;
-    padding-bottom: 85px;
-  }
-
-  .eyebrow {
-    color: var(--turquesa);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-  }
-
-  .status-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: var(--turquesa);
-    border-radius: 50%;
-    margin-right: 8px;
-    box-shadow: 0 0 12px var(--turquesa);
-  }
-
-  .hero h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(43px, 5.4vw, 69px);
-    line-height: 1.08;
-    letter-spacing: -3px;
-    margin-bottom: 25px;
-  }
-
-  .hero h1 span,
-  .section-heading h2 span,
-  .closing-cta h2 span {
-    color: var(--turquesa);
-  }
-
-  .hero-lead {
-    color: var(--gris);
-    font-size: 15px;
-    line-height: 1.9;
-    max-width: 520px;
-    margin-bottom: 30px;
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-  }
-
-  .button {
-    min-height: 49px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 13px 21px;
-    border-radius: 9px;
-    font-size: 13px;
-    font-weight: 800;
-    transition: .3s;
-  }
-
-  .button-primary {
-    color: #071525;
-    background: var(--turquesa);
-    border: 1px solid var(--turquesa);
-  }
-
-  .button-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0,245,212,.2);
-  }
-
-  .button-quiet {
-    color: var(--blanco);
-    background: rgba(255,255,255,.04);
-    border: 1px solid var(--borde);
-  }
-
-  .button-quiet:hover {
-    border-color: var(--turquesa);
-    color: var(--turquesa);
-  }
-
-  .play-icon {
-    color: var(--turquesa);
-    font-size: 11px;
-  }
-
-  .hero-proof {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 42px;
-  }
-
-  .proof-symbols {
-    display: flex;
-  }
-
-  .proof-symbols span {
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
-    margin-right: -7px;
-    border: 2px solid var(--fondo);
-    border-radius: 50%;
-    background: var(--superficie);
-    color: var(--turquesa);
-  }
-
-  .hero-proof strong,
-  .hero-proof small {
-    display: block;
-  }
-
-  .hero-proof strong {
-    font-size: 12px;
-  }
-
-  .hero-proof small {
-    color: var(--gris);
-    font-size: 10px;
-  }
-
-  /* IMAGEN PRINCIPAL */
-
-  .hero-visual {
-    min-height: 490px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .visual-glow {
-    position: absolute;
-    width: 75%;
-    height: 75%;
-    background: var(--turquesa);
-    filter: blur(110px);
-    opacity: .15;
-  }
-
-  .hero-picture {
-    position: relative;
-    width: 85%;
-    height: 450px;
-    z-index: 2;
-    border-radius: 25px;
-    overflow: hidden;
-    border: 1px solid rgba(0,245,212,.3);
-    box-shadow: var(--sombra);
-    background: var(--superficie);
-  }
-
-  .hero-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .visual-orbit {
-    position: absolute;
-    border: 1px solid rgba(0,245,212,.18);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  .orbit-one {
-    width: 480px;
-    height: 480px;
-  }
-
-  .orbit-two {
-    width: 550px;
-    height: 550px;
-    border-style: dashed;
-    opacity: .5;
-  }
-
-  .floating-card {
-    position: absolute;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 17px;
-    background: rgba(20,35,67,.95);
-    border: 1px solid var(--borde);
-    border-radius: 12px;
-    box-shadow: var(--sombra);
-    backdrop-filter: blur(10px);
-  }
-
-  .card-tech {
-    top: 75px;
-    left: -5px;
-  }
-
-  .card-care {
-    bottom: 75px;
-    right: -5px;
-  }
-
-  .mini-icon {
-    width: 35px;
-    height: 35px;
-    display: grid;
-    place-items: center;
-    border-radius: 9px;
-    background: rgba(0,245,212,.12);
-    color: var(--turquesa);
-    font-size: 21px;
-  }
-
-  .floating-card strong,
-  .floating-card small {
-    display: block;
-  }
-
-  .floating-card strong {
-    font-size: 11px;
-  }
-
-  .floating-card small {
-    font-size: 9px;
-    color: var(--gris);
-  }
-
-  .visual-caption {
-    position: absolute;
-    bottom: 0;
-    right: 12%;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: var(--gris);
-  }
-
-  .visual-caption span {
-    display: inline-block;
-    width: 7px;
-    height: 7px;
-    background: var(--turquesa);
-    border-radius: 50%;
-    margin-right: 7px;
-  }
-
-  /* BENEFICIOS */
-
-  .trust-strip {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    padding: 28px 35px;
-    gap: 20px;
-    background: var(--fondo-secundario);
-    border: 1px solid var(--borde);
-    border-radius: 16px;
-  }
-
-  .trust-strip article {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .trust-icon {
-    width: 43px;
-    height: 43px;
-    display: grid;
-    place-items: center;
-    color: var(--turquesa);
-    background: rgba(0,245,212,.09);
-    border-radius: 11px;
-    font-size: 23px;
-  }
-
-  .trust-strip strong,
-  .trust-strip small {
-    display: block;
-  }
-
-  .trust-strip strong {
-    font-size: 12px;
-  }
-
-  .trust-strip small {
-    color: var(--gris);
-    font-size: 10px;
-  }
-
-  /* PRESENTACIÓN */
-
-  .intro-section {
-    padding-top: 120px;
-    padding-bottom: 110px;
-  }
-
-  .section-heading {
-    max-width: 700px;
-    text-align: center;
-    margin: 0 auto 55px;
-  }
-
-  .section-heading h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(34px,4vw,48px);
-    line-height: 1.18;
-    letter-spacing: -1.5px;
-    margin-bottom: 20px;
-  }
-
-  .section-heading > p:last-child {
-    max-width: 580px;
-    margin: auto;
-    color: var(--gris);
-    font-size: 14px;
-  }
-
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 22px;
-  }
-
-  .feature-card {
-    position: relative;
-    min-height: 285px;
-    padding: 30px;
-    overflow: hidden;
-    background: linear-gradient(145deg,var(--superficie),#101c35);
-    border: 1px solid var(--borde);
-    border-radius: 17px;
-    transition: .3s;
-  }
-
-  .feature-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(0,245,212,.5);
-    box-shadow: 0 18px 40px rgba(0,0,0,.2);
-  }
-
-  .feature-number {
-    position: absolute;
-    top: 20px;
-    right: 23px;
-    color: rgba(255,255,255,.16);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-  }
-
-  .feature-icon {
-    width: 55px;
-    height: 55px;
-    display: grid;
-    place-items: center;
-    color: var(--turquesa);
-    background: rgba(0,245,212,.1);
-    border-radius: 14px;
-    font-size: 28px;
-    margin-bottom: 25px;
-  }
-
-  .feature-card h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 19px;
-    margin-bottom: 12px;
-  }
-
-  .feature-card p {
-    color: var(--gris);
-    font-size: 12px;
-    line-height: 1.8;
-    margin-bottom: 20px;
-  }
-
-  .feature-card a {
-    color: var(--turquesa);
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  /* LLAMADO A LA ACCIÓN */
-
-  .closing-cta {
-    padding: 55px 60px;
-    margin-top: 15px;
-    margin-bottom: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    background:
-      radial-gradient(circle at 90% 10%,rgba(0,245,212,.16),transparent 35%),
-      linear-gradient(120deg,#142343,#101B35);
-    border: 1px solid rgba(0,245,212,.2);
-    border-radius: 22px;
-  }
-
-  .closing-cta .eyebrow {
-    margin-bottom: 12px;
-  }
-
-  .closing-cta h2 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: clamp(29px,3.5vw,42px);
-    line-height: 1.2;
-    margin-bottom: 14px;
-  }
-
-  .closing-cta p:last-child {
-    color: var(--gris);
-    font-size: 13px;
-  }
-
-  .closing-cta .button {
-    flex-shrink: 0;
-  }
-
-  /* PIE DE PÁGINA */
-
-  .site-footer {
-    min-height: 110px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    border-top: 1px solid var(--borde);
-  }
-
-  .brand-footer .brand-mark {
-    font-size: 30px;
-  }
-
-  .site-footer > p {
-    color: var(--gris);
-    font-size: 11px;
-  }
-
-  .site-footer > small {
-    color: var(--gris);
-    font-size: 10px;
-  }
-
-  /* PORTAL FLOTANTE */
-
-  .smile-portal {
-    position: fixed;
-    right: 27px;
-    bottom: 25px;
-    z-index: 1100;
-  }
-
-  .portal-trigger {
-    position: relative;
-    width: 65px;
-    height: 65px;
-    border: 1px solid rgba(0,245,212,.6);
-    border-radius: 50%;
-    background: linear-gradient(145deg,#00F5D4,#4682B4);
-    color: #071525;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    box-shadow: 0 0 25px rgba(0,245,212,.3);
-    transition: .3s;
-  }
-
-  .portal-trigger:hover {
-    transform: scale(1.08);
-  }
-
-  .portal-symbol {
-    font-size: 27px;
-    font-weight: 900;
-    transition: .3s;
-  }
-
-  .portal-label {
-    position: absolute;
-    right: 75px;
-    white-space: nowrap;
-    padding: 8px 12px;
-    background: var(--superficie);
-    border: 1px solid var(--borde);
-    color: var(--blanco);
-    border-radius: 8px;
-    font-size: 10px;
-    font-weight: 700;
-  }
-
-  .portal-ring {
-    position: absolute;
-    inset: -7px;
-    border: 1px solid rgba(0,245,212,.45);
-    border-radius: 50%;
-    animation: portalPulse 2.2s infinite;
-  }
-
-  @keyframes portalPulse {
-    0% { transform: scale(.9); opacity: .9; }
-    100% { transform: scale(1.35); opacity: 0; }
-  }
-
-  .portal-actions {
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(15px);
-    transition: .3s;
-  }
-
-  .smile-portal.active .portal-actions {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  .smile-portal.active .portal-symbol {
-    transform: rotate(45deg);
-  }
-
-  .portal-action {
-    min-width: 165px;
-    padding: 11px 15px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--superficie);
-    border: 1px solid var(--borde);
-    border-radius: 10px;
-    box-shadow: var(--sombra);
-    transition: .3s;
-  }
-
-  .portal-action:hover {
-    border-color: var(--turquesa);
-    transform: translateX(-5px);
-  }
-
-  .portal-action span {
-    color: var(--turquesa);
-    font-size: 19px;
-  }
-
-  .portal-action small {
-    color: var(--blanco);
-    font-size: 11px;
-    font-weight: 700;
-  }
-
-  /* ANIMACIONES */
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity .75s ease, transform .75s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* RESPONSIVE */
-
-  @media(max-width: 1000px) {
-    .site-header {
-      padding-inline: 4%;
+    :root {
+      --primary: #C2185B;
+      --primary-dark: #9E1249;
+      --primary-light: #FCE8F0;
+      --secondary: #123B56;
+      --dark: #172B3A;
+      --text: #30303B;
+      --muted: #777582;
+      --white: #FFFFFF;
+      --background: #FFF9FB;
+      --border: #F0DDE5;
+      --shadow: 0 15px 45px rgba(18,59,86,.10);
+      --radius: 22px;
     }
 
-    .main-nav {
-      gap: 15px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .nav-link {
-      font-size: 11px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .hero {
-      gap: 25px;
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
     }
 
-    .hero-picture {
-      width: 90%;
-      height: 400px;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .trust-strip {
-      padding: 23px;
-    }
-  }
-
-  @media(max-width: 760px) {
-    .site-header {
-      min-height: 75px;
+    button {
+      font-family: inherit;
+      cursor: pointer;
     }
 
-    .menu-toggle {
+    img {
+      max-width: 100%;
       display: block;
     }
 
-    .main-nav {
-      position: absolute;
-      top: 75px;
-      left: 0;
-      width: 100%;
-      display: none;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
-      padding: 15px 5% 25px;
-      background: rgba(11,19,43,.98);
-      border-bottom: 1px solid var(--borde);
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
     }
 
-    .main-nav.active {
-      display: flex;
+    .section {
+      padding: 95px 0;
     }
 
-    .nav-link {
-      padding: 13px 5px;
-      font-size: 13px;
-      border-bottom: 1px solid var(--borde);
-    }
-
-    .nav-cta {
+    .section-heading {
       text-align: center;
-      margin-top: 15px;
+      max-width: 690px;
+      margin: 0 auto 48px;
     }
 
-    .hero {
-      grid-template-columns: 1fr;
-      padding-top: 65px;
-      gap: 50px;
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 9px 17px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
-    .hero-copy {
-      text-align: center;
-    }
-
-    .hero-lead {
-      margin-inline: auto;
-    }
-
-    .hero-actions,
-    .hero-proof {
-      justify-content: center;
-    }
-
-    .hero-visual {
-      min-height: 400px;
-    }
-
-    .hero-picture {
-      height: 370px;
-      width: 85%;
-    }
-
-    .orbit-one {
-      width: 400px;
-      height: 400px;
-    }
-
-    .orbit-two {
-      width: 450px;
-      height: 450px;
-    }
-
-    .card-tech {
-      left: 0;
-    }
-
-    .card-care {
-      right: 0;
-    }
-
-    .trust-strip {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .feature-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .closing-cta {
-      padding: 40px 30px;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .site-footer {
-      flex-direction: column;
-      text-align: center;
-      padding-block: 35px;
-    }
-  }
-
-  @media(max-width: 520px) {
-    .section-shell {
-      width: 90%;
-    }
-
-    .brand-name {
-      font-size: 22px;
-    }
-
-    .hero h1 {
-      font-size: 44px;
-      letter-spacing: -2px;
-    }
-
-    .hero-actions {
-      flex-direction: column;
-    }
-
-    .hero-actions .button {
-      width: 100%;
-    }
-
-    .hero-visual {
-      min-height: 340px;
-    }
-
-    .hero-picture {
-      height: 310px;
-      width: 88%;
-    }
-
-    .floating-card {
-      padding: 10px;
-      gap: 7px;
-    }
-
-    .floating-card strong {
-      font-size: 9px;
-    }
-
-    .floating-card small {
-      font-size: 8px;
-    }
-
-    .card-tech {
-      top: 35px;
-    }
-
-    .card-care {
-      bottom: 40px;
-    }
-
-    .visual-caption {
-      font-size: 8px;
-    }
-
-    .intro-section {
-      padding-top: 85px;
-      padding-bottom: 75px;
-    }
-
-    .feature-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .feature-card {
-      min-height: auto;
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
     }
 
     .section-heading h2 {
-      font-size: 34px;
+      font-size: clamp(30px, 4vw, 43px);
+      color: var(--secondary);
+      line-height: 1.2;
+      margin-bottom: 15px;
     }
 
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      border-radius: 50px;
+      padding: 15px 25px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 25px rgba(194,24,91,.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--secondary);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* BARRA SUPERIOR */
+
+    .topbar {
+      background: var(--secondary);
+      color: white;
+      padding: 10px 0;
+      font-size: 12px;
+    }
+
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #f3e8ed;
+      backdrop-filter: blur(15px);
+    }
+
+    .header-content {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .brand-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      color: white;
+      font-size: 26px;
+      font-weight: 800;
+    }
+
+    .brand strong {
+      font-family: 'Poppins', sans-serif;
+      font-size: 21px;
+      color: var(--secondary);
+      display: block;
+    }
+
+    .brand small {
+      color: var(--primary);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .main-nav a {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--secondary);
+      transition: .3s;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: var(--primary-light);
+      color: var(--primary);
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      font-size: 24px;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        radial-gradient(circle at 85% 20%, #FCE8F0 0, transparent 35%),
+        linear-gradient(120deg, #fff 50%, #fff7fa);
+      padding: 85px 0 75px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .hero-content .eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(40px, 5.4vw, 65px);
+      line-height: 1.13;
+      color: var(--secondary);
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+
+    .hero-content h1 span {
+      color: var(--primary);
+    }
+
+    .hero-content > p {
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 530px;
+      margin-bottom: 30px;
+      font-size: 15px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .hero-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .benefit span {
+      width: 29px;
+      height: 29px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-width: 0;
+    }
+
+    .hero-picture {
+      display: block;
+      width: 100%;
+      height: 490px;
+      overflow: hidden;
+      border-radius: 38px 38px 38px 110px;
+      box-shadow: 0 25px 65px rgba(18,59,86,.18);
+      background: var(--primary-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .visual-glow {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: var(--primary);
+      opacity: .10;
+      border-radius: 50%;
+      top: -35px;
+      right: -35px;
+    }
+
+    .floating-card {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      border-radius: 17px;
+      padding: 15px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-tech {
+      bottom: 35px;
+      left: -40px;
+    }
+
+    .mini-icon {
+      background: var(--primary-light);
+      color: var(--primary);
+      width: 43px;
+      height: 43px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+    }
+
+    .floating-card strong {
+      display: block;
+      color: var(--secondary);
+      font-size: 13px;
+    }
+
+    .floating-card small {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* CINTA DE CONFIANZA */
+
+    .trust-strip {
+      padding: 25px 0;
+      background: var(--secondary);
+      color: white;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: left;
+    }
+
+    .trust-item .icon {
+      font-size: 27px;
+      color: #F5A7C5;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .trust-item small {
+      font-size: 11px;
+      color: #d7e0e7;
+    }
+
+    /* SERVICIOS */
+
+    .services-section {
+      background: var(--background);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid #f3e8ed;
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: .35s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: #edb6cc;
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      color: var(--secondary);
+      font-size: 19px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .text-link {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* NOSOTROS */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 430px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: var(--primary-light);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-content h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      color: var(--secondary);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      line-height: 1.9;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 25px 0;
+    }
+
+    .about-point {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .about-point span {
+      color: var(--primary);
+    }
+
+    /* CTA */
+
     .closing-cta {
-      margin-bottom: 70px;
-      padding: 30px 22px;
+      padding: 65px 0;
+      background: linear-gradient(120deg, var(--secondary), #1D526F);
+      color: white;
+      text-align: center;
     }
 
     .closing-cta h2 {
-      font-size: 31px;
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 15px;
     }
 
-    .closing-cta .button {
-      width: 100%;
+    .closing-cta p {
+      color: #dce8ee;
+      margin-bottom: 25px;
+      line-height: 1.7;
     }
 
-    .smile-portal {
-      right: 17px;
-      bottom: 17px;
+    /* FOOTER */
+
+    .site-footer {
+      background: #102D42;
+      color: white;
+      padding: 55px 0 20px;
     }
 
-    .portal-trigger {
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 45px;
+      margin-bottom: 40px;
+    }
+
+    .footer-grid h3 {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+      color: #c6d4dd;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #b9cbd6;
+    }
+
+    /* BOTON WHATSAPP */
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      left: 23px;
+      z-index: 1500;
       width: 57px;
       height: 57px;
+      border-radius: 50%;
+      background: #20B96A;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 29px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.2);
+      transition: .3s;
     }
 
-    .portal-label {
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    /* CHAT INTELIGENTE */
+
+    .chat-launcher {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 2000;
+      width: 63px;
+      height: 63px;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      background: var(--primary);
+      font-size: 27px;
+      box-shadow: 0 10px 30px rgba(194,24,91,.35);
+      transition: .3s;
+    }
+
+    .chat-launcher:hover {
+      transform: scale(1.08);
+      background: var(--primary-dark);
+    }
+
+    .chat-window {
+      position: fixed;
+      right: 25px;
+      bottom: 102px;
+      width: min(370px, calc(100vw - 30px));
+      height: 510px;
+      max-height: calc(100dvh - 130px);
+      background: white;
+      border-radius: 23px;
+      box-shadow: 0 20px 65px rgba(18,59,86,.22);
+      z-index: 1999;
       display: none;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--border);
     }
-  }
 
-  @media(prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      scroll-behavior: auto !important;
-      animation-duration: .01ms !important;
-      transition-duration: .01ms !important;
+    .chat-window.open {
+      display: flex;
+      animation: chatAppear .25s ease;
     }
-  }
+
+    @keyframes chatAppear {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chat-header {
+      padding: 19px;
+      background: var(--secondary);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chat-avatar {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      font-size: 22px;
+    }
+
+    .chat-profile strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .chat-profile small {
+      color: #cce5d8;
+      font-size: 10px;
+    }
+
+    .chat-close {
+      border: none;
+      color: white;
+      background: transparent;
+      font-size: 25px;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px;
+      background: #FAF9FB;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .message {
+      max-width: 88%;
+      padding: 12px 14px;
+      border-radius: 15px;
+      font-size: 12px;
+      line-height: 1.65;
+      white-space: pre-line;
+      overflow-wrap: anywhere;
+    }
+
+    .message.bot {
+      align-self: flex-start;
+      background: white;
+      color: var(--text);
+      border: 1px solid #eee9ed;
+      border-bottom-left-radius: 4px;
+    }
+
+    .message.user {
+      align-self: flex-end;
+      color: white;
+      background: var(--primary);
+      border-bottom-right-radius: 4px;
+    }
+
+    .quick-questions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      padding: 0 14px 12px;
+      background: #FAF9FB;
+    }
+
+    .quick-questions button {
+      background: white;
+      color: var(--primary);
+      border: 1px solid #edc5d5;
+      padding: 8px 11px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .chat-form {
+      display: flex;
+      gap: 8px;
+      padding: 13px;
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+
+    .chat-form input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid var(--border);
+      outline: none;
+      border-radius: 30px;
+      padding: 12px 15px;
+      font-family: inherit;
+      font-size: 12px;
+    }
+
+    .chat-form input:focus {
+      border-color: var(--primary);
+    }
+
+    .chat-form button {
+      border: none;
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      color: white;
+      background: var(--primary);
+      font-size: 17px;
+    }
+
+    .chat-note {
+      text-align: center;
+      background: white;
+      color: #999;
+      font-size: 9px;
+      padding: 0 8px 10px;
+    }
+
+    /* ANIMACIONES */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-content > p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions,
+      .hero-benefits {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        width: min(600px, 100%);
+        margin: auto;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-image {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .about-content {
+        text-align: center;
+      }
+
+      .about-points {
+        text-align: left;
+      }
+
+      .main-nav {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-content {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .header-content {
+        min-height: 72px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .main-nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        padding: 20px 5%;
+        background: white;
+        box-shadow: 0 15px 25px rgba(0,0,0,.08);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .main-nav.open {
+        display: flex;
+      }
+
+      .main-nav a {
+        padding: 13px 0;
+        border-bottom: 1px solid #f3e8ed;
+      }
+
+      .main-nav .nav-cta {
+        text-align: center;
+        background: var(--primary);
+        color: white;
+        border-radius: 30px;
+        margin-top: 12px;
+        padding: 13px;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero-content h1 {
+        font-size: 42px;
+      }
+
+      .hero-picture {
+        height: 360px;
+        border-radius: 25px 25px 25px 75px;
+      }
+
+      .card-tech {
+        left: 8px;
+        bottom: 15px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .trust-item {
+        justify-content: flex-start;
+        max-width: 260px;
+        margin: auto;
+        width: 100%;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .about-image {
+        height: 310px;
+      }
+
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .chat-window {
+        right: 10px;
+        bottom: 90px;
+        width: calc(100vw - 20px);
+        height: min(510px, calc(100dvh - 115px));
+      }
+
+      .chat-launcher {
+        right: 15px;
+        bottom: 15px;
+      }
+
+      .whatsapp-float {
+        left: 15px;
+        bottom: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- FONDO -->
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
+  <!-- BARRA SUPERIOR -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <span>📍 Cerro de Pasco, Perú</span>
+      <span>✦ Cuidamos tu sonrisa con tecnología y confianza</span>
+    </div>
+  </div>
 
-  <!-- ENCABEZADO -->
+  <!-- HEADER -->
   <header class="site-header">
+    <div class="container header-content">
 
-    <a href="index.html" class="brand">
-      <span class="brand-mark">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <defs>
-            <linearGradient id="tooth-gradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#E5FBFF"/>
-              <stop offset="48%" stop-color="#4682B4"/>
-              <stop offset="100%" stop-color="#00F5D4"/>
-            </linearGradient>
-          </defs>
-          <path d="M17 10C8 14 9 27 14 38l7 16c2 5 7 5 9 0l4-12c1-3 4-3 5 0l4 12c2 5 7 5 9 0l7-16c5-11 6-24-3-28-7-3-12 2-19 2S24 7 17 10Z"
-            fill="url(#tooth-gradient)" stroke="#D8F7FF" stroke-width="1.5"/>
-          <path d="M20 17c-4 3-3 10 0 16" fill="none" stroke="#FFFFFF"
-            stroke-width="3" stroke-linecap="round" opacity=".65"/>
-        </svg>
-      </span>
+      <a href="index.html" class="brand">
+        <div class="brand-icon">✦</div>
+        <div>
+          <strong>OdontoSmile</strong>
+          <small>PASCO · CLÍNICA DENTAL</small>
+        </div>
+      </a>
 
-      <span class="brand-name">Odonto<span>Smile</span></span>
-    </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
 
-    <button class="menu-toggle" type="button" aria-label="Abrir menú"
-      aria-expanded="false" aria-controls="main-nav">
-      <span></span><span></span><span></span>
-    </button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="tratamientos.html">Tratamientos</a>
+        <a href="especialidades.html">Especialidades</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="contacto.html#reservar" class="nav-cta btn btn-primary">Agendar cita ↗</a>
+      </nav>
 
-    <nav class="main-nav" id="main-nav">
-      <a class="nav-link" href="index.html">Inicio</a>
-      <a class="nav-link" href="tratamientos.html">Tratamientos</a>
-      <a class="nav-link" href="especialidades.html">Especialidades</a>
-      <a class="nav-link" href="nosotros.html">Nosotros</a>
-      <a class="nav-link" href="contacto.html">Contacto</a>
-      <a class="nav-cta" href="contacto.html#reservar">Agendar cita ↗</a>
-    </nav>
-
+    </div>
   </header>
 
   <main>
 
     <!-- HERO -->
-    <section class="hero section-shell">
+    <section class="hero">
+      <div class="container hero-grid">
 
-      <div class="hero-copy reveal">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Tu salud dental es nuestra prioridad</span>
 
-        <p class="eyebrow">
-          <span class="status-dot"></span>
-          ODONTOLOGÍA · TECNOLOGÍA · BIENESTAR
-        </p>
+          <h1>
+            Una sonrisa sana,
+            <span>una vida feliz.</span>
+          </h1>
 
-        <h1>
-          Tu sonrisa,<br>
-          en otra <span>dimensión.</span>
-        </h1>
+          <p>
+            En OdontoSmile combinamos atención personalizada,
+            profesionales especializados y tecnología odontológica
+            para cuidar la sonrisa que te hace único.
+          </p>
 
-        <p class="hero-lead">
-          Una experiencia dental de nueva generación.
-          Tecnología avanzada, atención humana y resultados
-          que se sienten tan bien como se ven.
-        </p>
+          <div class="hero-actions">
+            <a href="contacto.html#reservar" class="btn btn-primary">
+              Agendar mi cita <span>→</span>
+            </a>
 
-        <div class="hero-actions">
-          <a href="contacto.html#reservar" class="button button-primary">
-            Descubre tu nueva sonrisa ↗
-          </a>
-
-          <a href="tratamientos.html" class="button button-quiet">
-            <span class="play-icon">▶</span>
-            Explorar tratamientos
-          </a>
-        </div>
-
-        <div class="hero-proof">
-          <div class="proof-symbols">
-            <span>✦</span>
-            <span>✧</span>
-            <span>+</span>
+            <a href="tratamientos.html" class="btn btn-outline">
+              Explorar tratamientos
+            </a>
           </div>
 
+          <div class="hero-benefits">
+            <div class="benefit">
+              <span>✓</span> Atención personalizada
+            </div>
+
+            <div class="benefit">
+              <span>✓</span> Tecnología dental
+            </div>
+
+            <div class="benefit">
+              <span>✓</span> Cuidado integral
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+
+          <div class="visual-glow"></div>
+
+          <picture class="hero-picture">
+            <img
+              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=85"
+              alt="Atención odontológica profesional"
+              fetchpriority="high"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85';"
+            >
+          </picture>
+
+          <div class="floating-card card-tech">
+            <span class="mini-icon">✦</span>
+            <div>
+              <strong>Sonrisas con confianza</strong>
+              <small>Atención personalizada en cada visita</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFIANZA -->
+    <section class="trust-strip">
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <span class="icon">✚</span>
           <div>
-            <strong>Sonrisas con confianza</strong>
-            <small>Atención personalizada en cada visita</small>
+            <strong>Cuidado integral</strong>
+            <small>Atención para cada sonrisa</small>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span class="icon">✧</span>
+          <div>
+            <strong>Tecnología moderna</strong>
+            <small>Innovación en odontología</small>
+          </div>
+        </div>
+
+        <div class="trust-item">
+          <span class="icon">♡</span>
+          <div>
+            <strong>Atención cercana</strong>
+            <small>Tu tranquilidad nos importa</small>
           </div>
         </div>
 
       </div>
+    </section>
 
-      <div class="hero-visual reveal">
+    <!-- SERVICIOS -->
+    <section class="section services-section">
+      <div class="container">
 
-        <div class="visual-glow"></div>
-        <div class="visual-orbit orbit-one"></div>
-        <div class="visual-orbit orbit-two"></div>
-
-    <picture class="hero-picture">
-      <img
-      src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=85"
-      alt="Profesional odontológico en una clínica moderna"
-      fetchpriority="high"
-      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85';"
-    >
-    </picture>
-
-        <div class="floating-card card-tech">
-          <span class="mini-icon">⌁</span>
-          <div>
-            <strong>Dental digital</strong>
-            <small>Precisión en cada detalle</small>
-          </div>
+        <div class="section-heading reveal">
+          <span class="eyebrow">Nuestros servicios</span>
+          <h2>Todo lo que tu sonrisa necesita</h2>
+          <p>
+            Descubre nuestras opciones de atención odontológica
+            y encuentra el cuidado que necesitas.
+          </p>
         </div>
 
-        <div class="floating-card card-care">
-          <span class="mini-icon">✦</span>
-          <div>
-            <strong>Atención premium</strong>
-            <small>Tu bienestar es prioridad</small>
-          </div>
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <div class="service-icon">✦</div>
+            <h3>Odontología general</h3>
+            <p>
+              Evaluación, prevención y cuidado de tu salud bucal
+              para mantener una sonrisa saludable.
+            </p>
+            <a href="tratamientos.html" class="text-link">Conocer más →</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">♡</div>
+            <h3>Estética dental</h3>
+            <p>
+              Alternativas para mejorar la apariencia de tu sonrisa
+              y recuperar tu confianza.
+            </p>
+            <a href="tratamientos.html" class="text-link">Conocer más →</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">✧</div>
+            <h3>Ortodoncia</h3>
+            <p>
+              Opciones de tratamiento para corregir la posición
+              de los dientes y mejorar tu mordida.
+            </p>
+            <a href="especialidades.html" class="text-link">Conocer más →</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">✚</div>
+            <h3>Odontopediatría</h3>
+            <p>
+              Cuidado dental para los más pequeños, con atención
+              amable y prevención desde la infancia.
+            </p>
+            <a href="especialidades.html" class="text-link">Conocer más →</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">◈</div>
+            <h3>Limpieza dental</h3>
+            <p>
+              Procedimientos preventivos para mantener una boca
+              limpia y contribuir a tu salud bucal.
+            </p>
+            <a href="tratamientos.html" class="text-link">Conocer más →</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon">✿</div>
+            <h3>Rehabilitación oral</h3>
+            <p>
+              Soluciones odontológicas orientadas a recuperar
+              la función y estética de tu sonrisa.
+            </p>
+            <a href="tratamientos.html" class="text-link">Conocer más →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="section">
+      <div class="container about-grid">
+
+        <div class="about-image reveal">
+          <img
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85"
+            alt="Consultorio odontológico moderno"
+            loading="lazy"
+          >
         </div>
 
-        <p class="visual-caption">
-          <span></span>
-          INNOVACIÓN QUE SE NOTA
-        </p>
+        <div class="about-content reveal">
+          <span class="eyebrow">Conoce OdontoSmile</span>
+
+          <h2>Tu sonrisa merece un cuidado especial.</h2>
+
+          <p>
+            Somos una propuesta de atención odontológica enfocada
+            en el bienestar, la prevención y la confianza de nuestros
+            pacientes.
+          </p>
+
+          <p>
+            Trabajamos para brindarte una experiencia agradable,
+            con información clara y alternativas de tratamiento
+            según tus necesidades.
+          </p>
+
+          <div class="about-points">
+            <div class="about-point"><span>✓</span> Atención personalizada</div>
+            <div class="about-point"><span>✓</span> Ambiente agradable</div>
+            <div class="about-point"><span>✓</span> Cuidado preventivo</div>
+            <div class="about-point"><span>✓</span> Orientación profesional</div>
+          </div>
+
+          <a href="nosotros.html" class="btn btn-primary">Conócenos más →</a>
+        </div>
 
       </div>
     </section>
 
-    <!-- BENEFICIOS -->
-    <section class="trust-strip section-shell">
-
-      <article>
-        <span class="trust-icon">✧</span>
-        <div>
-          <strong>Tecnología avanzada</strong>
-          <small>Diagnóstico preciso</small>
-        </div>
-      </article>
-
-      <article>
-        <span class="trust-icon">⌁</span>
-        <div>
-          <strong>Atención cercana</strong>
-          <small>Tu comodidad primero</small>
-        </div>
-      </article>
-
-      <article>
-        <span class="trust-icon">◈</span>
-        <div>
-          <strong>Planes a tu medida</strong>
-          <small>Tratamientos personalizados</small>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- PRESENTACIÓN -->
-    <section class="intro-section section-shell">
-
-      <div class="section-heading reveal">
-        <p class="eyebrow">EL FUTURO DE TU SALUD DENTAL</p>
-
-        <h2>
-          La confianza comienza<br>
-          con una <span>sonrisa.</span>
-        </h2>
-
+    <!-- CTA -->
+    <section class="closing-cta">
+      <div class="container reveal">
+        <h2>¡Es momento de cuidar tu sonrisa!</h2>
         <p>
-          Combinamos ciencia, diseño y calidez humana
-          para transformar tu visita al dentista
-          en una experiencia positiva.
+          Da el primer paso hacia una mejor salud bucal.
+          Nuestro equipo está listo para orientarte.
         </p>
+        <a href="contacto.html#reservar" class="btn btn-primary">
+          Solicitar una cita →
+        </a>
       </div>
-
-      <div class="feature-grid">
-
-        <article class="feature-card reveal">
-          <span class="feature-number">01</span>
-          <div class="feature-icon">⌬</div>
-          <h3>Diagnóstico inteligente</h3>
-          <p>
-            Evaluación cuidadosa y herramientas modernas
-            para acompañarte con claridad.
-          </p>
-          <a href="especialidades.html">Conoce más ↗</a>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="feature-number">02</span>
-          <div class="feature-icon">✧</div>
-          <h3>Sonrisa diseñada para ti</h3>
-          <p>
-            Tratamientos personalizados que respetan
-            tu salud, estilo y objetivos.
-          </p>
-          <a href="tratamientos.html">Ver tratamientos ↗</a>
-        </article>
-
-        <article class="feature-card reveal">
-          <span class="feature-number">03</span>
-          <div class="feature-icon">♡</div>
-          <h3>Cuidado sin ansiedad</h3>
-          <p>
-            Un entorno tranquilo, comunicación transparente
-            y acompañamiento cercano.
-          </p>
-          <a href="nosotros.html">Nuestra filosofía ↗</a>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- LLAMADO A LA ACCIÓN -->
-    <section class="closing-cta section-shell reveal" id="reservar">
-
-      <div>
-        <p class="eyebrow">ESTÁS A UN PASO</p>
-
-        <h2>
-          ¿Listos para una sonrisa<br>
-          <span>extraordinaria?</span>
-        </h2>
-
-        <p>
-          Conversemos sobre lo que necesitas.
-          Tu próxima visita comienza aquí.
-        </p>
-      </div>
-
-      <a href="contacto.html#reservar" class="button button-primary">
-        Agenda tu cita ↗
-      </a>
-
     </section>
 
   </main>
 
-  <!-- PIE DE PÁGINA -->
-  <footer class="site-footer section-shell">
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
 
-    <a href="index.html" class="brand brand-footer">
-      <span class="brand-mark">✧</span>
-      <span class="brand-name">Odonto<span>Smile</span></span>
-    </a>
+      <div class="footer-grid">
 
-    <p>Una nueva dimensión del cuidado dental.</p>
+        <div>
+          <a href="index.html" class="brand">
+            <div class="brand-icon">✦</div>
+            <div>
+              <strong style="color:white;">OdontoSmile</strong>
+              <small>PASCO · CLÍNICA DENTAL</small>
+            </div>
+          </a>
 
-    <small>
-      © <span id="year"></span>
-      OdontoSmile. Todos los derechos reservados.
-    </small>
+          <p style="margin-top:20px;">
+            Cuidamos tu salud bucal con atención cercana,
+            confianza y compromiso con tu sonrisa.
+          </p>
+        </div>
 
-  </footer>
+        <div>
+          <h3>Enlaces rápidos</h3>
+          <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="tratamientos.html">Tratamientos</a>
+            <a href="especialidades.html">Especialidades</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+          </div>
+        </div>
 
-  <!-- PORTAL FLOTANTE -->
-  <div class="smile-portal" id="smile-portal">
+        <div>
+          <h3>Contáctanos</h3>
+          <p>📍 Cerro de Pasco, Perú</p>
+          <p>📱 934 033 216</p>
+          <a href="https://wa.me/51934033216" target="_blank" rel="noopener">
+            Escríbenos por WhatsApp →
+          </a>
+        </div>
 
-    <div class="portal-actions">
+      </div>
 
-      <a class="portal-action action-one"
-        href="contacto.html#reservar" aria-label="Cita Express">
-        <span>＋</span>
-        <small>Cita Express</small>
-      </a>
-
-      <a class="portal-action action-two"
-        href="contacto.html#urgencias" aria-label="Urgencias 24 horas">
-        <span>✚</span>
-        <small>Urgencias 24h</small>
-      </a>
-
-      <a class="portal-action action-three"
-        href="contacto.html#chat" aria-label="Chat Inteligente">
-        <span>✧</span>
-        <small>Chat Inteligente</small>
-      </a>
+      <div class="footer-bottom">
+        © <span id="year"></span> OdontoSmile PASCO. Todos los derechos reservados.
+      </div>
 
     </div>
+  </footer>
 
-    <button class="portal-trigger" type="button"
-      aria-expanded="false" aria-label="Abrir Portal de Sonrisas">
+  <!-- WHATSAPP -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/51934033216?text=Hola%20OdontoSmile%2C%20deseo%20informaci%C3%B3n."
+    target="_blank"
+    rel="noopener"
+    aria-label="Contactar por WhatsApp"
+    title="Escríbenos por WhatsApp"
+  >◉</a>
 
-      <span class="portal-ring"></span>
-      <span class="portal-symbol">✦</span>
-      <span class="portal-label">Portal de Sonrisas</span>
+  <!-- BOTÓN DEL CHAT -->
+  <button
+    class="chat-launcher"
+    id="chat-launcher"
+    aria-label="Abrir chat inteligente"
+    aria-expanded="false"
+    title="Chat inteligente OdontoSmile"
+  >💬</button>
 
-    </button>
+  <!-- VENTANA DEL CHAT -->
+  <section class="chat-window" id="chat-window" aria-label="Chat inteligente OdontoSmile">
 
-  </div>
+    <div class="chat-header">
+      <div class="chat-profile">
+        <div class="chat-avatar">🦷</div>
+        <div>
+          <strong>Asistente OdontoSmile</strong>
+          <small>● En línea · Atención automática</small>
+        </div>
+      </div>
 
-  <!-- JAVASCRIPT INTEGRADO -->
+      <button class="chat-close" id="chat-close" aria-label="Cerrar chat">×</button>
+    </div>
+
+    <div class="chat-messages" id="chat-messages" aria-live="polite">
+      <div class="message bot">
+        ¡Hola! 👋 Bienvenido a OdontoSmile PASCO.
+
+        Soy tu asistente virtual. Puedo ayudarte con información sobre nuestros tratamientos, citas y atención.
+
+        ¿Qué deseas consultar?
+      </div>
+    </div>
+
+    <div class="quick-questions">
+      <button type="button" data-question="¿Qué tratamientos ofrecen?">Tratamientos</button>
+      <button type="button" data-question="¿Cómo puedo reservar una cita?">Reservar cita</button>
+      <button type="button" data-question="¿Cuál es su horario?">Horarios</button>
+      <button type="button" data-question="¿Dónde están ubicados?">Ubicación</button>
+    </div>
+
+    <form class="chat-form" id="chat-form">
+      <input
+        type="text"
+        id="chat-input"
+        placeholder="Escribe tu consulta..."
+        autocomplete="off"
+        maxlength="400"
+        required
+      >
+      <button type="submit" aria-label="Enviar mensaje">➤</button>
+    </form>
+
+    <div class="chat-note">
+      Asistente automático. Para confirmar información, contacta con nuestro equipo.
+    </div>
+
+  </section>
+
+  <!-- JAVASCRIPT -->
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener("DOMContentLoaded", function () {
 
-    // MENÚ RESPONSIVE
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('#main-nav');
+      // AÑO AUTOMÁTICO
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-    if (menuToggle && mainNav) {
+      // MENÚ RESPONSIVE
+      const menuToggle = document.getElementById("menu-toggle");
+      const mainNav = document.getElementById("main-nav");
 
-      menuToggle.addEventListener('click', function () {
-
-        const isOpen = mainNav.classList.toggle('active');
-
-        menuToggle.setAttribute('aria-expanded', String(isOpen));
-        menuToggle.setAttribute(
-          'aria-label',
-          isOpen ? 'Cerrar menú' : 'Abrir menú'
-        );
-
+      menuToggle.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.textContent = isOpen ? "×" : "☰";
       });
 
-      // Cerrar menú al seleccionar una página
-      mainNav.querySelectorAll('a').forEach(function (link) {
-
-        link.addEventListener('click', function () {
-          mainNav.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-          menuToggle.setAttribute('aria-label', 'Abrir menú');
+      mainNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mainNav.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.textContent = "☰";
         });
-
       });
 
-    }
-
-    // AÑO AUTOMÁTICO
-    const yearElement = document.querySelector('#year');
-
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-
-    // ANIMACIONES AL DESPLAZARSE
-    const revealElements = document.querySelectorAll('.reveal');
-
-    if ('IntersectionObserver' in window) {
-
+      // ANIMACIONES AL DESPLAZARSE
       const observer = new IntersectionObserver(function (entries) {
-
         entries.forEach(function (entry) {
-
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           }
-
         });
+      }, { threshold: 0.12 });
 
-      }, {
-        threshold: 0.12
-      });
-
-      revealElements.forEach(function (element) {
+      document.querySelectorAll(".reveal").forEach(function (element) {
         observer.observe(element);
       });
 
-    } else {
+      // CHAT INTELIGENTE
+      const chatLauncher = document.getElementById("chat-launcher");
+      const chatWindow = document.getElementById("chat-window");
+      const chatClose = document.getElementById("chat-close");
+      const chatForm = document.getElementById("chat-form");
+      const chatInput = document.getElementById("chat-input");
+      const chatMessages = document.getElementById("chat-messages");
 
-      revealElements.forEach(function (element) {
-        element.classList.add('visible');
+      function toggleChat(open) {
+        chatWindow.classList.toggle("open", open);
+        chatLauncher.setAttribute("aria-expanded", String(open));
+        chatLauncher.textContent = open ? "×" : "💬";
+
+        if (open) {
+          setTimeout(() => chatInput.focus(), 150);
+        }
+      }
+
+      chatLauncher.addEventListener("click", function () {
+        toggleChat(!chatWindow.classList.contains("open"));
       });
 
-    }
-
-    // PORTAL FLOTANTE
-    const portal = document.querySelector('#smile-portal');
-    const portalTrigger = document.querySelector('.portal-trigger');
-
-    if (portal && portalTrigger) {
-
-      portalTrigger.addEventListener('click', function () {
-
-        const isOpen = portal.classList.toggle('active');
-
-        portalTrigger.setAttribute('aria-expanded', String(isOpen));
-
-        portalTrigger.setAttribute(
-          'aria-label',
-          isOpen ? 'Cerrar Portal de Sonrisas' : 'Abrir Portal de Sonrisas'
-        );
-
+      chatClose.addEventListener("click", function () {
+        toggleChat(false);
       });
 
-      // Cerrar el portal al pulsar fuera de él
-      document.addEventListener('click', function (event) {
+      function addMessage(text, type) {
+        const message = document.createElement("div");
+        message.className = "message " + type;
+        message.textContent = text;
+        chatMessages.appendChild(message);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
 
-        if (!portal.contains(event.target)) {
-          portal.classList.remove('active');
-          portalTrigger.setAttribute('aria-expanded', 'false');
-          portalTrigger.setAttribute('aria-label', 'Abrir Portal de Sonrisas');
+      function normalizeText(text) {
+        return text
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .trim();
+      }
+
+      function getBotResponse(question) {
+        const q = normalizeText(question);
+
+        if (/hola|buenos dias|buenas tardes|buenas noches|saludos|hey/.test(q)) {
+          return "¡Hola! 😊 Gracias por comunicarte con OdontoSmile PASCO. Estoy aquí para ayudarte. ¿Deseas información sobre tratamientos, citas o ubicación?";
         }
 
+        if (/tratamiento|servicio|ofrecen|especialidad|servicios/.test(q)) {
+          return "🦷 Contamos con información sobre distintas áreas odontológicas:\n\n• Odontología general\n• Ortodoncia\n• Estética dental\n• Odontopediatría\n• Limpieza dental\n• Rehabilitación oral\n\nPuedes visitar nuestra sección de tratamientos para conocer más.";
+        }
+
+        if (/cita|reserv|agendar|consulta|turno/.test(q)) {
+          return "📅 ¡Con gusto te ayudamos a solicitar una cita!\n\nPuedes ingresar a nuestra página de contacto y utilizar la sección de reservas:\n\ncontacto.html#reservar\n\nTambién puedes escribir directamente por WhatsApp.";
+        }
+
+        if (/horario|atienden|abren|hora|abierto/.test(q)) {
+          return "🕒 Para confirmar nuestros horarios de atención y disponibilidad, comunícate directamente con nuestro equipo por WhatsApp:\n\n934 033 216.\n\nAsí podremos brindarte información actualizada.";
+        }
+
+        if (/precio|costo|cuanto|cuesta|tarifa/.test(q)) {
+          return "💗 El costo depende del tratamiento y de la evaluación odontológica que necesites.\n\nPara recibir información sobre precios, escríbenos por WhatsApp al 934 033 216.";
+        }
+
+        if (/ubicacion|direccion|donde|lugar|pasco/.test(q)) {
+          return "📍 Nos encontramos en Cerro de Pasco, Perú.\n\nPara recibir indicaciones exactas sobre cómo llegar, puedes comunicarte con nuestro equipo por WhatsApp.";
+        }
+
+        if (/whatsapp|telefono|celular|contacto|numero/.test(q)) {
+          return "📱 Puedes comunicarte con OdontoSmile mediante este número:\n\n934 033 216\n\nTambién puedes abrir directamente nuestra conversación de WhatsApp.";
+        }
+
+        if (/urgencia|dolor|sangrado|emergencia|inflamacion/.test(q)) {
+          return "⚠️ Si tienes dolor intenso, hinchazón importante, sangrado persistente o una lesión dental, solicita atención odontológica cuanto antes.\n\nSi tienes dificultad para respirar o tragar, busca atención de emergencia inmediatamente.\n\nComunícate con nuestro equipo para recibir orientación.";
+        }
+
+        if (/nino|nina|hijo|hija|infantil|pediatr/.test(q)) {
+          return "👧🦷 La odontopediatría se enfoca en el cuidado dental de los niños. Podemos orientarte sobre prevención y atención infantil.\n\nEscríbenos para consultar disponibilidad.";
+        }
+
+        if (/limpieza|blanqueamiento|dientes blancos|profilaxis/.test(q)) {
+          return "✨ La limpieza dental y los procedimientos estéticos deben elegirse según la evaluación de cada paciente.\n\nNuestro equipo puede orientarte sobre las alternativas adecuadas para tu sonrisa.";
+        }
+
+        if (/gracias|muchas gracias/.test(q)) {
+          return "¡Gracias a ti! 💗 En OdontoSmile estamos para ayudarte. ¡Que tengas un excelente día!";
+        }
+
+        return "¡Gracias por tu consulta! 😊 Todavía no tengo una respuesta específica para esa pregunta.\n\nPuedo orientarte sobre tratamientos, citas, horarios, ubicación y contacto.\n\nSi necesitas atención personalizada, escríbenos por WhatsApp al 934 033 216.";
+      }
+
+      function sendQuestion(text) {
+        const question = text.trim();
+
+        if (!question) return;
+
+        addMessage(question, "user");
+
+        const response = getBotResponse(question);
+
+        setTimeout(function () {
+          addMessage(response, "bot");
+        }, 450);
+      }
+
+      chatForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const question = chatInput.value.trim();
+
+        if (!question) return;
+
+        sendQuestion(question);
+        chatInput.value = "";
       });
 
-    }
+      document.querySelectorAll(".quick-questions button").forEach(function (button) {
+        button.addEventListener("click", function () {
+          sendQuestion(button.dataset.question);
+        });
+      });
 
-  });
+    });
   </script>
 
-  <!-- CONEXIONES ORIGINALES CON SUPABASE: NO MODIFICADAS -->
+  <!-- CONEXIÓN SUPABASE: CONSERVAR TU ARCHIVO EXISTENTE -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase.js"></script>
 
