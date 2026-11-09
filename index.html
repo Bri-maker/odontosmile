@@ -10,57 +10,39 @@
 
   <title>OdontoSmile | Tu sonrisa, nuestra pasión</title>
 
-  <!-- TIPOGRAFÍAS -->
+  <!-- =================================
+       TIPOGRAFÍAS
+  ================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- =================================
+       CSS PRINCIPAL
+  ================================== -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- JAVASCRIPT -->
+  <!-- =================================
+       JAVASCRIPT PRINCIPAL
+  ================================== -->
   <script src="js/main.js" defer></script>
 </head>
 
 <body>
 
-  <!-- FONDO -->
+  <!-- FONDOS DECORATIVOS -->
   <div class="ambient ambient-one"></div>
   <div class="ambient ambient-two"></div>
 
-  <!-- ENCABEZADO -->
+  <!-- =================================
+       HEADER
+  ================================== -->
   <header class="site-header">
 
-    <a href="index.html" class="brand">
+    <a href="index.html" class="brand" aria-label="OdontoSmile Inicio">
 
-      <span class="brand-mark">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <defs>
-            <linearGradient id="tooth-gradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#E5FBFF"/>
-              <stop offset="48%" stop-color="#4682B4"/>
-              <stop offset="100%" stop-color="#00F5D4"/>
-            </linearGradient>
-          </defs>
-
-          <path
-            d="M17 10C8 14 9 27 14 38l7 16c2 5 7 5 9 0l4-12c1-3 4-3 5 0l4 12c2 5 7 5 9 0l7-16c5-11 6-24-3-28-7-3-12 2-19 2S24 7 17 10Z"
-            fill="url(#tooth-gradient)"
-            stroke="#D8F7FF"
-            stroke-width="1.5"
-          />
-
-          <path
-            d="M20 17c-4 3-3 10 0 16"
-            fill="none"
-            stroke="#FFFFFF"
-            stroke-width="3"
-            stroke-linecap="round"
-            opacity=".65"
-          />
-        </svg>
-      </span>
+      <span class="brand-mark">✦</span>
 
       <span class="brand-name">
         Odonto<span>Smile</span>
@@ -74,25 +56,36 @@
       type="button"
       aria-label="Abrir menú"
       aria-expanded="false"
-      aria-controls="main-nav"
-    >
+      aria-controls="main-nav">
+
       <span></span>
       <span></span>
       <span></span>
+
     </button>
 
     <!-- NAVEGACIÓN -->
     <nav class="main-nav" id="main-nav">
 
-      <a class="nav-link active" href="index.html">Inicio</a>
+      <a class="nav-link active" href="index.html">
+        Inicio
+      </a>
 
-      <a class="nav-link" href="tratamientos.html">Tratamientos</a>
+      <a class="nav-link" href="tratamientos.html">
+        Tratamientos
+      </a>
 
-      <a class="nav-link" href="especialidades.html">Especialidades</a>
+      <a class="nav-link" href="especialidades.html">
+        Especialidades
+      </a>
 
-      <a class="nav-link" href="nosotros.html">Nosotros</a>
+      <a class="nav-link" href="nosotros.html">
+        Nosotros
+      </a>
 
-      <a class="nav-link" href="contacto.html">Contacto</a>
+      <a class="nav-link" href="contacto.html">
+        Contacto
+      </a>
 
       <a class="nav-cta" href="contacto.html#reservar">
         Agendar cita ↗
@@ -102,7 +95,9 @@
 
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
+  <!-- =================================
+       CONTENIDO PRINCIPAL
+  ================================== -->
   <main>
 
     <!-- HERO -->
@@ -156,24 +151,26 @@
 
       </div>
 
-      <!-- IMAGEN PRINCIPAL DIRECTA -->
+      <!-- IMAGEN PRINCIPAL -->
       <div class="hero-visual reveal">
 
         <div class="visual-glow"></div>
+
         <div class="visual-orbit orbit-one"></div>
         <div class="visual-orbit orbit-two"></div>
 
         <picture class="hero-picture">
 
           <img
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=90"
+            src="assets/hero-dentist.webp"
             alt="Profesional odontológico en una clínica moderna"
             fetchpriority="high"
+            loading="eager"
           >
 
         </picture>
 
-        <!-- TARJETA FLOTANTE -->
+        <!-- TARJETA TECNOLOGÍA -->
         <div class="floating-card card-tech">
 
           <span class="mini-icon">⌁</span>
@@ -185,6 +182,7 @@
 
         </div>
 
+        <!-- TARJETA ATENCIÓN -->
         <div class="floating-card card-care">
 
           <span class="mini-icon">✦</span>
@@ -205,39 +203,49 @@
 
     </section>
 
-    <!-- BENEFICIOS -->
+    <!-- =================================
+         BENEFICIOS
+    ================================== -->
     <section class="trust-strip section-shell">
 
       <article>
+
         <span class="trust-icon">✧</span>
 
         <div>
           <strong>Tecnología avanzada</strong>
           <small>Diagnóstico preciso</small>
         </div>
+
       </article>
 
       <article>
+
         <span class="trust-icon">⌁</span>
 
         <div>
           <strong>Atención cercana</strong>
           <small>Tu comodidad primero</small>
         </div>
+
       </article>
 
       <article>
+
         <span class="trust-icon">◈</span>
 
         <div>
           <strong>Planes a tu medida</strong>
           <small>Tratamientos personalizados</small>
         </div>
+
       </article>
 
     </section>
 
-    <!-- PRESENTACIÓN -->
+    <!-- =================================
+         PRESENTACIÓN
+    ================================== -->
     <section class="intro-section section-shell">
 
       <div class="section-heading reveal">
@@ -323,7 +331,9 @@
 
     </section>
 
-    <!-- LLAMADO A LA ACCIÓN -->
+    <!-- =================================
+         LLAMADO A LA ACCIÓN
+    ================================== -->
     <section class="closing-cta section-shell reveal" id="reservar">
 
       <div>
@@ -352,7 +362,9 @@
 
   </main>
 
-  <!-- PIE DE PÁGINA -->
+  <!-- =================================
+       FOOTER
+  ================================== -->
   <footer class="site-footer section-shell">
 
     <a href="index.html" class="brand brand-footer">
@@ -376,7 +388,9 @@
 
   </footer>
 
-  <!-- PORTAL FLOTANTE -->
+  <!-- =================================
+       PORTAL DE SONRISAS
+  ================================== -->
   <div class="smile-portal" id="smile-portal">
 
     <div class="portal-actions">
@@ -384,28 +398,31 @@
       <a
         class="portal-action action-one"
         href="contacto.html#reservar"
-        aria-label="Cita Express"
-      >
+        aria-label="Cita Express">
+
         <span>＋</span>
         <small>Cita Express</small>
+
       </a>
 
       <a
         class="portal-action action-two"
         href="contacto.html#urgencias"
-        aria-label="Urgencias 24 horas"
-      >
+        aria-label="Urgencias">
+
         <span>✚</span>
         <small>Urgencias 24h</small>
+
       </a>
 
       <a
         class="portal-action action-three"
         href="contacto.html#chat"
-        aria-label="Chat Inteligente"
-      >
+        aria-label="Chat Inteligente">
+
         <span>✧</span>
         <small>Chat Inteligente</small>
+
       </a>
 
     </div>
@@ -414,23 +431,24 @@
       class="portal-trigger"
       type="button"
       aria-expanded="false"
-      aria-label="Abrir Portal de Sonrisas"
-    >
+      aria-label="Abrir Portal de Sonrisas">
 
       <span class="portal-ring"></span>
-
       <span class="portal-symbol">✦</span>
-
-      <span class="portal-label">
-        Portal de Sonrisas
-      </span>
+      <span class="portal-label">Portal de Sonrisas</span>
 
     </button>
 
   </div>
 
-  <!-- SUPABASE -->
+  <!-- =================================
+       SUPABASE
+  ================================== -->
+
+  <!-- Biblioteca oficial -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Configuración de Supabase -->
   <script src="js/supabase.js"></script>
 
 </body>
