@@ -2,932 +2,906 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Conoce OdontoSmile Pasco, nuestra filosofía y compromiso con tu salud bucal.">
-<title>Nosotros | OdontoSmile PASCO</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --steel: #4682B4;
-  --steel-light: #9EC9E8;
-  --neon: #00F5D4;
-  --night: #0B132B;
-  --panel: #111E3B;
-  --text: #EDF7FF;
-  --muted: #9AACC7;
-  --line: rgba(151,190,221,.16);
-}
-
-* { box-sizing:border-box; margin:0; padding:0; }
-
-html { scroll-behavior:smooth; }
-
-body {
-  font-family:'Plus Jakarta Sans',sans-serif;
-  background:var(--night);
-  color:var(--text);
-  overflow-x:hidden;
-}
-
-a { text-decoration:none; color:inherit; }
-
-img { display:block; max-width:100%; }
-
-.container {
-  width:min(1180px,calc(100% - 40px));
-  margin:auto;
-}
-
-/* HEADER */
-
-.header {
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(11,19,43,.95);
-  backdrop-filter:blur(15px);
-  border-bottom:1px solid var(--line);
-}
-
-.header-inner {
-  min-height:80px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-
-.logo {
-  font-size:1.35rem;
-  font-weight:800;
-}
-
-.logo span { color:var(--neon); }
-
-.nav {
-  display:flex;
-  gap:5px;
-  flex-wrap:wrap;
-}
-
-.nav a {
-  padding:10px;
-  border-radius:8px;
-  font-size:.8rem;
-  color:var(--steel-light);
-  transition:.3s;
-}
-
-.nav a:hover,
-.nav a.active {
-  color:var(--neon);
-  background:rgba(0,245,212,.08);
-}
-
-.btn {
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  padding:14px 22px;
-  border-radius:9px;
-  font-size:.82rem;
-  font-weight:800;
-  border:1px solid transparent;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.btn-primary {
-  color:#05202A;
-  background:linear-gradient(120deg,var(--neon),#9AF8E9);
-  box-shadow:0 8px 25px rgba(0,245,212,.15);
-}
-
-.btn-primary:hover {
-  transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(0,245,212,.3);
-}
-
-.btn-outline {
-  border-color:var(--neon);
-  color:var(--neon);
-  background:transparent;
-}
-
-.btn-outline:hover {
-  background:rgba(0,245,212,.1);
-}
-
-/* GENERAL */
-
-.eyebrow {
-  color:var(--neon);
-  font-size:.7rem;
-  font-weight:800;
-  letter-spacing:2px;
-}
-
-.section-title {
-  font-size:clamp(2rem,4vw,3.3rem);
-  margin:16px 0;
-  line-height:1.15;
-  letter-spacing:-2px;
-}
-
-.section-title span { color:var(--neon); }
-
-.description {
-  color:var(--muted);
-  font-size:.9rem;
-  line-height:1.9;
-}
-
-/* HERO */
-
-.hero {
-  min-height:620px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:65px;
-  padding:80px 0;
-}
-
-.hero h1 {
-  font-size:clamp(2.8rem,5vw,4.8rem);
-  line-height:1.08;
-  margin:20px 0;
-  letter-spacing:-3px;
-}
-
-.hero h1 span { color:var(--neon); }
-
-.hero p {
-  color:var(--muted);
-  line-height:1.9;
-  font-size:.95rem;
-}
-
-.hero-buttons {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:28px;
-}
-
-.hero-photo {
-  position:relative;
-  height:470px;
-}
-
-.hero-photo img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:20px;
-  border:1px solid rgba(0,245,212,.3);
-  box-shadow:0 25px 60px rgba(0,0,0,.4);
-}
-
-.photo-label {
-  position:absolute;
-  bottom:25px;
-  left:-25px;
-  padding:18px;
-  background:rgba(11,19,43,.95);
-  border:1px solid var(--neon);
-  border-radius:12px;
-}
-
-.photo-label strong {
-  display:block;
-  color:var(--neon);
-  font-size:.9rem;
-}
-
-.photo-label small { color:var(--muted); }
-
-/* STATS */
-
-.stats {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  padding:25px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:var(--panel);
-}
-
-.stat {
-  text-align:center;
-  padding:15px;
-  border-right:1px solid var(--line);
-}
-
-.stat:last-child { border:0; }
-
-.stat strong {
-  display:block;
-  font-size:2rem;
-  color:var(--neon);
-}
-
-.stat span {
-  font-size:.75rem;
-  color:var(--muted);
-}
-
-/* HISTORIA */
-
-.story {
-  display:grid;
-  grid-template-columns:1fr 1.1fr;
-  align-items:center;
-  gap:65px;
-  padding:110px 0;
-}
-
-.story-photo {
-  height:420px;
-}
-
-.story-photo img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:18px;
-  border:1px solid var(--line);
-}
-
-.story-content p {
-  color:var(--muted);
-  line-height:1.9;
-  font-size:.9rem;
-  margin-bottom:17px;
-}
-
-/* VALORES */
-
-.values-section {
-  padding:90px 0;
-  background:rgba(17,30,59,.55);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-
-.heading {
-  text-align:center;
-  max-width:650px;
-  margin:0 auto 45px;
-}
-
-.values-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-
-.value-card {
-  padding:28px;
-  background:linear-gradient(145deg,#192D4F,#101A36);
-  border:1px solid var(--line);
-  border-radius:15px;
-  transition:.3s;
-}
-
-.value-card:hover {
-  transform:translateY(-7px);
-  border-color:var(--neon);
-}
-
-.value-icon {
-  width:48px;
-  height:48px;
-  display:grid;
-  place-items:center;
-  color:var(--neon);
-  background:rgba(0,245,212,.1);
-  border:1px solid rgba(0,245,212,.2);
-  border-radius:12px;
-  font-size:1.5rem;
-  margin-bottom:20px;
-}
-
-.value-card h3 { margin-bottom:12px; }
-
-.value-card p {
-  color:var(--muted);
-  font-size:.82rem;
-  line-height:1.8;
-}
-
-/* GALERIA */
-
-.gallery-section { padding:100px 0; }
-
-.gallery-grid {
-  display:grid;
-  grid-template-columns:1.3fr 1fr 1fr;
-  grid-template-rows:260px;
-  gap:18px;
-}
-
-.gallery-item {
-  position:relative;
-  overflow:hidden;
-  border-radius:15px;
-  border:1px solid var(--line);
-}
-
-.gallery-item img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.5s;
-}
-
-.gallery-item:hover img { transform:scale(1.08); }
-
-.gallery-item span {
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:100%;
-  padding:30px 15px 15px;
-  font-weight:700;
-  background:linear-gradient(transparent,rgba(0,0,0,.9));
-}
-
-/* FORMULARIO */
-
-.contact-section {
-  padding:85px 0;
-  background:linear-gradient(135deg,#101D3A,#14284A);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-
-.contact-layout {
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:55px;
-  align-items:center;
-}
-
-.contact-info h2 {
-  font-size:2.5rem;
-  margin:18px 0;
-}
-
-.contact-info h2 span { color:var(--neon); }
-
-.contact-info p {
-  color:var(--muted);
-  line-height:1.9;
-  font-size:.9rem;
-}
-
-.contact-details {
-  margin-top:30px;
-  display:grid;
-  gap:18px;
-}
-
-.contact-detail {
-  display:flex;
-  align-items:center;
-  gap:14px;
-  color:var(--steel-light);
-  font-size:.85rem;
-}
-
-.contact-detail b {
-  width:42px;
-  height:42px;
-  display:grid;
-  place-items:center;
-  color:var(--neon);
-  background:rgba(0,245,212,.08);
-  border:1px solid var(--line);
-  border-radius:10px;
-}
-
-.form-card {
-  padding:35px;
-  background:rgba(11,19,43,.8);
-  border:1px solid rgba(0,245,212,.2);
-  border-radius:18px;
-  box-shadow:0 20px 50px rgba(0,0,0,.2);
-}
-
-.form-card h3 {
-  font-size:1.5rem;
-  margin-bottom:8px;
-}
-
-.form-card > p {
-  color:var(--muted);
-  font-size:.8rem;
-  margin-bottom:25px;
-}
-
-.form-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:17px;
-}
-
-.form-group {
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-
-.form-group.full { grid-column:1/-1; }
-
-.form-group label {
-  font-size:.77rem;
-  font-weight:700;
-  color:var(--steel-light);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width:100%;
-  padding:14px;
-  background:var(--panel);
-  border:1px solid var(--line);
-  border-radius:9px;
-  color:var(--text);
-  outline:none;
-  font:inherit;
-  font-size:.82rem;
-  transition:.3s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color:var(--neon);
-  box-shadow:0 0 0 3px rgba(0,245,212,.08);
-}
-
-.form-group select option { background:var(--panel); }
-
-.form-group textarea {
-  min-height:110px;
-  resize:vertical;
-}
-
-.form-card button {
-  width:100%;
-  margin-top:20px;
-}
-
-.form-note {
-  color:var(--muted);
-  font-size:.7rem;
-  text-align:center;
-  margin-top:13px;
-}
-
-.form-status {
-  margin-top:15px;
-  color:var(--neon);
-  font-size:.82rem;
-  line-height:1.6;
-  display:none;
-}
-
-/* FOOTER */
-
-.footer {
-  padding:28px 0;
-  text-align:center;
-  color:var(--muted);
-  font-size:.75rem;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px) {
-  .hero,.story,.contact-layout {
-    grid-template-columns:1fr;
-  }
-
-  .hero { gap:35px; }
-
-  .hero-photo { height:400px; }
-
-  .story { gap:35px; }
-
-  .values-grid { grid-template-columns:1fr 1fr; }
-
-  .gallery-grid {
-    grid-template-columns:1fr 1fr;
-    grid-template-rows:230px 230px;
-  }
-
-  .gallery-item:first-child { grid-column:span 2; }
-}
-
-@media(max-width:650px) {
-  .header-inner {
-    flex-wrap:wrap;
-    padding:15px 0;
-  }
-
-  .nav {
-    order:3;
-    width:100%;
-    justify-content:center;
-  }
-
-  .nav a { font-size:.7rem; padding:8px; }
-
-  .header-inner > .btn { padding:11px; font-size:.7rem; }
-
-  .hero { padding:55px 0; }
-
-  .hero h1 { letter-spacing:-2px; }
-
-  .hero-photo { height:320px; }
-
-  .photo-label { left:-8px; }
-
-  .stats { grid-template-columns:1fr 1fr; }
-
-  .stat:nth-child(2) { border:0; }
-
-  .stat:nth-child(3),
-  .stat:nth-child(4) { border-top:1px solid var(--line); }
-
-  .values-grid { grid-template-columns:1fr; }
-
-  .gallery-grid {
-    grid-template-columns:1fr;
-    grid-template-rows:repeat(3,220px);
-  }
-
-  .gallery-item:first-child { grid-column:auto; }
-
-  .form-card { padding:23px 18px; }
-
-  .form-grid { grid-template-columns:1fr; }
-
-  .form-group.full { grid-column:auto; }
-
-  .contact-info h2 { font-size:2rem; }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  *,*::before,*::after {
-    scroll-behavior:auto!important;
-    transition:none!important;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conoce OdontoSmile Pasco, nuestra filosofía, tecnología y compromiso con tu salud bucal.">
+  <title>Nosotros | OdontoSmile PASCO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+
+  <style>
+    :root {
+      --steel: #4682B4;
+      --steel-light: #9EC9E8;
+      --neon: #00F5D4;
+      --night: #0B132B;
+      --panel: #111E3B;
+      --text: #EDF7FF;
+      --muted: #9AACC7;
+      --line: rgba(151,190,221,.16);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(1180px, calc(100% - 44px));
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,19,43,.91);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header__inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo__text {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo__text strong { color: var(--neon); }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav__link {
+      padding: 10px 12px;
+      border-radius: 9px;
+      color: var(--steel-light);
+      font-size: .82rem;
+      transition: .25s;
+    }
+
+    .nav__link:hover,
+    .nav__link--active {
+      color: var(--neon);
+      background: rgba(0,245,212,.08);
+    }
+
+    .header__actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .header__phone {
+      color: var(--steel-light);
+      font-size: .78rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 49px;
+      padding: 0 21px;
+      border-radius: 10px;
+      font-size: .84rem;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn--primary {
+      color: #05202A;
+      background: linear-gradient(120deg,var(--neon),#9AF8E9);
+      box-shadow: 0 8px 25px rgba(0,245,212,.15);
+    }
+
+    .btn--primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,245,212,.27);
+    }
+
+    .btn--outline {
+      color: var(--neon);
+      border: 1px solid rgba(0,245,212,.35);
+      background: rgba(0,245,212,.05);
+    }
+
+    .btn--outline:hover {
+      background: rgba(0,245,212,.12);
+      transform: translateY(-3px);
+    }
+
+    /* ELEMENTOS GENERALES */
+
+    .about-page {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-page::before {
+      content: "";
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      top: 0;
+      right: -250px;
+      border-radius: 50%;
+      background: rgba(0,245,212,.07);
+      filter: blur(110px);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--neon);
+      font-size: .69rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 23px;
+      height: 2px;
+      background: var(--neon);
+      box-shadow: 0 0 10px var(--neon);
+    }
+
+    .section-title {
+      margin: 15px 0;
+      font-size: clamp(2.1rem,4vw,3.5rem);
+      line-height: 1.13;
+      letter-spacing: -2px;
+    }
+
+    .section-title span { color: var(--neon); }
+
+    .section-description {
+      color: var(--muted);
+      font-size: .93rem;
+      line-height: 1.9;
+    }
+
+    /* HERO */
+
+    .about-hero {
+      min-height: 610px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 65px;
+      padding: 75px 0 85px;
+    }
+
+    .hero-content { position: relative; z-index: 2; }
+
+    .hero-content h1 {
+      max-width: 620px;
+      margin: 23px 0;
+      font-size: clamp(3rem,5.6vw,5.1rem);
+      line-height: 1.06;
+      letter-spacing: -4px;
+    }
+
+    .hero-content h1 span { color: var(--neon); }
+
+    .hero-content > p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: .97rem;
+      line-height: 1.9;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 29px;
+    }
+
+    .hero-image {
+      min-width: 0;
+      height: 490px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 20px -15px -15px 20px;
+      border: 1px solid rgba(0,245,212,.35);
+      border-radius: 22px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid rgba(0,245,212,.25);
+      box-shadow: 0 25px 65px rgba(0,0,0,.35);
+    }
+
+    .image-label {
+      position: absolute;
+      left: -30px;
+      bottom: 35px;
+      max-width: 245px;
+      padding: 17px 20px;
+      border: 1px solid rgba(0,245,212,.25);
+      border-radius: 13px;
+      background: rgba(11,19,43,.94);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 15px 40px rgba(0,0,0,.25);
+    }
+
+    .image-label strong {
+      display: block;
+      color: var(--neon);
+      font-size: .88rem;
+    }
+
+    .image-label small {
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    /* ESTADÍSTICAS */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: linear-gradient(120deg,rgba(17,30,59,.95),rgba(17,30,59,.55));
+    }
+
+    .stat {
+      text-align: center;
+      padding: 12px;
+      border-right: 1px solid var(--line);
+    }
+
+    .stat:last-child { border: 0; }
+
+    .stat strong {
+      display: block;
+      color: var(--neon);
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .73rem;
+    }
+
+    /* HISTORIA */
+
+    .story-section {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      align-items: center;
+      gap: 75px;
+      padding: 115px 0;
+    }
+
+    .story-photo {
+      height: 440px;
+      position: relative;
+    }
+
+    .story-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+    }
+
+    .story-photo::after {
+      content: "ODONTOSMILE PASCO";
+      position: absolute;
+      left: 17px;
+      bottom: 17px;
+      padding: 10px 14px;
+      border-radius: 7px;
+      color: var(--neon);
+      background: rgba(11,19,43,.88);
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .story-content h2 {
+      margin: 16px 0;
+      font-size: clamp(2rem,4vw,3.1rem);
+      line-height: 1.15;
+      letter-spacing: -2px;
+    }
+
+    .story-content h2 span { color: var(--neon); }
+
+    .story-content p {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.9;
+    }
+
+    /* VALORES */
+
+    .values-section {
+      padding: 85px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(17,30,59,.32);
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow { justify-content: center; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .value-card {
+      position: relative;
+      min-height: 220px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(145deg,rgba(25,45,79,.8),rgba(12,23,48,.9));
+      transition: .3s;
+    }
+
+    .value-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(0,245,212,.4);
+      box-shadow: 0 18px 40px rgba(0,0,0,.2);
+    }
+
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      border: 1px solid rgba(0,245,212,.2);
+      border-radius: 13px;
+      color: var(--neon);
+      background: rgba(0,245,212,.08);
+      font-size: 1.4rem;
+    }
+
+    .value-card h3 {
+      margin: 0 0 9px;
+      font-size: 1rem;
+    }
+
+    .value-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .81rem;
+      line-height: 1.8;
+    }
+
+    /* GALERÍA */
+
+    .gallery-section { padding: 105px 0; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-rows: 250px;
+      gap: 16px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .gallery-item:hover img { transform: scale(1.08); }
+
+    .gallery-item span {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 35px 16px 15px;
+      color: white;
+      font-size: .83rem;
+      font-weight: 700;
+      background: linear-gradient(transparent,rgba(5,12,29,.95));
+    }
+
+    /* CTA FINAL */
+
+    .final-cta {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 80px;
+      padding: 45px;
+      border: 1px solid rgba(0,245,212,.28);
+      border-radius: 20px;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 85% 20%,rgba(0,245,212,.13),transparent 45%),
+        linear-gradient(120deg,#14284A,#101A36);
+    }
+
+    .final-cta h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem,3vw,2.5rem);
+    }
+
+    .final-cta h2 span { color: var(--neon); }
+
+    .final-cta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .75rem;
+      text-align: center;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 950px) {
+      .header__phone { display: none; }
+      .about-hero { gap: 35px; }
+      .hero-content h1 { font-size: 3.5rem; }
+      .story-section { gap: 40px; }
+    }
+
+    @media(max-width: 760px) {
+      .header__inner {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .header__actions { margin-left: auto; }
+
+      .about-hero,
+      .story-section {
+        grid-template-columns: 1fr;
+      }
+
+      .about-hero { padding: 55px 0 65px; }
+
+      .hero-content h1 {
+        font-size: clamp(2.8rem,10vw,4rem);
+        letter-spacing: -2px;
+      }
+
+      .hero-image {
+        height: 390px;
+        margin: 10px 12px 15px 0;
+      }
+
+      .image-label { left: -10px; }
+
+      .stats { grid-template-columns: repeat(2,1fr); }
+
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(3) { border-top: 1px solid var(--line); }
+      .stat:nth-child(4) { border-top: 1px solid var(--line); }
+
+      .story-section { padding: 75px 0; }
+
+      .story-photo { height: 350px; }
+
+      .values-grid { grid-template-columns: 1fr 1fr; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 210px 210px;
+      }
+
+      .gallery-item:first-child { grid-column: span 2; }
+
+      .final-cta {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 30px 23px;
+      }
+    }
+
+    @media(max-width: 480px) {
+      .container { width: calc(100% - 30px); }
+
+      .logo__text { font-size: 1.1rem; }
+
+      .nav { gap: 0; }
+
+      .nav__link {
+        padding: 8px;
+        font-size: .72rem;
+      }
+
+      .header__actions .btn {
+        min-height: 38px;
+        padding: 0 11px;
+        font-size: .7rem;
+      }
+
+      .hero-image { height: 310px; }
+
+      .values-grid { grid-template-columns: 1fr; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,220px);
+      }
+
+      .gallery-item:first-child { grid-column: auto; }
+
+      .section-title { letter-spacing: -1px; }
+    }
+
+    @media(prefers-reduced-motion: reduce) {
+      *,*::before,*::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="container header-inner">
-    <a href="./index.html" class="logo">OdontoSmile <span>PASCO</span></a>
+  <header class="header" id="header">
+    <div class="container header__inner">
 
-    <nav class="nav">
-      <a href="./index.html">Inicio</a>
-      <a href="./especialidades.html">Especialidades</a>
-      <a href="./tratamientos.html">Tratamientos</a>
-      <a href="./nosotros.html" class="active">Nosotros</a>
-      <a href="./contacto.html">Contacto</a>
-    </nav>
+      <a href="./index.html" class="logo">
+        <span class="logo__text">OdontoSmile <strong>PASCO</strong></span>
+      </a>
 
-    <a href="#formulario" class="btn btn-primary">Agendar cita ↗</a>
-  </div>
-</header>
+      <nav class="nav" id="nav">
+        <a href="./index.html" class="nav__link">Inicio</a>
+        <a href="./especialidades.html" class="nav__link">Especialidades</a>
+        <a href="./tratamientos.html" class="nav__link">Tratamientos</a>
+        <a href="./nosotros.html" class="nav__link nav__link--active">Nosotros</a>
+        <a href="./contacto.html" class="nav__link">Contacto</a>
+      </nav>
 
-<main>
-
-<section class="container hero">
-  <div>
-    <span class="eyebrow">CONÓCENOS · ODONTOSMILE PASCO</span>
-
-    <h1>Cuidamos tu sonrisa, <span>transformamos tu confianza.</span></h1>
-
-    <p>
-      En OdontoSmile Pasco creemos que una sonrisa saludable puede
-      cambiarlo todo. Combinamos atención personalizada, innovación
-      y compromiso para cuidar de ti y de tu familia.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#formulario" class="btn btn-primary">Agenda tu consulta ↗</a>
-      <a href="#historia" class="btn btn-outline">Conócenos</a>
-    </div>
-  </div>
-
-  <div class="hero-photo">
-    <img
-      src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1100&q=85"
-      alt="Clínica odontológica moderna"
-      fetchpriority="high"
-      onerror="this.onerror=null;this.src='https://placehold.co/1000x700/111E3B/00F5D4?text=OdontoSmile+PASCO';"
-    >
-    <div class="photo-label">
-      <strong>Tu sonrisa es nuestra prioridad</strong>
-      <small>Atención con dedicación y confianza</small>
-    </div>
-  </div>
-</section>
-
-<section class="container stats">
-  <div class="stat"><strong>100%</strong><span>Compromiso</span></div>
-  <div class="stat"><strong>360°</strong><span>Atención integral</span></div>
-  <div class="stat"><strong>1 a 1</strong><span>Atención personalizada</span></div>
-  <div class="stat"><strong>24/7</strong><span>Tu sonrisa nos importa</span></div>
-</section>
-
-<section class="container story" id="historia">
-  <div class="story-photo">
-    <img
-      src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1000&q=85"
-      alt="Consultorio odontológico"
-      loading="lazy"
-      onerror="this.onerror=null;this.src='https://placehold.co/900x700/111E3B/00F5D4?text=Nuestra+clinica';"
-    >
-  </div>
-
-  <div class="story-content">
-    <span class="eyebrow">NUESTRA IDENTIDAD</span>
-    <h2 class="section-title">Más que una clínica, <span>un espacio para sonreír.</span></h2>
-
-    <p>
-      En OdontoSmile Pasco combinamos tecnología moderna con
-      un equipo comprometido con brindarte una experiencia
-      odontológica de calidad.
-    </p>
-
-    <p>
-      Trabajamos para que cada paciente reciba una atención
-      cercana, profesional y enfocada en sus necesidades.
-      Queremos que cada visita sea una experiencia de confianza,
-      tranquilidad y bienestar.
-    </p>
-
-    <a href="#formulario" class="btn btn-primary">Conoce nuestros servicios →</a>
-  </div>
-</section>
-
-<section class="values-section">
-  <div class="container">
-    <div class="heading">
-      <span class="eyebrow">LO QUE NOS DEFINE</span>
-      <h2 class="section-title">Nuestra esencia es <span>cuidarte.</span></h2>
-      <p class="description">Cada detalle de nuestro trabajo está orientado a brindarte una experiencia odontológica de calidad.</p>
-    </div>
-
-    <div class="values-grid">
-      <article class="value-card">
-        <div class="value-icon">✦</div>
-        <h3>Excelencia profesional</h3>
-        <p>Atención responsable, cuidadosa y enfocada en cada paciente.</p>
-      </article>
-
-      <article class="value-card">
-        <div class="value-icon">♡</div>
-        <h3>Calidez humana</h3>
-        <p>Escuchamos tus necesidades y te acompañamos en cada tratamiento.</p>
-      </article>
-
-      <article class="value-card">
-        <div class="value-icon">⌘</div>
-        <h3>Innovación tecnológica</h3>
-        <p>Utilizamos herramientas modernas para mejorar tu experiencia.</p>
-      </article>
-
-      <article class="value-card">
-        <div class="value-icon">✓</div>
-        <h3>Confianza y seguridad</h3>
-        <p>Promovemos un entorno responsable y orientado a tu bienestar.</p>
-      </article>
-
-      <article class="value-card">
-        <div class="value-icon">◎</div>
-        <h3>Atención personalizada</h3>
-        <p>Cada sonrisa es diferente y merece una atención especial.</p>
-      </article>
-
-      <article class="value-card">
-        <div class="value-icon">✧</div>
-        <h3>Compromiso contigo</h3>
-        <p>Tu salud bucal es importante y trabajamos para cuidarla.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="container gallery-section">
-  <div class="heading">
-    <span class="eyebrow">NUESTRO ENTORNO</span>
-    <h2 class="section-title">Tecnología y cuidado <span>en cada detalle.</span></h2>
-    <p class="description">Un entorno pensado para brindar comodidad, confianza y una experiencia agradable.</p>
-  </div>
-
-  <div class="gallery-grid">
-    <article class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=85"
-        alt="Atención odontológica" loading="lazy"
-        onerror="this.onerror=null;this.src='https://placehold.co/900x600/111E3B/00F5D4?text=Atencion+profesional';">
-      <span>Atención profesional</span>
-    </article>
-
-    <article class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=85"
-        alt="Equipamiento odontológico" loading="lazy"
-        onerror="this.onerror=null;this.src='https://placehold.co/900x600/111E3B/00F5D4?text=Tecnologia';">
-      <span>Tecnología moderna</span>
-    </article>
-
-    <article class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=85"
-        alt="Cuidado de la sonrisa" loading="lazy"
-        onerror="this.onerror=null;this.src='https://placehold.co/900x600/111E3B/00F5D4?text=Sonrisas';">
-      <span>Cuidado de tu sonrisa</span>
-    </article>
-  </div>
-</section>
-
-<!-- FORMULARIO DE CONTACTO -->
-
-<section class="contact-section" id="formulario">
-  <div class="container contact-layout">
-
-    <div class="contact-info">
-      <span class="eyebrow">ESTAMOS PARA AYUDARTE</span>
-      <h2>Tu próxima sonrisa <span>comienza aquí.</span></h2>
-
-      <p>
-        ¿Tienes alguna consulta o deseas programar una cita?
-        Completa nuestro formulario y comunícate con nuestro equipo.
-      </p>
-
-      <div class="contact-details">
-        <div class="contact-detail">
-          <b>✉</b>
-          <span>Atención personalizada</span>
-        </div>
-        <div class="contact-detail">
-          <b>⌖</b>
-          <span>Pasco, Perú</span>
-        </div>
-        <div class="contact-detail">
-          <b>♡</b>
-          <span>Comprometidos con tu sonrisa</span>
-        </div>
+      <div class="header__actions">
+        <a href="tel:+51900000000" class="header__phone">+51 9XX XXX XXX</a>
+        <a href="./contacto.html#cita" class="btn btn--primary">Agendar Cita ↗</a>
       </div>
+
     </div>
+  </header>
 
-    <div class="form-card">
-      <h3>Solicita tu cita</h3>
-      <p>Completa tus datos para enviarnos tu solicitud.</p>
+  <main class="about-page">
 
-      <form id="appointmentForm">
-        <div class="form-grid">
+    <!-- PRESENTACIÓN PRINCIPAL -->
 
-          <div class="form-group">
-            <label for="nombre">Nombre completo *</label>
-            <input type="text" id="nombre" name="nombre"
-              placeholder="Tu nombre" required>
-          </div>
+    <section class="container about-hero">
 
-          <div class="form-group">
-            <label for="telefono">Teléfono *</label>
-            <input type="tel" id="telefono" name="telefono"
-              placeholder="999 999 999" pattern="[0-9+ ]{9,15}" required>
-          </div>
+      <div class="hero-content">
+        <span class="eyebrow">CONÓCENOS · ODONTOSMILE PASCO</span>
 
-          <div class="form-group">
-            <label for="correo">Correo electrónico</label>
-            <input type="email" id="correo" name="correo"
-              placeholder="correo@ejemplo.com">
-          </div>
+        <h1>
+          Cuidamos tu sonrisa,
+          <span>transformamos tu confianza.</span>
+        </h1>
 
-          <div class="form-group">
-            <label for="servicio">Especialidad *</label>
-            <select id="servicio" name="servicio" required>
-              <option value="">Selecciona una opción</option>
-              <option>Odontología general</option>
-              <option>Ortodoncia</option>
-              <option>Endodoncia</option>
-              <option>Estética dental</option>
-              <option>Implantes dentales</option>
-              <option>Limpieza dental</option>
-              <option>Otro tratamiento</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="fecha">Fecha preferida *</label>
-            <input type="date" id="fecha" name="fecha" required>
-          </div>
-
-          <div class="form-group">
-            <label for="hora">Hora preferida *</label>
-            <select id="hora" name="hora" required>
-              <option value="">Selecciona una hora</option>
-              <option>09:00 AM</option>
-              <option>10:00 AM</option>
-              <option>11:00 AM</option>
-              <option>12:00 PM</option>
-              <option>02:00 PM</option>
-              <option>03:00 PM</option>
-              <option>04:00 PM</option>
-              <option>05:00 PM</option>
-            </select>
-          </div>
-
-          <div class="form-group full">
-            <label for="mensaje">Mensaje adicional</label>
-            <textarea id="mensaje" name="mensaje"
-              placeholder="Cuéntanos qué necesitas..."></textarea>
-          </div>
-
-        </div>
-
-        <button type="submit" class="btn btn-primary">
-          Enviar solicitud por WhatsApp ↗
-        </button>
-
-        <p class="form-note">
-          Tus datos se utilizarán para atender tu solicitud de cita.
+        <p>
+          En OdontoSmile Pasco creemos que una sonrisa saludable
+          puede cambiarlo todo. Combinamos atención personalizada,
+          innovación y compromiso para cuidar de ti y de tu familia.
         </p>
 
-        <div class="form-status" id="formStatus" role="status"></div>
-      </form>
+        <div class="hero-buttons">
+          <a href="./contacto.html#cita" class="btn btn--primary">
+            Agenda tu consulta ↗
+          </a>
+
+          <a href="#nosotros-historia" class="btn btn--outline">
+            Descubre quiénes somos
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="./assets/nosotros-equipo.jpg"
+          alt="Equipo de profesionales odontológicos"
+          fetchpriority="high"
+        >
+
+        <div class="image-label">
+          <strong>Tu sonrisa es nuestra prioridad</strong>
+          <small>Atención odontológica con dedicación</small>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+
+    <section class="container stats">
+
+      <div class="stat">
+        <strong>100%</strong>
+        <span>Compromiso con tu bienestar</span>
+      </div>
+
+      <div class="stat">
+        <strong>360°</strong>
+        <span>Atención integral</span>
+      </div>
+
+      <div class="stat">
+        <strong>1 a 1</strong>
+        <span>Atención personalizada</span>
+      </div>
+
+      <div class="stat">
+        <strong>24/7</strong>
+        <span>Tu sonrisa nos importa</span>
+      </div>
+
+    </section>
+
+    <!-- QUIÉNES SOMOS -->
+
+    <section class="container story-section" id="nosotros-historia">
+
+      <div class="story-photo">
+        <img
+          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000"
+          alt="Instalaciones de una clínica odontológica moderna"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="story-content">
+        <span class="eyebrow">NUESTRA IDENTIDAD</span>
+
+        <h2>
+          Más que una clínica,
+          <span>un espacio para sonreír.</span>
+        </h2>
+
+        <p>
+          En OdontoSmile Pasco combinamos tecnología de vanguardia
+          con un equipo de especialistas comprometidos con brindarte
+          la mejor experiencia odontológica.
+        </p>
+
+        <p>
+          Trabajamos para que cada paciente reciba una atención
+          cercana, profesional y enfocada en sus necesidades.
+          Queremos que cada visita sea una experiencia de confianza,
+          tranquilidad y bienestar.
+        </p>
+
+        <a href="./contacto.html" class="btn btn--primary">
+          Conoce nuestra clínica →
+        </a>
+      </div>
+
+    </section>
+
+    <!-- NUESTROS VALORES -->
+
+    <section class="values-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">LO QUE NOS DEFINE</span>
+          <h2 class="section-title">
+            Nuestra esencia es <span>cuidarte.</span>
+          </h2>
+          <p class="section-description">
+            Cada detalle de nuestro trabajo está orientado
+            a brindarte una experiencia odontológica de calidad.
+          </p>
+        </div>
+
+        <div class="values-grid">
+
+          <article class="value-card">
+            <div class="value-icon">✦</div>
+            <h3>Excelencia profesional</h3>
+            <p>
+              Buscamos ofrecer una atención responsable,
+              cuidadosa y enfocada en cada paciente.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">♡</div>
+            <h3>Calidez humana</h3>
+            <p>
+              Escuchamos tus necesidades y te acompañamos
+              durante cada etapa de tu tratamiento.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">⌘</div>
+            <h3>Innovación tecnológica</h3>
+            <p>
+              Apostamos por herramientas y técnicas modernas
+              para mejorar la experiencia odontológica.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">✓</div>
+            <h3>Confianza y seguridad</h3>
+            <p>
+              Promovemos un entorno de atención responsable,
+              ordenado y orientado al bienestar.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">◎</div>
+            <h3>Atención personalizada</h3>
+            <p>
+              Cada sonrisa es diferente. Por eso buscamos
+              soluciones adaptadas a cada persona.
+            </p>
+          </article>
+
+          <article class="value-card">
+            <div class="value-icon">✧</div>
+            <h3>Compromiso contigo</h3>
+            <p>
+              Tu salud bucal es importante y trabajamos
+              para acompañarte en su cuidado.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+
+    <section class="container gallery-section">
+
+      <div class="section-heading">
+        <span class="eyebrow">NUESTRO ENTORNO</span>
+        <h2 class="section-title">
+          Tecnología y cuidado <span>en cada detalle.</span>
+        </h2>
+        <p class="section-description">
+          Un entorno pensado para brindar comodidad,
+          confianza y una experiencia agradable.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <article class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1000"
+            alt="Atención odontológica"
+            loading="lazy"
+          >
+          <span>Atención profesional</span>
+        </article>
+
+        <article class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=900"
+            alt="Equipamiento odontológico"
+            loading="lazy"
+          >
+          <span>Tecnología moderna</span>
+        </article>
+
+        <article class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900"
+            alt="Cuidado de la sonrisa"
+            loading="lazy"
+          >
+          <span>Cuidado de tu sonrisa</span>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- LLAMADO FINAL -->
+
+    <section class="container final-cta">
+
+      <div>
+        <h2>¿Listo para cuidar <span>tu sonrisa?</span></h2>
+        <p>Estamos aquí para acompañarte. Da el primer paso hacia una sonrisa saludable.</p>
+      </div>
+
+      <a href="./contacto.html#cita" class="btn btn--primary">
+        Agendar mi cita ↗
+      </a>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 OdontoSmile PASCO. Todos los derechos reservados.
     </div>
+  </footer>
 
-  </div>
-</section>
-
-</main>
-
-<footer class="footer">
-  <div class="container">
-    © 2026 OdontoSmile PASCO. Todos los derechos reservados.
-  </div>
-</footer>
-
-<script>
-const fecha = document.getElementById('fecha');
-const hoy = new Date();
-const fechaLocal = new Date(
-  hoy.getTime() - hoy.getTimezoneOffset() * 60000
-).toISOString().split('T')[0];
-
-fecha.min = fechaLocal;
-
-document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  if (!this.reportValidity()) return;
-
-  const nombre = document.getElementById('nombre').value.trim();
-  const telefono = document.getElementById('telefono').value.trim();
-  const correo = document.getElementById('correo').value.trim();
-  const servicio = document.getElementById('servicio').value;
-  const fechaCita = document.getElementById('fecha').value;
-  const hora = document.getElementById('hora').value;
-  const mensaje = document.getElementById('mensaje').value.trim();
-
-  // Reemplaza este número por el WhatsApp real de tu clínica.
-  const numeroWhatsApp = '51900000000';
-
-  const texto =
-    `¡Hola, OdontoSmile PASCO! Deseo solicitar una cita.%0A%0A` +
-    `Nombre: ${encodeURIComponent(nombre)}%0A` +
-    `Teléfono: ${encodeURIComponent(telefono)}%0A` +
-    `Correo: ${encodeURIComponent(correo || 'No indicado')}%0A` +
-    `Especialidad: ${encodeURIComponent(servicio)}%0A` +
-    `Fecha: ${encodeURIComponent(fechaCita)}%0A` +
-    `Hora: ${encodeURIComponent(hora)}%0A` +
-    `Mensaje: ${encodeURIComponent(mensaje || 'Sin mensaje adicional')}`;
-
-  const url = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
-
-  window.open(url, '_blank', 'noopener,noreferrer');
-
-  document.getElementById('formStatus').style.display = 'block';
-  document.getElementById('formStatus').textContent =
-    'Se abrió WhatsApp para que puedas enviar tu solicitud.';
-});
-</script>
+  <script src="./js/main.js"></script>
 
 </body>
 </html>
