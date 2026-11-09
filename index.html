@@ -10,7 +10,7 @@
 
   <title>OdontoSmile | Tu sonrisa, nuestra pasión</title>
 
-  <!-- Tipografías -->
+  <!-- TIPOGRAFÍAS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -19,7 +19,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- JavaScript -->
+  <!-- JAVASCRIPT -->
   <script src="js/main.js" defer></script>
 </head>
 
@@ -32,7 +32,6 @@
   <!-- ENCABEZADO -->
   <header class="site-header">
 
-    <!-- LOGOTIPO -->
     <a href="index.html" class="brand">
 
       <span class="brand-mark">
@@ -69,7 +68,7 @@
 
     </a>
 
-    <!-- BOTÓN MENÚ MÓVIL -->
+    <!-- MENÚ MÓVIL -->
     <button
       class="menu-toggle"
       type="button"
@@ -85,25 +84,15 @@
     <!-- NAVEGACIÓN -->
     <nav class="main-nav" id="main-nav">
 
-      <a class="nav-link" href="index.html">
-        Inicio
-      </a>
+      <a class="nav-link active" href="index.html">Inicio</a>
 
-      <a class="nav-link" href="tratamientos.html">
-        Tratamientos
-      </a>
+      <a class="nav-link" href="tratamientos.html">Tratamientos</a>
 
-      <a class="nav-link" href="especialidades.html">
-        Especialidades
-      </a>
+      <a class="nav-link" href="especialidades.html">Especialidades</a>
 
-      <a class="nav-link" href="nosotros.html">
-        Nosotros
-      </a>
+      <a class="nav-link" href="nosotros.html">Nosotros</a>
 
-      <a class="nav-link" href="contacto.html">
-        Contacto
-      </a>
+      <a class="nav-link" href="contacto.html">Contacto</a>
 
       <a class="nav-cta" href="contacto.html#reservar">
         Agendar cita ↗
@@ -119,7 +108,6 @@
     <!-- HERO -->
     <section class="hero section-shell">
 
-      <!-- TEXTO -->
       <div class="hero-copy reveal">
 
         <p class="eyebrow">
@@ -140,17 +128,11 @@
 
         <div class="hero-actions">
 
-          <a
-            href="contacto.html#reservar"
-            class="button button-primary"
-          >
+          <a href="contacto.html#reservar" class="button button-primary">
             Descubre tu nueva sonrisa ↗
           </a>
 
-          <a
-            href="tratamientos.html"
-            class="button button-quiet"
-          >
+          <a href="tratamientos.html" class="button button-quiet">
             <span class="play-icon">▶</span>
             Explorar tratamientos
           </a>
@@ -174,7 +156,7 @@
 
       </div>
 
-      <!-- IMAGEN PRINCIPAL -->
+      <!-- IMAGEN PRINCIPAL DIRECTA -->
       <div class="hero-visual reveal">
 
         <div class="visual-glow"></div>
@@ -183,13 +165,8 @@
 
         <picture class="hero-picture">
 
-          <source
-            srcset="assets/hero-dentist.webp"
-            type="image/webp"
-          >
-
           <img
-            src="assets/hero-dentist.webp"
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=90"
             alt="Profesional odontológico en una clínica moderna"
             fetchpriority="high"
           >
@@ -367,10 +344,7 @@
 
       </div>
 
-      <a
-        href="contacto.html#reservar"
-        class="button button-primary"
-      >
+      <a href="contacto.html#reservar" class="button button-primary">
         Agenda tu cita ↗
       </a>
 
@@ -445,9 +419,7 @@
 
       <span class="portal-ring"></span>
 
-      <span class="portal-symbol">
-        ✦
-      </span>
+      <span class="portal-symbol">✦</span>
 
       <span class="portal-label">
         Portal de Sonrisas
@@ -456,8 +428,10 @@
     </button>
 
   </div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
 
 </body>
 </html>
