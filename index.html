@@ -1,371 +1,462 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Reservar una cita | OdontoSmile</title>
-    <meta name="description" content="Reserva tu cita odontológica en OdontoSmile.">
+  <meta name="theme-color" content="#0B132B">
+  <meta name="description" content="OdontoSmile, clínica odontológica moderna. Tecnología, cuidado y sonrisas saludables.">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <title>OdontoSmile | Tu sonrisa, nuestra pasión</title>
 
-        body {
-            background: #0B132B;
-            color: #ffffff;
-            min-height: 100vh;
-        }
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        header {
-            padding: 25px 8%;
-            background: #101d3c;
-            border-bottom: 1px solid #4682B4;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        .logo {
-            color: #00F5D4;
-            font-size: 27px;
-            font-weight: bold;
-            text-decoration: none;
-        }
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 
-        .contenedor {
-            width: 90%;
-            max-width: 850px;
-            margin: 45px auto;
-            padding: 35px;
-            background: #142344;
-            border: 1px solid #4682B4;
-            border-radius: 18px;
-            box-shadow: 0 0 25px rgba(0, 245, 212, 0.08);
-        }
-
-        h1 {
-            text-align: center;
-            color: #00F5D4;
-            margin-bottom: 12px;
-        }
-
-        .descripcion {
-            text-align: center;
-            color: #c7d3e8;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .formulario {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .campo {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .campo.completo {
-            grid-column: 1 / -1;
-        }
-
-        label {
-            color: #e5f1ff;
-            font-weight: bold;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #4682B4;
-            border-radius: 9px;
-            background: #0B132B;
-            color: #ffffff;
-            outline: none;
-            font-size: 15px;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            border-color: #00F5D4;
-            box-shadow: 0 0 8px rgba(0, 245, 212, 0.2);
-        }
-
-        input::placeholder, textarea::placeholder {
-            color: #9aabc4;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 110px;
-        }
-
-        .privacidad {
-            grid-column: 1 / -1;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            color: #c7d3e8;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .privacidad input {
-            width: auto;
-            margin-top: 3px;
-        }
-
-        button {
-            grid-column: 1 / -1;
-            padding: 15px;
-            border: none;
-            border-radius: 9px;
-            background: #00F5D4;
-            color: #0B132B;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        #mensajeEstado {
-            grid-column: 1 / -1;
-            text-align: center;
-            line-height: 1.5;
-            font-weight: bold;
-        }
-
-        .volver {
-            display: block;
-            text-align: center;
-            margin-top: 25px;
-            color: #00F5D4;
-            text-decoration: none;
-        }
-
-        @media (max-width: 600px) {
-            .contenedor {
-                padding: 22px;
-                margin: 25px auto;
-            }
-
-            .formulario {
-                grid-template-columns: 1fr;
-            }
-
-            .campo.completo,
-            .privacidad,
-            button,
-            #mensajeEstado {
-                grid-column: 1;
-            }
-        }
-    </style>
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
 
-    <header>
-        <a href="index.html" class="logo">OdontoSmile</a>
-    </header>
+  <!-- FONDO -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
 
-    <main class="contenedor">
-        <h1>Reserva tu cita</h1>
+  <!-- ENCABEZADO -->
+  <header class="site-header">
 
-        <p class="descripcion">
-            Tu sonrisa merece el mejor cuidado.
-            Completa el formulario y solicita tu cita odontológica.
+    <!-- LOGOTIPO -->
+    <a href="index.html" class="brand">
+
+      <span class="brand-mark">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="tooth-gradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#E5FBFF"/>
+              <stop offset="48%" stop-color="#4682B4"/>
+              <stop offset="100%" stop-color="#00F5D4"/>
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M17 10C8 14 9 27 14 38l7 16c2 5 7 5 9 0l4-12c1-3 4-3 5 0l4 12c2 5 7 5 9 0l7-16c5-11 6-24-3-28-7-3-12 2-19 2S24 7 17 10Z"
+            fill="url(#tooth-gradient)"
+            stroke="#D8F7FF"
+            stroke-width="1.5"
+          />
+
+          <path
+            d="M20 17c-4 3-3 10 0 16"
+            fill="none"
+            stroke="#FFFFFF"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity=".65"
+          />
+        </svg>
+      </span>
+
+      <span class="brand-name">
+        Odonto<span>Smile</span>
+      </span>
+
+    </a>
+
+    <!-- BOTÓN MENÚ MÓVIL -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="main-nav" id="main-nav">
+
+      <a class="nav-link" href="index.html">
+        Inicio
+      </a>
+
+      <a class="nav-link" href="tratamientos.html">
+        Tratamientos
+      </a>
+
+      <a class="nav-link" href="especialidades.html">
+        Especialidades
+      </a>
+
+      <a class="nav-link" href="nosotros.html">
+        Nosotros
+      </a>
+
+      <a class="nav-link" href="contacto.html">
+        Contacto
+      </a>
+
+      <a class="nav-cta" href="contacto.html#reservar">
+        Agendar cita ↗
+      </a>
+
+    </nav>
+
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero section-shell">
+
+      <!-- TEXTO -->
+      <div class="hero-copy reveal">
+
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          ODONTOLOGÍA · TECNOLOGÍA · BIENESTAR
         </p>
 
-        <form id="appointmentForm" class="formulario">
+        <h1>
+          Tu sonrisa,<br>
+          en otra <span>dimensión.</span>
+        </h1>
 
-            <div class="campo">
-                <label for="nombre">Nombre completo *</label>
-                <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Ingresa tus nombres"
-                    required
-                >
-            </div>
+        <p class="hero-lead">
+          Una experiencia dental de nueva generación.
+          Tecnología avanzada, atención humana y resultados
+          que se sienten tan bien como se ven.
+        </p>
 
-            <div class="campo">
-                <label for="telefono">Teléfono *</label>
-                <input
-                    type="tel"
-                    id="telefono"
-                    name="telefono"
-                    placeholder="Tu número de celular"
-                    required
-                >
-            </div>
+        <div class="hero-actions">
 
-            <div class="campo">
-                <label for="correo">Correo electrónico</label>
-                <input
-                    type="email"
-                    id="correo"
-                    name="correo"
-                    placeholder="ejemplo@gmail.com"
-                >
-            </div>
+          <a
+            href="contacto.html#reservar"
+            class="button button-primary"
+          >
+            Descubre tu nueva sonrisa ↗
+          </a>
 
-            <div class="campo">
-                <label for="servicio">Tratamiento *</label>
-                <select id="servicio" name="servicio" required>
-                    <option value="">Selecciona un tratamiento</option>
-                    <option value="Limpieza dental">Limpieza dental</option>
-                    <option value="Blanqueamiento dental">Blanqueamiento dental</option>
-                    <option value="Ortodoncia">Ortodoncia</option>
-                    <option value="Endodoncia">Endodoncia</option>
-                    <option value="Implantes dentales">Implantes dentales</option>
-                    <option value="Consulta general">Consulta general</option>
-                </select>
-            </div>
+          <a
+            href="tratamientos.html"
+            class="button button-quiet"
+          >
+            <span class="play-icon">▶</span>
+            Explorar tratamientos
+          </a>
 
-            <div class="campo">
-                <label for="fecha">Fecha de cita *</label>
-                <input type="date" id="fecha" name="fecha" required>
-            </div>
+        </div>
 
-            <div class="campo">
-                <label for="hora">Hora de cita *</label>
-                <input type="time" id="hora" name="hora" required>
-            </div>
+        <div class="hero-proof">
 
-            <div class="campo completo">
-                <label for="mensaje">Mensaje adicional</label>
-                <textarea
-                    id="mensaje"
-                    name="mensaje"
-                    placeholder="Escribe alguna consulta o detalle adicional..."
-                ></textarea>
-            </div>
+          <div class="proof-symbols">
+            <span>✦</span>
+            <span>✧</span>
+            <span>+</span>
+          </div>
 
-            <label class="privacidad">
-                <input type="checkbox" id="privacidad" required>
-                <span>Acepto que mis datos sean utilizados para gestionar mi solicitud de cita.</span>
-            </label>
+          <div>
+            <strong>Sonrisas con confianza</strong>
+            <small>Atención personalizada en cada visita</small>
+          </div>
 
-            <p id="mensajeEstado" role="status" aria-live="polite"></p>
+        </div>
 
-            <button type="submit" id="btnEnviar">
-                Reservar mi cita
-            </button>
+      </div>
 
-        </form>
+      <!-- IMAGEN PRINCIPAL -->
+      <div class="hero-visual reveal">
 
-        <a href="index.html" class="volver">
-            ← Volver al inicio
-        </a>
-    </main>
+        <div class="visual-glow"></div>
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
 
-    <!-- Cargar Supabase antes de configurar el formulario -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/supabase.js"></script>
+        <picture class="hero-picture">
 
-    <script>
-        const formulario = document.getElementById("appointmentForm");
-        const mensajeEstado = document.getElementById("mensajeEstado");
-        const btnEnviar = document.getElementById("btnEnviar");
-        const campoFecha = document.getElementById("fecha");
+          <source
+            srcset="assets/hero-dentist.webp"
+            type="image/webp"
+          >
 
-        // Evitar seleccionar fechas anteriores al día actual
-        const hoy = new Date();
-        const fechaLocal = new Date(
-            hoy.getTime() - hoy.getTimezoneOffset() * 60000
-        ).toISOString().split("T")[0];
+          <img
+            src="assets/hero-dentist.webp"
+            alt="Profesional odontológico en una clínica moderna"
+            fetchpriority="high"
+          >
 
-        campoFecha.min = fechaLocal;
+        </picture>
 
-        formulario.addEventListener("submit", async function(evento) {
-            evento.preventDefault();
+        <!-- TARJETA FLOTANTE -->
+        <div class="floating-card card-tech">
 
-            if (typeof supabaseClient === "undefined") {
-                mensajeEstado.textContent =
-                    "Error: no se pudo conectar con Supabase. Revisa js/supabase.js.";
-                mensajeEstado.style.color = "#ff7777";
-                return;
-            }
+          <span class="mini-icon">⌁</span>
 
-            btnEnviar.disabled = true;
-            btnEnviar.textContent = "Registrando cita...";
-            mensajeEstado.textContent = "";
+          <div>
+            <strong>Dental digital</strong>
+            <small>Precisión en cada detalle</small>
+          </div>
 
-            const datos = {
-                nombre: document.getElementById("nombre").value.trim(),
-                telefono: document.getElementById("telefono").value.trim(),
-                correo: document.getElementById("correo").value.trim() || null,
-                tratamiento: document.getElementById("servicio").value,
-                fecha_cita: document.getElementById("fecha").value,
-                hora: document.getElementById("hora").value,
-                mensaje: document.getElementById("mensaje").value.trim() || null
-            };
+        </div>
 
-            try {
-                const { error } = await supabaseClient
-                    .from("citas")
-                    .insert([datos]);
+        <div class="floating-card card-care">
 
-                if (error) {
-                    throw error;
-                }
+          <span class="mini-icon">✦</span>
 
-                mensajeEstado.textContent =
-                    "¡Tu solicitud fue registrada correctamente!";
-                mensajeEstado.style.color = "#00F5D4";
+          <div>
+            <strong>Atención premium</strong>
+            <small>Tu bienestar es prioridad</small>
+          </div>
 
-                // Cambia este número por el WhatsApp real de la clínica
-                const numeroWhatsApp = "51900000000";
+        </div>
 
-                const textoWhatsApp =
-                    "¡Hola, OdontoSmile! Deseo confirmar mi solicitud de cita.%0A%0A" +
-                    "Nombre: " + encodeURIComponent(datos.nombre) + "%0A" +
-                    "Teléfono: " + encodeURIComponent(datos.telefono) + "%0A" +
-                    "Correo: " + encodeURIComponent(datos.correo || "No indicado") + "%0A" +
-                    "Tratamiento: " + encodeURIComponent(datos.tratamiento) + "%0A" +
-                    "Fecha: " + encodeURIComponent(datos.fecha_cita) + "%0A" +
-                    "Hora: " + encodeURIComponent(datos.hora) + "%0A" +
-                    "Mensaje: " + encodeURIComponent(datos.mensaje || "Sin mensaje");
+        <p class="visual-caption">
+          <span></span>
+          INNOVACIÓN QUE SE NOTA
+        </p>
 
-                const urlWhatsApp =
-                    "https://wa.me/" + numeroWhatsApp + "?text=" + textoWhatsApp;
+      </div>
 
-                window.open(urlWhatsApp, "_blank");
+    </section>
 
-                formulario.reset();
-                campoFecha.min = fechaLocal;
+    <!-- BENEFICIOS -->
+    <section class="trust-strip section-shell">
 
-            } catch (error) {
-                console.error("Error al registrar la cita:", error);
+      <article>
+        <span class="trust-icon">✧</span>
 
-                mensajeEstado.textContent =
-                    "No se pudo registrar la cita. Verifica tu conexión e inténtalo nuevamente.";
-                mensajeEstado.style.color = "#ff7777";
+        <div>
+          <strong>Tecnología avanzada</strong>
+          <small>Diagnóstico preciso</small>
+        </div>
+      </article>
 
-            } finally {
-                btnEnviar.disabled = false;
-                btnEnviar.textContent = "Reservar mi cita";
-            }
-        });
-    </script>
+      <article>
+        <span class="trust-icon">⌁</span>
+
+        <div>
+          <strong>Atención cercana</strong>
+          <small>Tu comodidad primero</small>
+        </div>
+      </article>
+
+      <article>
+        <span class="trust-icon">◈</span>
+
+        <div>
+          <strong>Planes a tu medida</strong>
+          <small>Tratamientos personalizados</small>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- PRESENTACIÓN -->
+    <section class="intro-section section-shell">
+
+      <div class="section-heading reveal">
+
+        <p class="eyebrow">
+          EL FUTURO DE TU SALUD DENTAL
+        </p>
+
+        <h2>
+          La confianza comienza<br>
+          con una <span>sonrisa.</span>
+        </h2>
+
+        <p>
+          Combinamos ciencia, diseño y calidez humana
+          para transformar tu visita al dentista
+          en una experiencia positiva.
+        </p>
+
+      </div>
+
+      <!-- TARJETAS -->
+      <div class="feature-grid">
+
+        <article class="feature-card reveal">
+
+          <span class="feature-number">01</span>
+
+          <div class="feature-icon">⌬</div>
+
+          <h3>Diagnóstico inteligente</h3>
+
+          <p>
+            Evaluación cuidadosa y herramientas modernas
+            para acompañarte con claridad.
+          </p>
+
+          <a href="especialidades.html">
+            Conoce más ↗
+          </a>
+
+        </article>
+
+        <article class="feature-card reveal">
+
+          <span class="feature-number">02</span>
+
+          <div class="feature-icon">✧</div>
+
+          <h3>Sonrisa diseñada para ti</h3>
+
+          <p>
+            Tratamientos personalizados que respetan
+            tu salud, estilo y objetivos.
+          </p>
+
+          <a href="tratamientos.html">
+            Ver tratamientos ↗
+          </a>
+
+        </article>
+
+        <article class="feature-card reveal">
+
+          <span class="feature-number">03</span>
+
+          <div class="feature-icon">♡</div>
+
+          <h3>Cuidado sin ansiedad</h3>
+
+          <p>
+            Un entorno tranquilo, comunicación transparente
+            y acompañamiento cercano.
+          </p>
+
+          <a href="nosotros.html">
+            Nuestra filosofía ↗
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- LLAMADO A LA ACCIÓN -->
+    <section class="closing-cta section-shell reveal" id="reservar">
+
+      <div>
+
+        <p class="eyebrow">
+          ESTÁS A UN PASO
+        </p>
+
+        <h2>
+          ¿Listos para una sonrisa<br>
+          <span>extraordinaria?</span>
+        </h2>
+
+        <p>
+          Conversemos sobre lo que necesitas.
+          Tu próxima visita comienza aquí.
+        </p>
+
+      </div>
+
+      <a
+        href="contacto.html#reservar"
+        class="button button-primary"
+      >
+        Agenda tu cita ↗
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer section-shell">
+
+    <a href="index.html" class="brand brand-footer">
+
+      <span class="brand-mark">✧</span>
+
+      <span class="brand-name">
+        Odonto<span>Smile</span>
+      </span>
+
+    </a>
+
+    <p>
+      Una nueva dimensión del cuidado dental.
+    </p>
+
+    <small>
+      © <span id="year"></span>
+      OdontoSmile. Todos los derechos reservados.
+    </small>
+
+  </footer>
+
+  <!-- PORTAL FLOTANTE -->
+  <div class="smile-portal" id="smile-portal">
+
+    <div class="portal-actions">
+
+      <a
+        class="portal-action action-one"
+        href="contacto.html#reservar"
+        aria-label="Cita Express"
+      >
+        <span>＋</span>
+        <small>Cita Express</small>
+      </a>
+
+      <a
+        class="portal-action action-two"
+        href="contacto.html#urgencias"
+        aria-label="Urgencias 24 horas"
+      >
+        <span>✚</span>
+        <small>Urgencias 24h</small>
+      </a>
+
+      <a
+        class="portal-action action-three"
+        href="contacto.html#chat"
+        aria-label="Chat Inteligente"
+      >
+        <span>✧</span>
+        <small>Chat Inteligente</small>
+      </a>
+
+    </div>
+
+    <button
+      class="portal-trigger"
+      type="button"
+      aria-expanded="false"
+      aria-label="Abrir Portal de Sonrisas"
+    >
+
+      <span class="portal-ring"></span>
+
+      <span class="portal-symbol">
+        ✦
+      </span>
+
+      <span class="portal-label">
+        Portal de Sonrisas
+      </span>
+
+    </button>
+
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
 
 </body>
 </html>
