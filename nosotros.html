@@ -4,904 +4,268 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Conoce OdontoSmile Pasco, nuestra filosofía, tecnología y compromiso con tu salud bucal.">
+  <meta name="description" content="Conoce más sobre OdontoSmile Pasco y nuestro equipo de profesionales odontológicos.">
   <title>Nosotros | OdontoSmile PASCO</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-
-  <style>
-    :root {
-      --steel: #4682B4;
-      --steel-light: #9EC9E8;
-      --neon: #00F5D4;
-      --night: #0B132B;
-      --panel: #111E3B;
-      --text: #EDF7FF;
-      --muted: #9AACC7;
-      --line: rgba(151,190,221,.16);
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      background: var(--night);
-      color: var(--text);
-      font-family: "Plus Jakarta Sans", sans-serif;
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    .container {
-      width: min(1180px, calc(100% - 44px));
-      margin: auto;
-    }
-
-    /* HEADER */
-
-    .header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(11,19,43,.91);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .header__inner {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .logo__text {
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .logo__text strong { color: var(--neon); }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .nav__link {
-      padding: 10px 12px;
-      border-radius: 9px;
-      color: var(--steel-light);
-      font-size: .82rem;
-      transition: .25s;
-    }
-
-    .nav__link:hover,
-    .nav__link--active {
-      color: var(--neon);
-      background: rgba(0,245,212,.08);
-    }
-
-    .header__actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .header__phone {
-      color: var(--steel-light);
-      font-size: .78rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 49px;
-      padding: 0 21px;
-      border-radius: 10px;
-      font-size: .84rem;
-      font-weight: 700;
-      transition: .3s;
-    }
-
-    .btn--primary {
-      color: #05202A;
-      background: linear-gradient(120deg,var(--neon),#9AF8E9);
-      box-shadow: 0 8px 25px rgba(0,245,212,.15);
-    }
-
-    .btn--primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,245,212,.27);
-    }
-
-    .btn--outline {
-      color: var(--neon);
-      border: 1px solid rgba(0,245,212,.35);
-      background: rgba(0,245,212,.05);
-    }
-
-    .btn--outline:hover {
-      background: rgba(0,245,212,.12);
-      transform: translateY(-3px);
-    }
-
-    /* ELEMENTOS GENERALES */
-
-    .about-page {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about-page::before {
-      content: "";
-      position: absolute;
-      width: 550px;
-      height: 550px;
-      top: 0;
-      right: -250px;
-      border-radius: 50%;
-      background: rgba(0,245,212,.07);
-      filter: blur(110px);
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--neon);
-      font-size: .69rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 23px;
-      height: 2px;
-      background: var(--neon);
-      box-shadow: 0 0 10px var(--neon);
-    }
-
-    .section-title {
-      margin: 15px 0;
-      font-size: clamp(2.1rem,4vw,3.5rem);
-      line-height: 1.13;
-      letter-spacing: -2px;
-    }
-
-    .section-title span { color: var(--neon); }
-
-    .section-description {
-      color: var(--muted);
-      font-size: .93rem;
-      line-height: 1.9;
-    }
-
-    /* HERO */
-
-    .about-hero {
-      min-height: 610px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 65px;
-      padding: 75px 0 85px;
-    }
-
-    .hero-content { position: relative; z-index: 2; }
-
-    .hero-content h1 {
-      max-width: 620px;
-      margin: 23px 0;
-      font-size: clamp(3rem,5.6vw,5.1rem);
-      line-height: 1.06;
-      letter-spacing: -4px;
-    }
-
-    .hero-content h1 span { color: var(--neon); }
-
-    .hero-content > p {
-      max-width: 520px;
-      color: var(--muted);
-      font-size: .97rem;
-      line-height: 1.9;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 29px;
-    }
-
-    .hero-image {
-      min-width: 0;
-      height: 490px;
-      position: relative;
-      isolation: isolate;
-    }
-
-    .hero-image::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: 20px -15px -15px 20px;
-      border: 1px solid rgba(0,245,212,.35);
-      border-radius: 22px;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 20px;
-      border: 1px solid rgba(0,245,212,.25);
-      box-shadow: 0 25px 65px rgba(0,0,0,.35);
-    }
-
-    .image-label {
-      position: absolute;
-      left: -30px;
-      bottom: 35px;
-      max-width: 245px;
-      padding: 17px 20px;
-      border: 1px solid rgba(0,245,212,.25);
-      border-radius: 13px;
-      background: rgba(11,19,43,.94);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 15px 40px rgba(0,0,0,.25);
-    }
-
-    .image-label strong {
-      display: block;
-      color: var(--neon);
-      font-size: .88rem;
-    }
-
-    .image-label small {
-      color: var(--muted);
-      font-size: .72rem;
-    }
-
-    /* ESTADÍSTICAS */
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 15px;
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: 17px;
-      background: linear-gradient(120deg,rgba(17,30,59,.95),rgba(17,30,59,.55));
-    }
-
-    .stat {
-      text-align: center;
-      padding: 12px;
-      border-right: 1px solid var(--line);
-    }
-
-    .stat:last-child { border: 0; }
-
-    .stat strong {
-      display: block;
-      color: var(--neon);
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: .73rem;
-    }
-
-    /* HISTORIA */
-
-    .story-section {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      align-items: center;
-      gap: 75px;
-      padding: 115px 0;
-    }
-
-    .story-photo {
-      height: 440px;
-      position: relative;
-    }
-
-    .story-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-    }
-
-    .story-photo::after {
-      content: "ODONTOSMILE PASCO";
-      position: absolute;
-      left: 17px;
-      bottom: 17px;
-      padding: 10px 14px;
-      border-radius: 7px;
-      color: var(--neon);
-      background: rgba(11,19,43,.88);
-      font-size: .65rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .story-content h2 {
-      margin: 16px 0;
-      font-size: clamp(2rem,4vw,3.1rem);
-      line-height: 1.15;
-      letter-spacing: -2px;
-    }
-
-    .story-content h2 span { color: var(--neon); }
-
-    .story-content p {
-      color: var(--muted);
-      font-size: .9rem;
-      line-height: 1.9;
-    }
-
-    /* VALORES */
-
-    .values-section {
-      padding: 85px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(17,30,59,.32);
-    }
-
-    .section-heading {
-      max-width: 650px;
-      margin: 0 auto 42px;
-      text-align: center;
-    }
-
-    .section-heading .eyebrow { justify-content: center; }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
-    }
-
-    .value-card {
-      position: relative;
-      min-height: 220px;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: linear-gradient(145deg,rgba(25,45,79,.8),rgba(12,23,48,.9));
-      transition: .3s;
-    }
-
-    .value-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(0,245,212,.4);
-      box-shadow: 0 18px 40px rgba(0,0,0,.2);
-    }
-
-    .value-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 20px;
-      border: 1px solid rgba(0,245,212,.2);
-      border-radius: 13px;
-      color: var(--neon);
-      background: rgba(0,245,212,.08);
-      font-size: 1.4rem;
-    }
-
-    .value-card h3 {
-      margin: 0 0 9px;
-      font-size: 1rem;
-    }
-
-    .value-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .81rem;
-      line-height: 1.8;
-    }
-
-    /* GALERÍA */
-
-    .gallery-section { padding: 105px 0; }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr;
-      grid-template-rows: 250px;
-      gap: 16px;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 15px;
-      border: 1px solid var(--line);
-      background: var(--panel);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .6s;
-    }
-
-    .gallery-item:hover img { transform: scale(1.08); }
-
-    .gallery-item span {
-      position: absolute;
-      inset: auto 0 0;
-      padding: 35px 16px 15px;
-      color: white;
-      font-size: .83rem;
-      font-weight: 700;
-      background: linear-gradient(transparent,rgba(5,12,29,.95));
-    }
-
-    /* CTA FINAL */
-
-    .final-cta {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 80px;
-      padding: 45px;
-      border: 1px solid rgba(0,245,212,.28);
-      border-radius: 20px;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 85% 20%,rgba(0,245,212,.13),transparent 45%),
-        linear-gradient(120deg,#14284A,#101A36);
-    }
-
-    .final-cta h2 {
-      margin: 0 0 10px;
-      font-size: clamp(1.7rem,3vw,2.5rem);
-    }
-
-    .final-cta h2 span { color: var(--neon); }
-
-    .final-cta p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    /* FOOTER */
-
-    .footer {
-      padding: 25px 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .75rem;
-      text-align: center;
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width: 950px) {
-      .header__phone { display: none; }
-      .about-hero { gap: 35px; }
-      .hero-content h1 { font-size: 3.5rem; }
-      .story-section { gap: 40px; }
-    }
-
-    @media(max-width: 760px) {
-      .header__inner {
-        flex-wrap: wrap;
-        padding: 14px 0;
-      }
-
-      .nav {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .header__actions { margin-left: auto; }
-
-      .about-hero,
-      .story-section {
-        grid-template-columns: 1fr;
-      }
-
-      .about-hero { padding: 55px 0 65px; }
-
-      .hero-content h1 {
-        font-size: clamp(2.8rem,10vw,4rem);
-        letter-spacing: -2px;
-      }
-
-      .hero-image {
-        height: 390px;
-        margin: 10px 12px 15px 0;
-      }
-
-      .image-label { left: -10px; }
-
-      .stats { grid-template-columns: repeat(2,1fr); }
-
-      .stat:nth-child(2) { border-right: 0; }
-      .stat:nth-child(3) { border-top: 1px solid var(--line); }
-      .stat:nth-child(4) { border-top: 1px solid var(--line); }
-
-      .story-section { padding: 75px 0; }
-
-      .story-photo { height: 350px; }
-
-      .values-grid { grid-template-columns: 1fr 1fr; }
-
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 210px 210px;
-      }
-
-      .gallery-item:first-child { grid-column: span 2; }
-
-      .final-cta {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 30px 23px;
-      }
-    }
-
-    @media(max-width: 480px) {
-      .container { width: calc(100% - 30px); }
-
-      .logo__text { font-size: 1.1rem; }
-
-      .nav { gap: 0; }
-
-      .nav__link {
-        padding: 8px;
-        font-size: .72rem;
-      }
-
-      .header__actions .btn {
-        min-height: 38px;
-        padding: 0 11px;
-        font-size: .7rem;
-      }
-
-      .hero-image { height: 310px; }
-
-      .values-grid { grid-template-columns: 1fr; }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3,220px);
-      }
-
-      .gallery-item:first-child { grid-column: auto; }
-
-      .section-title { letter-spacing: -1px; }
-    }
-
-    @media(prefers-reduced-motion: reduce) {
-      *,*::before,*::after {
-        scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/nosotros.css">
 </head>
 
 <body>
 
-  <header class="header" id="header">
-    <div class="container header__inner">
-
-      <a href="./index.html" class="logo">
-        <span class="logo__text">OdontoSmile <strong>PASCO</strong></span>
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">✚</span>
+        <span>OdontoSmile <strong>PASCO</strong></span>
       </a>
 
-      <nav class="nav" id="nav">
-        <a href="./index.html" class="nav__link">Inicio</a>
-        <a href="./especialidades.html" class="nav__link">Especialidades</a>
-        <a href="./tratamientos.html" class="nav__link">Tratamientos</a>
-        <a href="./nosotros.html" class="nav__link nav__link--active">Nosotros</a>
-        <a href="./contacto.html" class="nav__link">Contacto</a>
+      <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html" class="active">Nosotros</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
       </nav>
 
-      <div class="header__actions">
-        <a href="tel:+51900000000" class="header__phone">+51 9XX XXX XXX</a>
-        <a href="./contacto.html#cita" class="btn btn--primary">Agendar Cita ↗</a>
-      </div>
-
+      <a href="contacto.html" class="btn btn-primary">Agendar cita</a>
     </div>
   </header>
 
-  <main class="about-page">
+  <main>
 
-    <!-- PRESENTACIÓN PRINCIPAL -->
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
 
-    <section class="container about-hero">
+        <div class="hero-content">
+          <span class="eyebrow">CONÓCENOS</span>
+          <h1>Tu sonrisa merece una atención <span>extraordinaria.</span></h1>
 
-      <div class="hero-content">
-        <span class="eyebrow">CONÓCENOS · ODONTOSMILE PASCO</span>
+          <p>
+            En OdontoSmile PASCO cuidamos tu salud bucal con atención
+            personalizada, tecnología moderna y profesionales comprometidos
+            con tu bienestar.
+          </p>
 
-        <h1>
-          Cuidamos tu sonrisa,
-          <span>transformamos tu confianza.</span>
-        </h1>
+          <div class="hero-buttons">
+            <a href="contacto.html" class="btn btn-primary">Agenda tu cita</a>
+            <a href="#nosotros" class="btn btn-outline">Conoce más</a>
+          </div>
 
-        <p>
-          En OdontoSmile Pasco creemos que una sonrisa saludable
-          puede cambiarlo todo. Combinamos atención personalizada,
-          innovación y compromiso para cuidar de ti y de tu familia.
-        </p>
+          <div class="hero-note">
+            <span>✓</span> Atención cercana y profesional
+            <span>✓</span> Comprometidos con tu sonrisa
+          </div>
+        </div>
 
-        <div class="hero-buttons">
-          <a href="./contacto.html#cita" class="btn btn--primary">
-            Agenda tu consulta ↗
-          </a>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&auto=format&fit=crop&q=85"
+            alt="Interior moderno de una clínica odontológica"
+            fetchpriority="high">
+          <div class="floating-card">
+            <span class="floating-icon">✦</span>
+            <div>
+              <strong>Sonrisas saludables</strong>
+              <small>Tu bienestar es nuestra prioridad</small>
+            </div>
+          </div>
+        </div>
 
-          <a href="#nosotros-historia" class="btn btn--outline">
-            Descubre quiénes somos
-          </a>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="section about" id="nosotros">
+      <div class="container about-grid">
+
+        <div class="about-images">
+          <img
+            class="about-main"
+            src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1000&auto=format&fit=crop&q=85"
+            alt="Atención odontológica profesional">
+
+          <img
+            class="about-small"
+            src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=700&auto=format&fit=crop&q=85"
+            alt="Profesional realizando una revisión dental">
+
+          <div class="experience-card">
+            <strong>100%</strong>
+            <span>Compromiso con tu salud bucal</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="eyebrow">SOBRE NOSOTROS</span>
+          <h2>Más que cuidar dientes, <span>transformamos sonrisas.</span></h2>
+
+          <p>
+            Somos OdontoSmile PASCO, una clínica orientada al cuidado de la
+            salud bucal. Trabajamos para brindar una experiencia agradable,
+            segura y confiable a cada paciente.
+          </p>
+
+          <p>
+            Creemos que una sonrisa saludable mejora la confianza y la calidad
+            de vida. Por eso, ofrecemos atención personalizada y soluciones
+            odontológicas adaptadas a las necesidades de cada persona.
+          </p>
+
+          <div class="about-points">
+            <div><span>✓</span> Atención personalizada</div>
+            <div><span>✓</span> Ambiente moderno y cómodo</div>
+            <div><span>✓</span> Compromiso con tu bienestar</div>
+            <div><span>✓</span> Cuidado de cada sonrisa</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MISIÓN Y VISIÓN -->
+    <section class="section mission-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">NUESTRO PROPÓSITO</span>
+          <h2>Lo que nos <span>motiva cada día</span></h2>
+          <p>Trabajamos con dedicación para construir sonrisas saludables y felices.</p>
+        </div>
+
+        <div class="mission-grid">
+
+          <article class="mission-card">
+            <div class="card-icon">◎</div>
+            <h3>Nuestra misión</h3>
+            <p>
+              Brindar servicios odontológicos de calidad mediante una atención
+              responsable, cercana y personalizada, contribuyendo a mejorar
+              la salud bucal y la calidad de vida de nuestros pacientes.
+            </p>
+          </article>
+
+          <article class="mission-card vision-card">
+            <div class="card-icon">✧</div>
+            <h3>Nuestra visión</h3>
+            <p>
+              Ser una clínica odontológica reconocida en Pasco por su calidad
+              de atención, confianza, innovación y compromiso con la salud
+              y bienestar de cada paciente.
+            </p>
+          </article>
+
         </div>
       </div>
-
-      <div class="hero-image">
-        <img
-          src="./assets/nosotros-equipo.jpg"
-          alt="Equipo de profesionales odontológicos"
-          fetchpriority="high"
-        >
-
-        <div class="image-label">
-          <strong>Tu sonrisa es nuestra prioridad</strong>
-          <small>Atención odontológica con dedicación</small>
-        </div>
-      </div>
-
     </section>
 
-    <!-- ESTADÍSTICAS -->
-
-    <section class="container stats">
-
-      <div class="stat">
-        <strong>100%</strong>
-        <span>Compromiso con tu bienestar</span>
-      </div>
-
-      <div class="stat">
-        <strong>360°</strong>
-        <span>Atención integral</span>
-      </div>
-
-      <div class="stat">
-        <strong>1 a 1</strong>
-        <span>Atención personalizada</span>
-      </div>
-
-      <div class="stat">
-        <strong>24/7</strong>
-        <span>Tu sonrisa nos importa</span>
-      </div>
-
-    </section>
-
-    <!-- QUIÉNES SOMOS -->
-
-    <section class="container story-section" id="nosotros-historia">
-
-      <div class="story-photo">
-        <img
-          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000"
-          alt="Instalaciones de una clínica odontológica moderna"
-          loading="lazy"
-        >
-      </div>
-
-      <div class="story-content">
-        <span class="eyebrow">NUESTRA IDENTIDAD</span>
-
-        <h2>
-          Más que una clínica,
-          <span>un espacio para sonreír.</span>
-        </h2>
-
-        <p>
-          En OdontoSmile Pasco combinamos tecnología de vanguardia
-          con un equipo de especialistas comprometidos con brindarte
-          la mejor experiencia odontológica.
-        </p>
-
-        <p>
-          Trabajamos para que cada paciente reciba una atención
-          cercana, profesional y enfocada en sus necesidades.
-          Queremos que cada visita sea una experiencia de confianza,
-          tranquilidad y bienestar.
-        </p>
-
-        <a href="./contacto.html" class="btn btn--primary">
-          Conoce nuestra clínica →
-        </a>
-      </div>
-
-    </section>
-
-    <!-- NUESTROS VALORES -->
-
-    <section class="values-section">
+    <!-- VALORES -->
+    <section class="section values-section">
       <div class="container">
 
         <div class="section-heading">
-          <span class="eyebrow">LO QUE NOS DEFINE</span>
-          <h2 class="section-title">
-            Nuestra esencia es <span>cuidarte.</span>
-          </h2>
-          <p class="section-description">
-            Cada detalle de nuestro trabajo está orientado
-            a brindarte una experiencia odontológica de calidad.
-          </p>
+          <span class="eyebrow">NUESTROS VALORES</span>
+          <h2>La confianza se construye con <span>valores.</span></h2>
+          <p>Principios que guían nuestro trabajo y la atención a cada paciente.</p>
         </div>
 
         <div class="values-grid">
 
           <article class="value-card">
-            <div class="value-icon">✦</div>
-            <h3>Excelencia profesional</h3>
-            <p>
-              Buscamos ofrecer una atención responsable,
-              cuidadosa y enfocada en cada paciente.
-            </p>
-          </article>
-
-          <article class="value-card">
             <div class="value-icon">♡</div>
-            <h3>Calidez humana</h3>
-            <p>
-              Escuchamos tus necesidades y te acompañamos
-              durante cada etapa de tu tratamiento.
-            </p>
+            <h3>Empatía</h3>
+            <p>Escuchamos y comprendemos las necesidades de cada paciente.</p>
           </article>
 
           <article class="value-card">
-            <div class="value-icon">⌘</div>
-            <h3>Innovación tecnológica</h3>
-            <p>
-              Apostamos por herramientas y técnicas modernas
-              para mejorar la experiencia odontológica.
-            </p>
+            <div class="value-icon">✦</div>
+            <h3>Calidad</h3>
+            <p>Buscamos ofrecer una atención cuidadosa y profesional.</p>
           </article>
 
           <article class="value-card">
-            <div class="value-icon">✓</div>
-            <h3>Confianza y seguridad</h3>
-            <p>
-              Promovemos un entorno de atención responsable,
-              ordenado y orientado al bienestar.
-            </p>
+            <div class="value-icon">♧</div>
+            <h3>Responsabilidad</h3>
+            <p>Trabajamos con dedicación y compromiso en cada procedimiento.</p>
           </article>
 
           <article class="value-card">
-            <div class="value-icon">◎</div>
-            <h3>Atención personalizada</h3>
-            <p>
-              Cada sonrisa es diferente. Por eso buscamos
-              soluciones adaptadas a cada persona.
-            </p>
-          </article>
-
-          <article class="value-card">
-            <div class="value-icon">✧</div>
-            <h3>Compromiso contigo</h3>
-            <p>
-              Tu salud bucal es importante y trabajamos
-              para acompañarte en su cuidado.
-            </p>
+            <div class="value-icon">◇</div>
+            <h3>Confianza</h3>
+            <p>Construimos relaciones transparentes y duraderas.</p>
           </article>
 
         </div>
       </div>
     </section>
 
-    <!-- GALERÍA -->
+    <!-- EQUIPO -->
+    <section class="section team-section">
+      <div class="container">
 
-    <section class="container gallery-section">
+        <div class="section-heading">
+          <span class="eyebrow">NUESTRO ENTORNO</span>
+          <h2>Un espacio pensado para <span>tu sonrisa.</span></h2>
+          <p>Un ambiente agradable y una atención centrada en el paciente.</p>
+        </div>
 
-      <div class="section-heading">
-        <span class="eyebrow">NUESTRO ENTORNO</span>
-        <h2 class="section-title">
-          Tecnología y cuidado <span>en cada detalle.</span>
-        </h2>
-        <p class="section-description">
-          Un entorno pensado para brindar comodidad,
-          confianza y una experiencia agradable.
-        </p>
+        <div class="team-grid">
+
+          <div class="team-photo team-photo-large">
+            <img
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1000&auto=format&fit=crop&q=85"
+              alt="Consultorio odontológico moderno">
+          </div>
+
+          <div class="team-photo">
+            <img
+              src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&auto=format&fit=crop&q=85"
+              alt="Atención dental en consultorio">
+          </div>
+
+          <div class="team-photo">
+            <img
+              src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=800&auto=format&fit=crop&q=85"
+              alt="Profesional de odontología">
+          </div>
+
+        </div>
       </div>
-
-      <div class="gallery-grid">
-
-        <article class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1000"
-            alt="Atención odontológica"
-            loading="lazy"
-          >
-          <span>Atención profesional</span>
-        </article>
-
-        <article class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=900"
-            alt="Equipamiento odontológico"
-            loading="lazy"
-          >
-          <span>Tecnología moderna</span>
-        </article>
-
-        <article class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900"
-            alt="Cuidado de la sonrisa"
-            loading="lazy"
-          >
-          <span>Cuidado de tu sonrisa</span>
-        </article>
-
-      </div>
-
     </section>
 
-    <!-- LLAMADO FINAL -->
+    <!-- LLAMADO A LA ACCIÓN -->
+    <section class="cta-section">
+      <div class="container cta-content">
+        <div>
+          <span class="eyebrow">ESTAMOS PARA AYUDARTE</span>
+          <h2>¡Es momento de regalarle salud a tu sonrisa!</h2>
+          <p>Agenda una cita y comienza a cuidar tu salud bucal con nosotros.</p>
+        </div>
 
-    <section class="container final-cta">
-
-      <div>
-        <h2>¿Listo para cuidar <span>tu sonrisa?</span></h2>
-        <p>Estamos aquí para acompañarte. Da el primer paso hacia una sonrisa saludable.</p>
+        <a href="contacto.html" class="btn btn-white">Agendar mi cita →</a>
       </div>
-
-      <a href="./contacto.html#cita" class="btn btn--primary">
-        Agendar mi cita ↗
-      </a>
-
     </section>
 
   </main>
 
+  <!-- PIE DE PÁGINA -->
   <footer class="footer">
-    <div class="container">
-      © 2026 OdontoSmile PASCO. Todos los derechos reservados.
+    <div class="container footer-content">
+      <a href="index.html" class="logo footer-logo">
+        <span class="logo-icon">✚</span>
+        <span>OdontoSmile <strong>PASCO</strong></span>
+      </a>
+
+      <p>Tu sonrisa, nuestra prioridad.</p>
+
+      <span class="copyright">
+        © 2026 OdontoSmile PASCO. Todos los derechos reservados.
+      </span>
     </div>
   </footer>
-
-  <script src="./js/main.js"></script>
 
 </body>
 </html>
