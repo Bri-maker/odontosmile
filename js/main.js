@@ -1,165 +1,319 @@
 
-/* =========================================
-   ODONTOSMILE - JAVASCRIPT PRINCIPAL
-========================================= */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Elementos principales
-  const menuToggle = document.querySelector(".menu-toggle");
-  const mainNav = document.querySelector(".main-nav");
-  const navLinks = document.querySelectorAll(".nav-link");
+  <meta name="theme-color" content="#0B132B">
+  <meta name="description" content="OdontoSmile, clínica odontológica moderna. Tecnología, cuidado y sonrisas saludables.">
 
-  const smilePortal = document.querySelector(".smile-portal");
-  const portalToggle = document.querySelector(".portal-toggle");
-  const portalActions = document.querySelector(".portal-actions");
+  <title>OdontoSmile | Tu sonrisa, nuestra pasión</title>
 
-  // =========================================
-  // 1. MENÚ RESPONSIVE
-  // =========================================
+  <!-- TIPOGRAFÍAS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  if (menuToggle && mainNav) {
-    menuToggle.addEventListener("click", () => {
-      const isOpen = mainNav.classList.toggle("is-open");
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 
-      menuToggle.setAttribute("aria-expanded", isOpen);
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Cerrar menú" : "Abrir menú"
-      );
-    });
+  <!-- JAVASCRIPT -->
+  <script src="js/main.js" defer></script>
+</head>
 
-    // Cerrar el menú al seleccionar una opción
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        mainNav.classList.remove("is-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Abrir menú");
-      });
-    });
+<body>
 
-    // Cerrar el menú al hacer clic fuera
-    document.addEventListener("click", (event) => {
-      if (
-        !mainNav.contains(event.target) &&
-        !menuToggle.contains(event.target)
-      ) {
-        mainNav.classList.remove("is-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Abrir menú");
-      }
-    });
-  }
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
 
-  // =========================================
-  // 2. NAVEGACIÓN ACTIVA
-  // =========================================
+  <!-- HEADER -->
+  <header class="site-header">
 
-  const currentPage = window.location.pathname;
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✦</span>
+      <span class="brand-name">Odonto<span>Smile</span></span>
+    </a>
 
-  navLinks.forEach((link) => {
-    const linkPage = new URL(link.href, window.location.origin).pathname;
+    <button class="menu-toggle" type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="main-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-    if (linkPage === currentPage) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
+    <nav class="main-nav" id="main-nav">
+      <a class="nav-link active" href="index.html">Inicio</a>
+      <a class="nav-link" href="tratamientos.html">Tratamientos</a>
+      <a class="nav-link" href="especialidades.html">Especialidades</a>
+      <a class="nav-link" href="nosotros.html">Nosotros</a>
+      <a class="nav-link" href="contacto.html">Contacto</a>
+      <a class="nav-cta" href="contacto.html#reservar">Agendar cita ↗</a>
+    </nav>
 
-    link.addEventListener("click", () => {
-      navLinks.forEach((item) => item.classList.remove("active"));
-      link.classList.add("active");
-    });
-  });
+  </header>
 
-  // =========================================
-  // 3. BOTÓN FLOTANTE SMILE PORTAL
-  // =========================================
+  <main>
 
-  if (smilePortal && portalToggle) {
-    portalToggle.addEventListener("click", (event) => {
-      event.stopPropagation();
+    <!-- HERO -->
+    <section class="hero section-shell">
 
-      const isOpen = smilePortal.classList.toggle("is-open");
+      <div class="hero-copy reveal">
 
-      portalToggle.setAttribute("aria-expanded", isOpen);
-    });
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          ODONTOLOGÍA · TECNOLOGÍA · BIENESTAR
+        </p>
 
-    // Cerrar el portal al hacer clic fuera
-    document.addEventListener("click", (event) => {
-      if (!smilePortal.contains(event.target)) {
-        smilePortal.classList.remove("is-open");
-        portalToggle.setAttribute("aria-expanded", "false");
-      }
-    });
+        <h1>
+          Tu sonrisa,<br>
+          en otra <span>dimensión.</span>
+        </h1>
 
-    // Cerrar al seleccionar una acción
-    if (portalActions) {
-      portalActions.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          smilePortal.classList.remove("is-open");
-          portalToggle.setAttribute("aria-expanded", "false");
-        });
-      });
-    }
-  }
+        <p class="hero-lead">
+          Una experiencia dental de nueva generación.
+          Tecnología avanzada, atención humana y resultados
+          que se sienten tan bien como se ven.
+        </p>
 
-  // =========================================
-  // 4. ANIMACIONES AL DESPLAZARSE
-  // =========================================
+        <div class="hero-actions">
+          <a href="contacto.html#reservar" class="button button-primary">
+            Descubre tu nueva sonrisa ↗
+          </a>
 
-  const revealElements = document.querySelectorAll(".reveal");
+          <a href="tratamientos.html" class="button button-quiet">
+            <span class="play-icon">▶</span>
+            Explorar tratamientos
+          </a>
+        </div>
 
-  if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.15,
-      }
-    );
+        <div class="hero-proof">
+          <div class="proof-symbols">
+            <span>✦</span>
+            <span>✧</span>
+            <span>+</span>
+          </div>
 
-    revealElements.forEach((element) => {
-      revealObserver.observe(element);
-    });
-  } else {
-    revealElements.forEach((element) => {
-      element.classList.add("is-visible");
-    });
-  }
+          <div>
+            <strong>Sonrisas con confianza</strong>
+            <small>Atención personalizada en cada visita</small>
+          </div>
+        </div>
 
-  // =========================================
-  // 5. AÑO AUTOMÁTICO DEL FOOTER
-  // =========================================
+      </div>
 
-  const yearElement = document.querySelector("#current-year");
+      <!-- IMAGEN -->
+      <div class="hero-visual reveal">
 
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
+        <div class="visual-glow"></div>
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
 
-  // =========================================
-  // 6. CERRAR ELEMENTOS CON ESCAPE
-  // =========================================
+        <picture class="hero-picture">
+          <img
+            src="assets/hero-dentist.webp"
+            alt="Profesional odontológico en una clínica moderna"
+            fetchpriority="high">
+        </picture>
 
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      if (mainNav && menuToggle) {
-        mainNav.classList.remove("is-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
+        <div class="floating-card card-tech">
+          <span class="mini-icon">⌁</span>
+          <div>
+            <strong>Dental digital</strong>
+            <small>Precisión en cada detalle</small>
+          </div>
+        </div>
 
-      if (smilePortal && portalToggle) {
-        smilePortal.classList.remove("is-open");
-        portalToggle.setAttribute("aria-expanded", "false");
-      }
-    }
-  });
+        <div class="floating-card card-care">
+          <span class="mini-icon">✦</span>
+          <div>
+            <strong>Atención premium</strong>
+            <small>Tu bienestar es prioridad</small>
+          </div>
+        </div>
 
-  console.log("OdontoSmile: página cargada correctamente 🦷");
-});
+        <p class="visual-caption">
+          <span></span>
+          INNOVACIÓN QUE SE NOTA
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="trust-strip section-shell">
+
+      <article>
+        <span class="trust-icon">✧</span>
+        <div>
+          <strong>Tecnología avanzada</strong>
+          <small>Diagnóstico preciso</small>
+        </div>
+      </article>
+
+      <article>
+        <span class="trust-icon">⌁</span>
+        <div>
+          <strong>Atención cercana</strong>
+          <small>Tu comodidad primero</small>
+        </div>
+      </article>
+
+      <article>
+        <span class="trust-icon">◈</span>
+        <div>
+          <strong>Planes a tu medida</strong>
+          <small>Tratamientos personalizados</small>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- PRESENTACIÓN -->
+    <section class="intro-section section-shell">
+
+      <div class="section-heading reveal">
+
+        <p class="eyebrow">EL FUTURO DE TU SALUD DENTAL</p>
+
+        <h2>
+          La confianza comienza<br>
+          con una <span>sonrisa.</span>
+        </h2>
+
+        <p>
+          Combinamos ciencia, diseño y calidez humana
+          para transformar tu visita al dentista
+          en una experiencia positiva.
+        </p>
+
+      </div>
+
+      <div class="feature-grid">
+
+        <article class="feature-card reveal">
+          <span class="feature-number">01</span>
+          <div class="feature-icon">⌬</div>
+          <h3>Diagnóstico inteligente</h3>
+          <p>
+            Evaluación cuidadosa y herramientas modernas
+            para acompañarte con claridad.
+          </p>
+          <a href="especialidades.html">Conoce más ↗</a>
+        </article>
+
+        <article class="feature-card reveal">
+          <span class="feature-number">02</span>
+          <div class="feature-icon">✧</div>
+          <h3>Sonrisa diseñada para ti</h3>
+          <p>
+            Tratamientos personalizados que respetan
+            tu salud, estilo y objetivos.
+          </p>
+          <a href="tratamientos.html">Ver tratamientos ↗</a>
+        </article>
+
+        <article class="feature-card reveal">
+          <span class="feature-number">03</span>
+          <div class="feature-icon">♡</div>
+          <h3>Cuidado sin ansiedad</h3>
+          <p>
+            Un entorno tranquilo, comunicación transparente
+            y acompañamiento cercano.
+          </p>
+          <a href="nosotros.html">Nuestra filosofía ↗</a>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- LLAMADO A LA ACCIÓN -->
+    <section class="closing-cta section-shell reveal" id="reservar">
+
+      <div>
+        <p class="eyebrow">ESTÁS A UN PASO</p>
+
+        <h2>
+          ¿Listos para una sonrisa<br>
+          <span>extraordinaria?</span>
+        </h2>
+
+        <p>
+          Conversemos sobre lo que necesitas.
+          Tu próxima visita comienza aquí.
+        </p>
+      </div>
+
+      <a href="contacto.html#reservar" class="button button-primary">
+        Agenda tu cita ↗
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer section-shell">
+
+    <a href="index.html" class="brand brand-footer">
+      <span class="brand-mark">✧</span>
+      <span class="brand-name">Odonto<span>Smile</span></span>
+    </a>
+
+    <p>Una nueva dimensión del cuidado dental.</p>
+
+    <small>
+      © <span id="year"></span>
+      OdontoSmile. Todos los derechos reservados.
+    </small>
+
+  </footer>
+
+  <!-- PORTAL FLOTANTE -->
+  <div class="smile-portal" id="smile-portal">
+
+    <div class="portal-actions">
+
+      <a class="portal-action action-one"
+         href="contacto.html#reservar">
+        <span>＋</span>
+        <small>Cita Express</small>
+      </a>
+
+      <a class="portal-action action-two"
+         href="contacto.html#urgencias">
+        <span>✚</span>
+        <small>Urgencias 24h</small>
+      </a>
+
+      <a class="portal-action action-three"
+         href="contacto.html#chat">
+        <span>✧</span>
+        <small>Chat Inteligente</small>
+      </a>
+
+    </div>
+
+    <button class="portal-trigger"
+      type="button"
+      aria-expanded="false"
+      aria-label="Abrir Portal de Sonrisas">
+
+      <span class="portal-ring"></span>
+      <span class="portal-symbol">✦</span>
+      <span class="portal-label">Portal de Sonrisas</span>
+
+    </button>
+
+  </div>
+
+  <!-- SUPABASE -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+
+</body>
+</html>
