@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,39 +9,58 @@
 
   <title>OdontoSmile | Tu sonrisa, nuestra pasión</title>
 
-  <!-- =================================
-       TIPOGRAFÍAS
-  ================================== -->
+  <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- =================================
-       CSS PRINCIPAL
-  ================================== -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- =================================
-       JAVASCRIPT PRINCIPAL
-  ================================== -->
+  <!-- JavaScript -->
   <script src="js/main.js" defer></script>
 </head>
 
 <body>
 
-  <!-- FONDOS DECORATIVOS -->
+  <!-- FONDO -->
   <div class="ambient ambient-one"></div>
   <div class="ambient ambient-two"></div>
 
-  <!-- =================================
-       HEADER
-  ================================== -->
+  <!-- ENCABEZADO -->
   <header class="site-header">
 
-    <a href="index.html" class="brand" aria-label="OdontoSmile Inicio">
+    <!-- LOGOTIPO -->
+    <a href="index.html" class="brand">
 
-      <span class="brand-mark">✦</span>
+      <span class="brand-mark">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="tooth-gradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#E5FBFF"/>
+              <stop offset="48%" stop-color="#4682B4"/>
+              <stop offset="100%" stop-color="#00F5D4"/>
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M17 10C8 14 9 27 14 38l7 16c2 5 7 5 9 0l4-12c1-3 4-3 5 0l4 12c2 5 7 5 9 0l7-16c5-11 6-24-3-28-7-3-12 2-19 2S24 7 17 10Z"
+            fill="url(#tooth-gradient)"
+            stroke="#D8F7FF"
+            stroke-width="1.5"
+          />
+
+          <path
+            d="M20 17c-4 3-3 10 0 16"
+            fill="none"
+            stroke="#FFFFFF"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity=".65"
+          />
+        </svg>
+      </span>
 
       <span class="brand-name">
         Odonto<span>Smile</span>
@@ -50,24 +68,23 @@
 
     </a>
 
-    <!-- MENÚ MÓVIL -->
+    <!-- BOTÓN MENÚ MÓVIL -->
     <button
       class="menu-toggle"
       type="button"
       aria-label="Abrir menú"
       aria-expanded="false"
-      aria-controls="main-nav">
-
+      aria-controls="main-nav"
+    >
       <span></span>
       <span></span>
       <span></span>
-
     </button>
 
     <!-- NAVEGACIÓN -->
     <nav class="main-nav" id="main-nav">
 
-      <a class="nav-link active" href="index.html">
+      <a class="nav-link" href="index.html">
         Inicio
       </a>
 
@@ -95,14 +112,13 @@
 
   </header>
 
-  <!-- =================================
-       CONTENIDO PRINCIPAL
-  ================================== -->
+  <!-- CONTENIDO PRINCIPAL -->
   <main>
 
     <!-- HERO -->
     <section class="hero section-shell">
 
+      <!-- TEXTO -->
       <div class="hero-copy reveal">
 
         <p class="eyebrow">
@@ -123,11 +139,17 @@
 
         <div class="hero-actions">
 
-          <a href="contacto.html#reservar" class="button button-primary">
+          <a
+            href="contacto.html#reservar"
+            class="button button-primary"
+          >
             Descubre tu nueva sonrisa ↗
           </a>
 
-          <a href="tratamientos.html" class="button button-quiet">
+          <a
+            href="tratamientos.html"
+            class="button button-quiet"
+          >
             <span class="play-icon">▶</span>
             Explorar tratamientos
           </a>
@@ -155,22 +177,25 @@
       <div class="hero-visual reveal">
 
         <div class="visual-glow"></div>
-
         <div class="visual-orbit orbit-one"></div>
         <div class="visual-orbit orbit-two"></div>
 
         <picture class="hero-picture">
 
+          <source
+            srcset="assets/hero-dentist.webp"
+            type="image/webp"
+          >
+
           <img
             src="assets/hero-dentist.webp"
             alt="Profesional odontológico en una clínica moderna"
             fetchpriority="high"
-            loading="eager"
           >
 
         </picture>
 
-        <!-- TARJETA TECNOLOGÍA -->
+        <!-- TARJETA FLOTANTE -->
         <div class="floating-card card-tech">
 
           <span class="mini-icon">⌁</span>
@@ -182,7 +207,6 @@
 
         </div>
 
-        <!-- TARJETA ATENCIÓN -->
         <div class="floating-card card-care">
 
           <span class="mini-icon">✦</span>
@@ -203,49 +227,39 @@
 
     </section>
 
-    <!-- =================================
-         BENEFICIOS
-    ================================== -->
+    <!-- BENEFICIOS -->
     <section class="trust-strip section-shell">
 
       <article>
-
         <span class="trust-icon">✧</span>
 
         <div>
           <strong>Tecnología avanzada</strong>
           <small>Diagnóstico preciso</small>
         </div>
-
       </article>
 
       <article>
-
         <span class="trust-icon">⌁</span>
 
         <div>
           <strong>Atención cercana</strong>
           <small>Tu comodidad primero</small>
         </div>
-
       </article>
 
       <article>
-
         <span class="trust-icon">◈</span>
 
         <div>
           <strong>Planes a tu medida</strong>
           <small>Tratamientos personalizados</small>
         </div>
-
       </article>
 
     </section>
 
-    <!-- =================================
-         PRESENTACIÓN
-    ================================== -->
+    <!-- PRESENTACIÓN -->
     <section class="intro-section section-shell">
 
       <div class="section-heading reveal">
@@ -331,9 +345,7 @@
 
     </section>
 
-    <!-- =================================
-         LLAMADO A LA ACCIÓN
-    ================================== -->
+    <!-- LLAMADO A LA ACCIÓN -->
     <section class="closing-cta section-shell reveal" id="reservar">
 
       <div>
@@ -354,7 +366,10 @@
 
       </div>
 
-      <a href="contacto.html#reservar" class="button button-primary">
+      <a
+        href="contacto.html#reservar"
+        class="button button-primary"
+      >
         Agenda tu cita ↗
       </a>
 
@@ -362,9 +377,7 @@
 
   </main>
 
-  <!-- =================================
-       FOOTER
-  ================================== -->
+  <!-- PIE DE PÁGINA -->
   <footer class="site-footer section-shell">
 
     <a href="index.html" class="brand brand-footer">
@@ -388,9 +401,7 @@
 
   </footer>
 
-  <!-- =================================
-       PORTAL DE SONRISAS
-  ================================== -->
+  <!-- PORTAL FLOTANTE -->
   <div class="smile-portal" id="smile-portal">
 
     <div class="portal-actions">
@@ -398,31 +409,28 @@
       <a
         class="portal-action action-one"
         href="contacto.html#reservar"
-        aria-label="Cita Express">
-
+        aria-label="Cita Express"
+      >
         <span>＋</span>
         <small>Cita Express</small>
-
       </a>
 
       <a
         class="portal-action action-two"
         href="contacto.html#urgencias"
-        aria-label="Urgencias">
-
+        aria-label="Urgencias 24 horas"
+      >
         <span>✚</span>
         <small>Urgencias 24h</small>
-
       </a>
 
       <a
         class="portal-action action-three"
         href="contacto.html#chat"
-        aria-label="Chat Inteligente">
-
+        aria-label="Chat Inteligente"
+      >
         <span>✧</span>
         <small>Chat Inteligente</small>
-
       </a>
 
     </div>
@@ -431,25 +439,24 @@
       class="portal-trigger"
       type="button"
       aria-expanded="false"
-      aria-label="Abrir Portal de Sonrisas">
+      aria-label="Abrir Portal de Sonrisas"
+    >
 
       <span class="portal-ring"></span>
-      <span class="portal-symbol">✦</span>
-      <span class="portal-label">Portal de Sonrisas</span>
+
+      <span class="portal-symbol">
+        ✦
+      </span>
+
+      <span class="portal-label">
+        Portal de Sonrisas
+      </span>
 
     </button>
 
   </div>
-
-  <!-- =================================
-       SUPABASE
-  ================================== -->
-
-  <!-- Biblioteca oficial -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-  <!-- Configuración de Supabase -->
-  <script src="js/supabase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
 
 </body>
 </html>
