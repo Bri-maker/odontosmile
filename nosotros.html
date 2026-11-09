@@ -1,63 +1,462 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Conoce más sobre OdontoSmile Pasco y nuestros profesionales." />
-  <title>Nosotros | OdontoSmile PASCO</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#0B132B">
+  <meta name="description" content="OdontoSmile, clínica odontológica moderna. Tecnología, cuidado y sonrisas saludables.">
+
+  <title>OdontoSmile | Tu sonrisa, nuestra pasión</title>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- JavaScript -->
+  <script src="js/main.js" defer></script>
 </head>
+
 <body>
 
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="./index.html" class="logo"><span class="logo__text">OdontoSmile <strong>PASCO</strong></span></a>
-      <nav class="nav" id="nav">
-        <a href="./index.html" class="nav__link">Inicio</a>
-        <a href="./especialidades.html" class="nav__link">Especialidades</a>
-        <a href="./tratamientos.html" class="nav__link">Tratamientos</a>
-        <a href="./nosotros.html" class="nav__link nav__link--active">Nosotros</a>
-        <a href="./contacto.html" class="nav__link">Contacto</a>
-      </nav>
-      <div class="header__actions">
-        <a href="tel:+51900000000" class="header__phone">+51 9XX XXX XXX</a>
-        <a href="./contacto.html#cita" class="btn btn--primary btn--sm">Agendar Cita</a>
-      </div>
-    </div>
+  <!-- FONDO -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <!-- ENCABEZADO -->
+  <header class="site-header">
+
+    <!-- LOGOTIPO -->
+    <a href="index.html" class="brand">
+
+      <span class="brand-mark">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="tooth-gradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#E5FBFF"/>
+              <stop offset="48%" stop-color="#4682B4"/>
+              <stop offset="100%" stop-color="#00F5D4"/>
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M17 10C8 14 9 27 14 38l7 16c2 5 7 5 9 0l4-12c1-3 4-3 5 0l4 12c2 5 7 5 9 0l7-16c5-11 6-24-3-28-7-3-12 2-19 2S24 7 17 10Z"
+            fill="url(#tooth-gradient)"
+            stroke="#D8F7FF"
+            stroke-width="1.5"
+          />
+
+          <path
+            d="M20 17c-4 3-3 10 0 16"
+            fill="none"
+            stroke="#FFFFFF"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity=".65"
+          />
+        </svg>
+      </span>
+
+      <span class="brand-name">
+        Odonto<span>Smile</span>
+      </span>
+
+    </a>
+
+    <!-- BOTÓN MENÚ MÓVIL -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="main-nav" id="main-nav">
+
+      <a class="nav-link" href="index.html">
+        Inicio
+      </a>
+
+      <a class="nav-link" href="tratamientos.html">
+        Tratamientos
+      </a>
+
+      <a class="nav-link" href="especialidades.html">
+        Especialidades
+      </a>
+
+      <a class="nav-link" href="nosotros.html">
+        Nosotros
+      </a>
+
+      <a class="nav-link" href="contacto.html">
+        Contacto
+      </a>
+
+      <a class="nav-cta" href="contacto.html#reservar">
+        Agendar cita ↗
+      </a>
+
+    </nav>
+
   </header>
 
-  <main class="page-section">
-    <div class="container grid-2 align-center">
-      <div class="about__image-box">
-        <img src="./assets/nosotros-equipo.jpg" alt="Equipo de odontólogos" />
-        <div class="floating-badge">
-          <strong>Más de 10 años de experiencia</strong>
-          <p>Comprometidos con tu salud bucal</p>
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero section-shell">
+
+      <!-- TEXTO -->
+      <div class="hero-copy reveal">
+
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          ODONTOLOGÍA · TECNOLOGÍA · BIENESTAR
+        </p>
+
+        <h1>
+          Tu sonrisa,<br>
+          en otra <span>dimensión.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Una experiencia dental de nueva generación.
+          Tecnología avanzada, atención humana y resultados
+          que se sienten tan bien como se ven.
+        </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="contacto.html#reservar"
+            class="button button-primary"
+          >
+            Descubre tu nueva sonrisa ↗
+          </a>
+
+          <a
+            href="tratamientos.html"
+            class="button button-quiet"
+          >
+            <span class="play-icon">▶</span>
+            Explorar tratamientos
+          </a>
+
         </div>
+
+        <div class="hero-proof">
+
+          <div class="proof-symbols">
+            <span>✦</span>
+            <span>✧</span>
+            <span>+</span>
+          </div>
+
+          <div>
+            <strong>Sonrisas con confianza</strong>
+            <small>Atención personalizada en cada visita</small>
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="about__content">
-        <span class="badge">¿POR QUÉ ELEGIRNOS?</span>
-        <h2>Tu salud bucal merece <span>atención de calidad</span></h2>
-        <p>En OdontoSmile Pasco combinamos tecnología de vanguardia con un equipo de especialistas comprometidos con brindarte la mejor experiencia odontológica. Tu bienestar es nuestra misión.</p>
+      <!-- IMAGEN PRINCIPAL -->
+      <div class="hero-visual reveal">
 
-        <ul class="check-list">
-          <li>Atención profesional y personalizada</li>
-          <li>Tecnología odontológica de última generación</li>
-          <li>Tratamientos adaptados a cada paciente</li>
-          <li>Ambiente cómodo, seguro y esterilizado</li>
-          <li>Seguimiento continuo de cada paciente</li>
-        </ul>
+        <div class="visual-glow"></div>
+        <div class="visual-orbit orbit-one"></div>
+        <div class="visual-orbit orbit-two"></div>
 
-        <a href="./contacto.html" class="btn btn--primary">Conoce nuestra clínica &rarr;</a>
+        <picture class="hero-picture">
+
+          <source
+            srcset="assets/hero-dentist.webp"
+            type="image/webp"
+          >
+
+          <img
+            src="assets/hero-dentist.webp"
+            alt="Profesional odontológico en una clínica moderna"
+            fetchpriority="high"
+          >
+
+        </picture>
+
+        <!-- TARJETA FLOTANTE -->
+        <div class="floating-card card-tech">
+
+          <span class="mini-icon">⌁</span>
+
+          <div>
+            <strong>Dental digital</strong>
+            <small>Precisión en cada detalle</small>
+          </div>
+
+        </div>
+
+        <div class="floating-card card-care">
+
+          <span class="mini-icon">✦</span>
+
+          <div>
+            <strong>Atención premium</strong>
+            <small>Tu bienestar es prioridad</small>
+          </div>
+
+        </div>
+
+        <p class="visual-caption">
+          <span></span>
+          INNOVACIÓN QUE SE NOTA
+        </p>
+
       </div>
-    </div>
+
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="trust-strip section-shell">
+
+      <article>
+        <span class="trust-icon">✧</span>
+
+        <div>
+          <strong>Tecnología avanzada</strong>
+          <small>Diagnóstico preciso</small>
+        </div>
+      </article>
+
+      <article>
+        <span class="trust-icon">⌁</span>
+
+        <div>
+          <strong>Atención cercana</strong>
+          <small>Tu comodidad primero</small>
+        </div>
+      </article>
+
+      <article>
+        <span class="trust-icon">◈</span>
+
+        <div>
+          <strong>Planes a tu medida</strong>
+          <small>Tratamientos personalizados</small>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- PRESENTACIÓN -->
+    <section class="intro-section section-shell">
+
+      <div class="section-heading reveal">
+
+        <p class="eyebrow">
+          EL FUTURO DE TU SALUD DENTAL
+        </p>
+
+        <h2>
+          La confianza comienza<br>
+          con una <span>sonrisa.</span>
+        </h2>
+
+        <p>
+          Combinamos ciencia, diseño y calidez humana
+          para transformar tu visita al dentista
+          en una experiencia positiva.
+        </p>
+
+      </div>
+
+      <!-- TARJETAS -->
+      <div class="feature-grid">
+
+        <article class="feature-card reveal">
+
+          <span class="feature-number">01</span>
+
+          <div class="feature-icon">⌬</div>
+
+          <h3>Diagnóstico inteligente</h3>
+
+          <p>
+            Evaluación cuidadosa y herramientas modernas
+            para acompañarte con claridad.
+          </p>
+
+          <a href="especialidades.html">
+            Conoce más ↗
+          </a>
+
+        </article>
+
+        <article class="feature-card reveal">
+
+          <span class="feature-number">02</span>
+
+          <div class="feature-icon">✧</div>
+
+          <h3>Sonrisa diseñada para ti</h3>
+
+          <p>
+            Tratamientos personalizados que respetan
+            tu salud, estilo y objetivos.
+          </p>
+
+          <a href="tratamientos.html">
+            Ver tratamientos ↗
+          </a>
+
+        </article>
+
+        <article class="feature-card reveal">
+
+          <span class="feature-number">03</span>
+
+          <div class="feature-icon">♡</div>
+
+          <h3>Cuidado sin ansiedad</h3>
+
+          <p>
+            Un entorno tranquilo, comunicación transparente
+            y acompañamiento cercano.
+          </p>
+
+          <a href="nosotros.html">
+            Nuestra filosofía ↗
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- LLAMADO A LA ACCIÓN -->
+    <section class="closing-cta section-shell reveal" id="reservar">
+
+      <div>
+
+        <p class="eyebrow">
+          ESTÁS A UN PASO
+        </p>
+
+        <h2>
+          ¿Listos para una sonrisa<br>
+          <span>extraordinaria?</span>
+        </h2>
+
+        <p>
+          Conversemos sobre lo que necesitas.
+          Tu próxima visita comienza aquí.
+        </p>
+
+      </div>
+
+      <a
+        href="contacto.html#reservar"
+        class="button button-primary"
+      >
+        Agenda tu cita ↗
+      </a>
+
+    </section>
+
   </main>
 
-  <script src="./js/main.js"></script>
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer section-shell">
+
+    <a href="index.html" class="brand brand-footer">
+
+      <span class="brand-mark">✧</span>
+
+      <span class="brand-name">
+        Odonto<span>Smile</span>
+      </span>
+
+    </a>
+
+    <p>
+      Una nueva dimensión del cuidado dental.
+    </p>
+
+    <small>
+      © <span id="year"></span>
+      OdontoSmile. Todos los derechos reservados.
+    </small>
+
+  </footer>
+
+  <!-- PORTAL FLOTANTE -->
+  <div class="smile-portal" id="smile-portal">
+
+    <div class="portal-actions">
+
+      <a
+        class="portal-action action-one"
+        href="contacto.html#reservar"
+        aria-label="Cita Express"
+      >
+        <span>＋</span>
+        <small>Cita Express</small>
+      </a>
+
+      <a
+        class="portal-action action-two"
+        href="contacto.html#urgencias"
+        aria-label="Urgencias 24 horas"
+      >
+        <span>✚</span>
+        <small>Urgencias 24h</small>
+      </a>
+
+      <a
+        class="portal-action action-three"
+        href="contacto.html#chat"
+        aria-label="Chat Inteligente"
+      >
+        <span>✧</span>
+        <small>Chat Inteligente</small>
+      </a>
+
+    </div>
+
+    <button
+      class="portal-trigger"
+      type="button"
+      aria-expanded="false"
+      aria-label="Abrir Portal de Sonrisas"
+    >
+
+      <span class="portal-ring"></span>
+
+      <span class="portal-symbol">
+        ✦
+      </span>
+
+      <span class="portal-label">
+        Portal de Sonrisas
+      </span>
+
+    </button>
+
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+
 </body>
 </html>
