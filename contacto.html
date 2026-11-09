@@ -186,6 +186,7 @@
     </header>
 
     <main class="contenedor">
+
         <h1>Reserva tu cita</h1>
 
         <p class="descripcion">
@@ -229,6 +230,7 @@
 
             <div class="campo">
                 <label for="servicio">Tratamiento *</label>
+
                 <select id="servicio" name="servicio" required>
                     <option value="">Selecciona un tratamiento</option>
                     <option value="Limpieza dental">Limpieza dental</option>
@@ -242,16 +244,27 @@
 
             <div class="campo">
                 <label for="fecha">Fecha de cita *</label>
-                <input type="date" id="fecha" name="fecha" required>
+                <input
+                    type="date"
+                    id="fecha"
+                    name="fecha"
+                    required
+                >
             </div>
 
             <div class="campo">
                 <label for="hora">Hora de cita *</label>
-                <input type="time" id="hora" name="hora" required>
+                <input
+                    type="time"
+                    id="hora"
+                    name="hora"
+                    required
+                >
             </div>
 
             <div class="campo completo">
                 <label for="mensaje">Mensaje adicional</label>
+
                 <textarea
                     id="mensaje"
                     name="mensaje"
@@ -261,7 +274,9 @@
 
             <label class="privacidad">
                 <input type="checkbox" id="privacidad" required>
-                <span>Acepto que mis datos sean utilizados para gestionar mi solicitud de cita.</span>
+                <span>
+                    Acepto que mis datos sean utilizados para gestionar mi solicitud de cita.
+                </span>
             </label>
 
             <p id="mensajeEstado" role="status" aria-live="polite"></p>
@@ -275,32 +290,49 @@
         <a href="index.html" class="volver">
             ← Volver al inicio
         </a>
+
     </main>
 
-    <!-- Cargar Supabase antes de configurar el formulario -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/supabase.js"></script>
+    <!-- =====================================
+         ODONTOSMILE - SCRIPTS
+    ====================================== -->
 
+    <!-- 1. Biblioteca de Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- 2. Conexión de Supabase -->
+    <script src="./js/supabase.js"></script>
+
+    <!-- 3. Funcionalidad del formulario -->
     <script>
+
         const formulario = document.getElementById("appointmentForm");
         const mensajeEstado = document.getElementById("mensajeEstado");
         const btnEnviar = document.getElementById("btnEnviar");
         const campoFecha = document.getElementById("fecha");
 
-        // Evitar seleccionar fechas anteriores al día actual
+        // Obtener fecha local para evitar seleccionar días anteriores
         const hoy = new Date();
+
         const fechaLocal = new Date(
             hoy.getTime() - hoy.getTimezoneOffset() * 60000
         ).toISOString().split("T")[0];
 
         campoFecha.min = fechaLocal;
 
+        // Registrar cita
         formulario.addEventListener("submit", async function(evento) {
+
             evento.preventDefault();
 
-            if (typeof supabaseClient === "undefined") {
+            // Verificar conexión
+            if (
+                typeof supabaseClient === "undefined" ||
+                !supabaseClient
+            ) {
                 mensajeEstado.textContent =
-                    "Error: no se pudo conectar con Supabase. Revisa js/supabase.js.";
+                    "No se pudo conectar con Supabase. Revisa tu archivo js/supabase.js.";
+
                 mensajeEstado.style.color = "#ff7777";
                 return;
             }
@@ -309,6 +341,7 @@
             btnEnviar.textContent = "Registrando cita...";
             mensajeEstado.textContent = "";
 
+            // Obtener datos del formulario
             const datos = {
                 nombre: document.getElementById("nombre").value.trim(),
                 telefono: document.getElementById("telefono").value.trim(),
@@ -320,6 +353,8 @@
             };
 
             try {
+
+                // Guardar información en Supabase
                 const { error } = await supabaseClient
                     .from("citas")
                     .insert([datos]);
@@ -329,44 +364,60 @@
                 }
 
                 mensajeEstado.textContent =
-                    "¡Tu solicitud fue registrada correctamente!";
+                    "¡Tu cita se registró correctamente! Ahora puedes confirmar por WhatsApp.";
+
                 mensajeEstado.style.color = "#00F5D4";
 
-                // Cambia este número por el WhatsApp real de la clínica
+                // Número de WhatsApp de la clínica
+                // Reemplaza por el número real
                 const numeroWhatsApp = "51900000000";
 
-                const textoWhatsApp =
-                    "¡Hola, OdontoSmile! Deseo confirmar mi solicitud de cita.%0A%0A" +
-                    "Nombre: " + encodeURIComponent(datos.nombre) + "%0A" +
-                    "Teléfono: " + encodeURIComponent(datos.telefono) + "%0A" +
-                    "Correo: " + encodeURIComponent(datos.correo || "No indicado") + "%0A" +
-                    "Tratamiento: " + encodeURIComponent(datos.tratamiento) + "%0A" +
-                    "Fecha: " + encodeURIComponent(datos.fecha_cita) + "%0A" +
-                    "Hora: " + encodeURIComponent(datos.hora) + "%0A" +
-                    "Mensaje: " + encodeURIComponent(datos.mensaje || "Sin mensaje");
+                // Crear mensaje de WhatsApp
+                const textoWhatsApp = [
+                    "¡Hola, OdontoSmile! Deseo confirmar mi solicitud de cita.",
+                    "",
+                    "Nombre: " + datos.nombre,
+                    "Teléfono: " + datos.telefono,
+                    "Correo: " + (datos.correo || "No indicado"),
+                    "Tratamiento: " + datos.tratamiento,
+                    "Fecha: " + datos.fecha_cita,
+                    "Hora: " + datos.hora,
+                    "Mensaje: " + (datos.mensaje || "Sin mensaje")
+                ].join("\n");
 
                 const urlWhatsApp =
-                    "https://wa.me/" + numeroWhatsApp + "?text=" + textoWhatsApp;
+                    "https://wa.me/" +
+                    numeroWhatsApp +
+                    "?text=" +
+                    encodeURIComponent(textoWhatsApp);
 
+                // Abrir WhatsApp
                 window.open(urlWhatsApp, "_blank");
 
+                // Limpiar formulario
                 formulario.reset();
                 campoFecha.min = fechaLocal;
 
             } catch (error) {
+
                 console.error("Error al registrar la cita:", error);
 
                 mensajeEstado.textContent =
-                    "No se pudo registrar la cita. Verifica tu conexión e inténtalo nuevamente.";
+                    "No se pudo registrar la cita. Error: " +
+                    (error.message || "Verifica la conexión y los permisos de Supabase.");
+
                 mensajeEstado.style.color = "#ff7777";
 
             } finally {
+
                 btnEnviar.disabled = false;
                 btnEnviar.textContent = "Reservar mi cita";
+
             }
+
         });
+
     </script>
 
 </body>
 </html>
-
