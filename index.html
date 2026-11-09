@@ -1,348 +1,371 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Formulario de Contacto | OdontoSmile PASCO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Reservar una cita | OdontoSmile</title>
+    <meta name="description" content="Reserva tu cita odontológica en OdontoSmile.">
 
-<style>
-:root {
-  --steel: #4682B4;
-  --steel-light: #9EC9E8;
-  --neon: #00F5D4;
-  --night: #0B132B;
-  --panel: #111E3B;
-  --text: #EDF7FF;
-  --muted: #9AACC7;
-  --line: rgba(151,190,221,0.16);
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        body {
+            background: #0B132B;
+            color: #ffffff;
+            min-height: 100vh;
+        }
 
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(70,130,180,.18), transparent 40%),
-    var(--night);
-  color: var(--text);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 35px 15px;
-}
+        header {
+            padding: 25px 8%;
+            background: #101d3c;
+            border-bottom: 1px solid #4682B4;
+        }
 
-.form-container {
-  width: 100%;
-  max-width: 850px;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 45px;
-  box-shadow: 0 25px 70px rgba(0,0,0,.35);
-  position: relative;
-  overflow: hidden;
-}
+        .logo {
+            color: #00F5D4;
+            font-size: 27px;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-.form-container::before {
-  content: "";
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  background: var(--neon);
-  filter: blur(130px);
-  opacity: .12;
-  top: -50px;
-  right: -30px;
-}
+        .contenedor {
+            width: 90%;
+            max-width: 850px;
+            margin: 45px auto;
+            padding: 35px;
+            background: #142344;
+            border: 1px solid #4682B4;
+            border-radius: 18px;
+            box-shadow: 0 0 25px rgba(0, 245, 212, 0.08);
+        }
 
-.form-header {
-  text-align: center;
-  margin-bottom: 35px;
-}
+        h1 {
+            text-align: center;
+            color: #00F5D4;
+            margin-bottom: 12px;
+        }
 
-.form-header .tag {
-  display: inline-block;
-  color: var(--neon);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
-}
+        .descripcion {
+            text-align: center;
+            color: #c7d3e8;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
 
-.form-header h1 {
-  font-size: 34px;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
+        .formulario {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
 
-.form-header h1 span {
-  color: var(--neon);
-}
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-.form-header p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
-}
+        .campo.completo {
+            grid-column: 1 / -1;
+        }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
+        label {
+            color: #e5f1ff;
+            font-weight: bold;
+        }
 
-.form-group {
-  margin-bottom: 22px;
-}
+        input, select, textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #4682B4;
+            border-radius: 9px;
+            background: #0B132B;
+            color: #ffffff;
+            outline: none;
+            font-size: 15px;
+        }
 
-.form-group label {
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
+        input:focus, select:focus, textarea:focus {
+            border-color: #00F5D4;
+            box-shadow: 0 0 8px rgba(0, 245, 212, 0.2);
+        }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid var(--line);
-  background: #0B1730;
-  color: var(--text);
-  outline: none;
-  font-family: inherit;
-  font-size: 12px;
-  transition: .3s;
-}
+        input::placeholder, textarea::placeholder {
+            color: #9aabc4;
+        }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--neon);
-  box-shadow: 0 0 0 3px rgba(0,245,212,.08);
-}
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #7185A5;
-}
+        .privacidad {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #c7d3e8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
 
-.form-group select option {
-  background: var(--panel);
-}
+        .privacidad input {
+            width: auto;
+            margin-top: 3px;
+        }
 
-.form-group textarea {
-  resize: vertical;
-  min-height: 110px;
-}
+        button {
+            grid-column: 1 / -1;
+            padding: 15px;
+            border: none;
+            border-radius: 9px;
+            background: #00F5D4;
+            color: #0B132B;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.privacy {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 11px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
+        button:hover {
+            background: #ffffff;
+            transform: translateY(-2px);
+        }
 
-.privacy input {
-  accent-color: var(--neon);
-  margin-top: 3px;
-}
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
 
-.btn-submit {
-  width: 100%;
-  padding: 17px;
-  border: none;
-  border-radius: 10px;
-  background: var(--neon);
-  color: var(--night);
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: .3s;
-}
+        #mensajeEstado {
+            grid-column: 1 / -1;
+            text-align: center;
+            line-height: 1.5;
+            font-weight: bold;
+        }
 
-.btn-submit:hover {
-  background: var(--steel-light);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0,245,212,.18);
-}
+        .volver {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #00F5D4;
+            text-decoration: none;
+        }
 
-.form-footer {
-  text-align: center;
-  margin-top: 22px;
-  font-size: 11px;
-  color: var(--muted);
-}
+        @media (max-width: 600px) {
+            .contenedor {
+                padding: 22px;
+                margin: 25px auto;
+            }
 
-@media(max-width:600px) {
-  .form-container {
-    padding: 25px 20px;
-  }
+            .formulario {
+                grid-template-columns: 1fr;
+            }
 
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .form-header h1 {
-    font-size: 27px;
-  }
-}
-</style>
+            .campo.completo,
+            .privacidad,
+            button,
+            #mensajeEstado {
+                grid-column: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="form-container">
+    <header>
+        <a href="index.html" class="logo">OdontoSmile</a>
+    </header>
 
-  <div class="form-header">
-    <span class="tag">✦ ODONTOSMILE PASCO</span>
-    <h1>Agenda tu <span>cita</span></h1>
-    <p>Completa el formulario y solicita tu atención odontológica.<br>
-    Estamos listos para cuidar tu sonrisa.</p>
-  </div>
+    <main class="contenedor">
+        <h1>Reserva tu cita</h1>
 
-  <form id="appointmentForm">
+        <p class="descripcion">
+            Tu sonrisa merece el mejor cuidado.
+            Completa el formulario y solicita tu cita odontológica.
+        </p>
 
-    <div class="form-row">
-      <div class="form-group">
-        <label for="nombre">Nombre completo *</label>
-        <input type="text" id="nombre" placeholder="Ingresa tus nombres" required>
-      </div>
+        <form id="appointmentForm" class="formulario">
 
-      <div class="form-group">
-        <label for="telefono">Teléfono *</label>
-        <input type="tel" id="telefono" placeholder="987654321"
-        pattern="[0-9]{9}" maxlength="9" required>
-      </div>
-    </div>
+            <div class="campo">
+                <label for="nombre">Nombre completo *</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Ingresa tus nombres"
+                    required
+                >
+            </div>
 
-    <div class="form-row">
-      <div class="form-group">
-        <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo" placeholder="ejemplo@gmail.com">
-      </div>
+            <div class="campo">
+                <label for="telefono">Teléfono *</label>
+                <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="Tu número de celular"
+                    required
+                >
+            </div>
 
-      <div class="form-group">
-        <label for="servicio">Especialidad *</label>
-        <select id="servicio" required>
-          <option value="">Selecciona una especialidad</option>
-          <option>Odontología General</option>
-          <option>Ortodoncia</option>
-          <option>Endodoncia</option>
-          <option>Estética Dental</option>
-          <option>Odontopediatría</option>
-          <option>Implantes Dentales</option>
-          <option>Otros tratamientos</option>
-        </select>
-      </div>
-    </div>
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    placeholder="ejemplo@gmail.com"
+                >
+            </div>
 
-    <div class="form-row">
-      <div class="form-group">
-        <label for="fecha">Fecha de cita *</label>
-        <input type="date" id="fecha" required>
-      </div>
+            <div class="campo">
+                <label for="servicio">Tratamiento *</label>
+                <select id="servicio" name="servicio" required>
+                    <option value="">Selecciona un tratamiento</option>
+                    <option value="Limpieza dental">Limpieza dental</option>
+                    <option value="Blanqueamiento dental">Blanqueamiento dental</option>
+                    <option value="Ortodoncia">Ortodoncia</option>
+                    <option value="Endodoncia">Endodoncia</option>
+                    <option value="Implantes dentales">Implantes dentales</option>
+                    <option value="Consulta general">Consulta general</option>
+                </select>
+            </div>
 
-      <div class="form-group">
-        <label for="hora">Hora preferida *</label>
-        <select id="hora" required>
-          <option value="">Selecciona una hora</option>
-          <option>09:00 AM</option>
-          <option>10:00 AM</option>
-          <option>11:00 AM</option>
-          <option>12:00 PM</option>
-          <option>02:00 PM</option>
-          <option>03:00 PM</option>
-          <option>04:00 PM</option>
-          <option>05:00 PM</option>
-          <option>06:00 PM</option>
-        </select>
-      </div>
-    </div>
+            <div class="campo">
+                <label for="fecha">Fecha de cita *</label>
+                <input type="date" id="fecha" name="fecha" required>
+            </div>
 
-    <div class="form-group">
-      <label for="mensaje">Mensaje adicional</label>
-      <textarea id="mensaje" placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
-    </div>
+            <div class="campo">
+                <label for="hora">Hora de cita *</label>
+                <input type="time" id="hora" name="hora" required>
+            </div>
 
-    <label class="privacy">
-      <input type="checkbox" required>
-      <span>Acepto el uso de mis datos para gestionar mi solicitud de cita.</span>
-    </label>
+            <div class="campo completo">
+                <label for="mensaje">Mensaje adicional</label>
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    placeholder="Escribe alguna consulta o detalle adicional..."
+                ></textarea>
+            </div>
 
-    <button type="submit" class="btn-submit">
-      ENVIAR SOLICITUD DE CITA →
-    </button>
+            <label class="privacidad">
+                <input type="checkbox" id="privacidad" required>
+                <span>Acepto que mis datos sean utilizados para gestionar mi solicitud de cita.</span>
+            </label>
 
-    <div class="form-footer">
-      ✦ OdontoSmile PASCO | Cuidamos tu sonrisa.
-    </div>
+            <p id="mensajeEstado" role="status" aria-live="polite"></p>
 
-  </form>
-</div>
+            <button type="submit" id="btnEnviar">
+                Reservar mi cita
+            </button>
 
-<script>
-const formulario = document.getElementById("appointmentForm");
+        </form>
 
-const fecha = document.getElementById("fecha");
-const hoy = new Date();
-const fechaLocal = new Date(
-  hoy.getTime() - hoy.getTimezoneOffset() * 60000
-).toISOString().split("T")[0];
+        <a href="index.html" class="volver">
+            ← Volver al inicio
+        </a>
+    </main>
 
-fecha.min = fechaLocal;
+    <!-- Cargar Supabase antes de configurar el formulario -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
 
-formulario.addEventListener("submit", function(e) {
-  e.preventDefault();
+    <script>
+        const formulario = document.getElementById("appointmentForm");
+        const mensajeEstado = document.getElementById("mensajeEstado");
+        const btnEnviar = document.getElementById("btnEnviar");
+        const campoFecha = document.getElementById("fecha");
 
-  const nombre = document.getElementById("nombre").value.trim();
-  const telefono = document.getElementById("telefono").value.trim();
-  const correo = document.getElementById("correo").value.trim();
-  const servicio = document.getElementById("servicio").value;
-  const dia = document.getElementById("fecha").value;
-  const hora = document.getElementById("hora").value;
-  const mensaje = document.getElementById("mensaje").value.trim();
+        // Evitar seleccionar fechas anteriores al día actual
+        const hoy = new Date();
+        const fechaLocal = new Date(
+            hoy.getTime() - hoy.getTimezoneOffset() * 60000
+        ).toISOString().split("T")[0];
 
-  const numeroWhatsApp = "51900000000";
+        campoFecha.min = fechaLocal;
 
-  const texto = `
-¡Hola OdontoSmile PASCO! Solicito una cita odontológica.
+        formulario.addEventListener("submit", async function(evento) {
+            evento.preventDefault();
 
-Nombre: ${nombre}
-Teléfono: ${telefono}
-Correo: ${correo || "No proporcionado"}
-Especialidad: ${servicio}
-Fecha: ${dia}
-Hora: ${hora}
-Mensaje: ${mensaje || "Sin mensaje adicional"}
+            if (typeof supabaseClient === "undefined") {
+                mensajeEstado.textContent =
+                    "Error: no se pudo conectar con Supabase. Revisa js/supabase.js.";
+                mensajeEstado.style.color = "#ff7777";
+                return;
+            }
 
-Espero su confirmación.`;
+            btnEnviar.disabled = true;
+            btnEnviar.textContent = "Registrando cita...";
+            mensajeEstado.textContent = "";
 
-  const url = "https://wa.me/" + numeroWhatsApp +
-    "?text=" + encodeURIComponent(texto);
+            const datos = {
+                nombre: document.getElementById("nombre").value.trim(),
+                telefono: document.getElementById("telefono").value.trim(),
+                correo: document.getElementById("correo").value.trim() || null,
+                tratamiento: document.getElementById("servicio").value,
+                fecha_cita: document.getElementById("fecha").value,
+                hora: document.getElementById("hora").value,
+                mensaje: document.getElementById("mensaje").value.trim() || null
+            };
 
-  window.open(url, "_blank");
-});
-</script>
+            try {
+                const { error } = await supabaseClient
+                    .from("citas")
+                    .insert([datos]);
+
+                if (error) {
+                    throw error;
+                }
+
+                mensajeEstado.textContent =
+                    "¡Tu solicitud fue registrada correctamente!";
+                mensajeEstado.style.color = "#00F5D4";
+
+                // Cambia este número por el WhatsApp real de la clínica
+                const numeroWhatsApp = "51900000000";
+
+                const textoWhatsApp =
+                    "¡Hola, OdontoSmile! Deseo confirmar mi solicitud de cita.%0A%0A" +
+                    "Nombre: " + encodeURIComponent(datos.nombre) + "%0A" +
+                    "Teléfono: " + encodeURIComponent(datos.telefono) + "%0A" +
+                    "Correo: " + encodeURIComponent(datos.correo || "No indicado") + "%0A" +
+                    "Tratamiento: " + encodeURIComponent(datos.tratamiento) + "%0A" +
+                    "Fecha: " + encodeURIComponent(datos.fecha_cita) + "%0A" +
+                    "Hora: " + encodeURIComponent(datos.hora) + "%0A" +
+                    "Mensaje: " + encodeURIComponent(datos.mensaje || "Sin mensaje");
+
+                const urlWhatsApp =
+                    "https://wa.me/" + numeroWhatsApp + "?text=" + textoWhatsApp;
+
+                window.open(urlWhatsApp, "_blank");
+
+                formulario.reset();
+                campoFecha.min = fechaLocal;
+
+            } catch (error) {
+                console.error("Error al registrar la cita:", error);
+
+                mensajeEstado.textContent =
+                    "No se pudo registrar la cita. Verifica tu conexión e inténtalo nuevamente.";
+                mensajeEstado.style.color = "#ff7777";
+
+            } finally {
+                btnEnviar.disabled = false;
+                btnEnviar.textContent = "Reservar mi cita";
+            }
+        });
+    </script>
 
 </body>
 </html>
-
-
-  <script src="./js/main.js"></script>
-</body>
-</html>... contanco.html
