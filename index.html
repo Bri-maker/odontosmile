@@ -2,520 +2,728 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0B132B">
-<meta name="description" content="OdontoSmile Pasco: tecnología, atención odontológica y sonrisas saludables.">
-<title>OdontoSmile | Tu sonrisa, nuestra pasión</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B132B">
+  <meta name="description" content="OdontoSmile Pasco - Tecnología, confianza y cuidado dental para tu sonrisa.">
+  <title>OdontoSmile | Clínica Dental Pasco</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="js/supabase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
 
-<style>
-:root{
- --acero:#4682B4;
- --acero-claro:#9EC9E8;
- --neon:#00F5D4;
- --fondo:#0B132B;
- --panel:#111E3B;
- --texto:#EDF7FF;
- --secundario:#9AACC7;
- --borde:rgba(158,201,232,.18);
- --sombra:0 15px 45px rgba(0,0,0,.25);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Inter,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.6}
-a{text-decoration:none;color:inherit}
-button,input{font-family:inherit}
-.container{width:min(1160px,90%);margin:auto}
-header{position:sticky;top:0;z-index:1000;background:#0b132bf2;backdrop-filter:blur(15px);border-bottom:1px solid var(--borde)}
-.navbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-.logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800;white-space:nowrap}
-.logo-icon{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--acero),var(--neon));color:#0B132B;font-size:25px}
-.logo span span{color:var(--neon)}
-nav{display:flex;align-items:center;gap:17px}
-nav a{font-size:12px;font-weight:700;color:var(--secundario);transition:.2s}
-nav a:hover{color:var(--neon)}
-.nav-login{border:1px solid var(--acero);padding:10px 13px;border-radius:9px}
-.nav-admin{background:var(--neon);color:#0B132B;padding:10px 13px;border-radius:9px}
-.menu-toggle{display:none;background:none;border:1px solid var(--borde);color:white;padding:8px 12px;border-radius:8px;font-size:22px}
-.btn{display:inline-flex;justify-content:center;align-items:center;padding:13px 21px;border-radius:11px;font-weight:800;cursor:pointer;border:0;transition:.25s}
-.btn-primary{background:var(--neon);color:#07172A}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 25px #00f5d455}
-.btn-outline{border:1px solid var(--acero);color:var(--texto)}
-.btn-outline:hover{background:var(--acero)}
-.hero{padding:90px 0;background:radial-gradient(ellipse at 85% 30%,#00f5d418,transparent 36%),radial-gradient(ellipse at 10% 20%,#4682b433,transparent 40%)}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
-.eyebrow{display:inline-block;padding:8px 13px;border-radius:30px;color:var(--neon);background:#00f5d411;border:1px solid #00f5d444;font-size:11px;font-weight:800;letter-spacing:1.5px}
-.hero h1{font-family:Poppins,sans-serif;font-size:clamp(38px,5vw,62px);line-height:1.13;margin:22px 0}
-.hero h1 span{color:var(--neon)}
-.hero p{color:var(--secundario);font-size:16px;max-width:550px}
-.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
-.hero-image{position:relative}
-.hero-image img{width:100%;height:440px;object-fit:cover;border-radius:25px;border:1px solid var(--borde);box-shadow:var(--sombra)}
-.hero-label{position:absolute;bottom:20px;left:20px;background:#0b132bf0;padding:15px 20px;border:1px solid var(--borde);border-radius:12px}
-.hero-label p{font-size:12px}
-.trust{background:#101d38;border-block:1px solid var(--borde)}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:25px 0}
-.trust-item{text-align:center;color:var(--secundario);font-size:13px}
-.trust-item strong{display:block;color:var(--neon);font-size:22px}
-section.content-section{padding:82px 0}
-.section-heading{text-align:center;max-width:700px;margin:0 auto 40px}
-.section-heading span{color:var(--neon);font-size:11px;font-weight:800;letter-spacing:2px}
-.section-heading h2{font-family:Poppins,sans-serif;font-size:clamp(27px,4vw,40px);margin:10px 0}
-.section-heading p{color:var(--secundario)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{padding:27px;background:var(--panel);border:1px solid var(--borde);border-radius:19px;transition:.3s}
-.card:hover{transform:translateY(-6px);border-color:var(--neon)}
-.card-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:14px;background:#00f5d41a;color:var(--neon);font-size:25px;margin-bottom:18px}
-.card h3{font-size:18px;margin-bottom:9px}
-.card p{font-size:14px;color:var(--secundario)}
-.card a{display:inline-block;color:var(--neon);font-size:13px;font-weight:700;margin-top:17px}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
-.about-grid img{width:100%;height:380px;object-fit:cover;border-radius:23px}
-.about-copy h2{font-family:Poppins,sans-serif;font-size:36px;margin:15px 0}
-.about-copy p{color:var(--secundario);margin-bottom:16px}
-.about-list{list-style:none;margin:20px 0}
-.about-list li{padding:8px 0;color:var(--acero-claro)}
-.about-list li:before{content:"✓";color:var(--neon);font-weight:bold;margin-right:10px}
-.cta{margin:20px auto 80px;padding:48px 25px;border-radius:23px;text-align:center;background:linear-gradient(120deg,#18365b,#102c46);border:1px solid var(--acero)}
-.cta h2{font-family:Poppins,sans-serif;font-size:32px;margin:12px 0}
-.cta p{color:var(--secundario);margin-bottom:20px}
-footer{background:#080f22;border-top:1px solid var(--borde);padding:45px 0 20px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-footer h3{color:var(--neon);margin-bottom:12px}
-footer p,footer a{font-size:13px;color:var(--secundario)}
-footer a{display:block;margin:8px 0}
-.copyright{text-align:center;border-top:1px solid var(--borde);margin-top:28px;padding-top:18px;color:var(--secundario);font-size:12px}
+  <style>
+    :root {
+      --acero: #4682B4;
+      --acero-claro: #9EC9E8;
+      --neon: #00F5D4;
+      --fondo: #0B132B;
+      --panel: #111E3B;
+      --texto: #EDF7FF;
+      --secundario: #9AACC7;
+      --borde: rgba(158,201,232,.16);
+    }
 
-/* Acceso privado */
-.modal-acceso{display:none;position:fixed;inset:0;z-index:3000;background:#030916eF;justify-content:center;align-items:center;padding:20px}
-.modal-acceso.visible{display:flex}
-.acceso-contenido{position:relative;width:min(430px,100%);padding:35px;border-radius:20px;background:var(--panel);border:1px solid var(--acero);text-align:center}
-.acceso-icono{display:inline-grid;place-items:center;width:55px;height:55px;border-radius:15px;background:var(--neon);color:var(--fondo);font-size:27px}
-.acceso-contenido h2{margin:15px 0}
-.acceso-contenido p{font-size:13px;color:var(--secundario);margin-bottom:16px}
-.acceso-contenido input{width:100%;padding:14px;border:1px solid var(--acero);border-radius:10px;background:var(--fondo);color:white;margin-bottom:12px}
-.acceso-contenido .btn{width:100%}
-.cerrar-acceso{position:absolute;right:14px;top:8px;border:0;background:none;color:white;font-size:28px;cursor:pointer}
-.panel-privado{display:none;padding:65px 5%;background:#0D1832}
-.panel-privado.visible{display:block}
-.panel-cabecera{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:25px}
-.panel-cabecera h2{font-family:Poppins,sans-serif;font-size:30px}
-.panel-cabecera p{color:var(--secundario)}
-.panel-etiqueta{color:var(--neon);font-size:11px;letter-spacing:2px}
-.btn-salir{background:var(--acero);color:white;padding:12px 18px;border:0;border-radius:9px;cursor:pointer}
-.tabla-privada{overflow-x:auto;background:var(--panel);border:1px solid var(--borde);border-radius:12px}
-.tabla-privada table{width:100%;min-width:750px;border-collapse:collapse}
-.tabla-privada th,.tabla-privada td{padding:14px;text-align:left;border-bottom:1px solid var(--borde);font-size:13px}
-.tabla-privada th{color:var(--neon);background:#192b4b}
-#estadoPrivado{color:var(--secundario);margin-top:15px;font-size:13px}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    button, input { font: inherit; }
+    img { max-width: 100%; display: block; }
 
-/* Asistente virtual */
-.chat-button{position:fixed;right:22px;bottom:95px;z-index:1200;width:60px;height:60px;border:0;border-radius:50%;background:var(--neon);color:#0B132B;font-size:26px;cursor:pointer;box-shadow:var(--sombra)}
-.chat-box{display:none;position:fixed;right:22px;bottom:165px;z-index:1200;width:min(350px,calc(100% - 35px));height:430px;background:var(--panel);border:1px solid var(--acero);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
-.chat-box.visible{display:flex;flex-direction:column}
-.chat-head{background:#18365b;padding:16px;font-weight:800;display:flex;justify-content:space-between}
-.chat-head button{background:none;border:0;color:white;font-size:20px;cursor:pointer}
-.chat-messages{padding:15px;flex:1;overflow-y:auto;font-size:13px}
-.chat-message{padding:11px 13px;border-radius:12px;margin-bottom:10px;background:#1b3153;color:var(--texto)}
-.chat-options{padding:12px;display:flex;flex-wrap:wrap;gap:7px;border-top:1px solid var(--borde)}
-.chat-options button{border:1px solid var(--acero);background:transparent;color:var(--acero-claro);padding:8px 10px;border-radius:20px;font-size:11px;cursor:pointer}
-.chat-input{display:flex;padding:10px;gap:7px;border-top:1px solid var(--borde)}
-.chat-input input{min-width:0;flex:1;padding:10px;border-radius:8px;background:var(--fondo);border:1px solid var(--borde);color:white}
-.chat-input button{background:var(--neon);border:0;border-radius:8px;padding:0 13px;cursor:pointer}
-.whatsapp{position:fixed;right:23px;bottom:22px;z-index:1100;width:55px;height:55px;border-radius:50%;background:#20c875;color:#06251a;display:grid;place-items:center;font-size:25px;box-shadow:var(--sombra)}
+    .container { width: min(1160px, 90%); margin: auto; }
 
-@media(max-width:1050px){
- nav{gap:10px}
- nav a{font-size:11px}
-}
-@media(max-width:900px){
- .menu-toggle{display:block}
- nav{display:none;position:absolute;top:78px;left:0;width:100%;padding:22px 5%;background:#0B132B;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--borde)}
- nav.open{display:flex}
- nav a{font-size:14px;padding:7px}
- .hero-grid,.about-grid{grid-template-columns:1fr}
- .hero-image img{height:350px}
- .cards{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:600px){
- .hero{padding:60px 0}
- .cards,.trust-grid,.footer-grid{grid-template-columns:1fr}
- .panel-cabecera{align-items:flex-start;flex-direction:column}
- .cta{padding:30px 18px}
- .hero-actions .btn{width:100%}
-}
-</style>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,19,43,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--borde);
+    }
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--texto);
+    }
+    .logo span { color: var(--neon); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: var(--secundario);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--neon); }
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 21px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .25s;
+    }
+    .btn-primary {
+      color: #07172B;
+      background: var(--neon);
+      box-shadow: 0 0 24px rgba(0,245,212,.16);
+    }
+    .btn-primary:hover { transform: translateY(-3px); }
+    .btn-outline {
+      border: 1px solid var(--acero);
+      color: var(--texto);
+      background: transparent;
+    }
+    .btn-outline:hover { border-color: var(--neon); color: var(--neon); }
+
+    .hero {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 45px;
+      padding: 75px 0;
+    }
+    .eyebrow {
+      display: inline-block;
+      color: var(--neon);
+      background: rgba(0,245,212,.08);
+      border: 1px solid rgba(0,245,212,.22);
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+    }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    .hero h1 { font-size: clamp(38px, 5vw, 62px); margin-bottom: 22px; }
+    .hero h1 span { color: var(--neon); }
+    .hero p { color: var(--secundario); font-size: 17px; max-width: 550px; margin-bottom: 30px; }
+    .hero-actions { display: flex; gap: 13px; flex-wrap: wrap; }
+    .hero-image { position: relative; }
+    .hero-image img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: 25px;
+      border: 1px solid var(--borde);
+      box-shadow: 0 25px 80px rgba(0,0,0,.35);
+    }
+    .floating-info {
+      position: absolute;
+      left: -25px;
+      bottom: 25px;
+      background: var(--panel);
+      border: 1px solid var(--borde);
+      border-radius: 15px;
+      padding: 18px 22px;
+      box-shadow: 0 15px 40px rgba(0,0,0,.3);
+    }
+    .floating-info strong { color: var(--neon); display: block; font-size: 21px; }
+    .floating-info small { color: var(--secundario); }
+
+    section { padding: 85px 0; }
+    .section-heading { text-align: center; max-width: 700px; margin: 0 auto 45px; }
+    .section-heading h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 13px; }
+    .section-heading h2 span { color: var(--neon); }
+    .section-heading p { color: var(--secundario); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .service-card {
+      background: var(--panel);
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 28px;
+      transition: .25s;
+    }
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--neon);
+    }
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      background: rgba(0,245,212,.1);
+      color: var(--neon);
+      border-radius: 15px;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .service-card h3 { margin-bottom: 12px; font-size: 19px; }
+    .service-card p { color: var(--secundario); font-size: 14px; }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+    }
+    .about img { height: 390px; width: 100%; object-fit: cover; border-radius: 22px; }
+    .about h2 { font-size: 37px; margin-bottom: 18px; }
+    .about h2 span { color: var(--neon); }
+    .about p { color: var(--secundario); margin-bottom: 18px; }
+
+    .cta {
+      background: linear-gradient(120deg, #142B4E, #111E3B);
+      border: 1px solid var(--borde);
+      border-radius: 25px;
+      padding: 55px 25px;
+      text-align: center;
+    }
+    .cta h2 { font-size: 34px; margin-bottom: 15px; }
+    .cta p { color: var(--secundario); margin-bottom: 25px; }
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--borde);
+      color: var(--secundario);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .floating-chat {
+      position: fixed;
+      right: 23px;
+      bottom: 23px;
+      z-index: 200;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,245,212,.5);
+      background: var(--panel);
+      color: var(--neon);
+      font-size: 26px;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(0,245,212,.2);
+    }
+    .chat-box {
+      display: none;
+      position: fixed;
+      z-index: 199;
+      right: 23px;
+      bottom: 95px;
+      width: min(350px, calc(100% - 35px));
+      background: var(--panel);
+      border: 1px solid var(--borde);
+      border-radius: 17px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px #0008;
+    }
+    .chat-box.open { display: block; }
+    .chat-header { padding: 17px; background: #17294A; color: var(--neon); font-weight: 800; }
+    .chat-content { padding: 17px; color: var(--secundario); font-size: 14px; }
+    .chat-content a { color: var(--neon); text-decoration: underline; }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(0,0,0,.75);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal.show { display: flex; }
+    .modal-card {
+      width: min(440px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      background: var(--panel);
+      border: 1px solid var(--borde);
+      border-radius: 20px;
+      padding: 28px;
+    }
+    .modal-card h2 { margin-bottom: 10px; }
+    .modal-card p { color: var(--secundario); font-size: 14px; margin-bottom: 18px; }
+    .close-modal { float: right; background: none; color: var(--texto); border: 0; font-size: 25px; cursor: pointer; }
+    .field { margin-bottom: 15px; }
+    .field label { display: block; margin-bottom: 7px; font-size: 13px; color: var(--secundario); }
+    .field input {
+      width: 100%;
+      background: var(--fondo);
+      border: 1px solid var(--borde);
+      color: var(--texto);
+      border-radius: 9px;
+      padding: 13px;
+      outline: none;
+    }
+    .field input:focus { border-color: var(--neon); }
+    .full { width: 100%; }
+    .message { margin-top: 15px; font-size: 13px; color: var(--neon); overflow-wrap: anywhere; }
+    .account-panel { display: none; padding: 45px 0; }
+    .account-panel.show { display: block; }
+    .account-panel h2 { margin-bottom: 10px; }
+    .account-panel p { color: var(--secundario); }
+    .table-wrap { overflow-x: auto; margin-top: 25px; }
+    table { width: 100%; border-collapse: collapse; min-width: 650px; }
+    th, td { padding: 13px; text-align: left; border-bottom: 1px solid var(--borde); font-size: 13px; }
+    th { color: var(--neon); }
+    .account-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+    @media(max-width: 850px) {
+      .nav-links { display: none; }
+      .hero, .about { grid-template-columns: 1fr; }
+      .hero { padding-top: 55px; }
+      .hero-image img { height: 350px; }
+      .floating-info { left: 12px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 550px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .navbar { min-height: 68px; }
+      .logo { font-size: 21px; }
+      .navbar > .btn { padding: 10px 12px; font-size: 12px; }
+      section { padding: 60px 0; }
+      .hero h1 { font-size: 39px; }
+      .cta h2 { font-size: 26px; }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
- <div class="container navbar">
-  <a href="#inicio" class="logo">
-   <span class="logo-icon">✚</span>
-   <span>Odonto<span>Smile</span></span>
-  </a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
-  <nav id="mainNav">
-   <a href="#inicio">Inicio</a>
-   <a href="#tratamientos">Tratamientos</a>
-   <a href="#especialidades">Especialidades</a>
-   <a href="#nosotros">Nosotros</a>
-   <a href="#contacto">Contacto</a>
-   <a href="javascript:void(0)" class="nav-login" onclick="abrirAcceso('cliente')">Mi cuenta</a>
-   <a href="javascript:void(0)" class="nav-admin" onclick="abrirAcceso('admin')">Administrador</a>
-  </nav>
- </div>
+  <div class="container navbar">
+    <a href="#inicio" class="logo">Odonto<span>Smile</span></a>
+    <nav class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#tratamientos">Tratamientos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="btn btn-primary" onclick="abrirModal()">Mi cuenta</button>
+  </div>
 </header>
 
 <main>
-<section class="hero" id="inicio">
- <div class="container hero-grid">
-  <div>
-   <span class="eyebrow">TECNOLOGÍA · CONFIANZA · SONRISAS</span>
-   <h1>Tu sonrisa merece una atención <span>extraordinaria.</span></h1>
-   <p>En OdontoSmile Pasco combinamos atención profesional, tecnología moderna y cuidado personalizado para ayudarte a mantener una sonrisa saludable y segura.</p>
-   <div class="hero-actions">
-    <a href="contacto.html#reservar" class="btn btn-primary">Agendar una cita ↗</a>
-    <a href="#tratamientos" class="btn btn-outline">Conocer tratamientos</a>
-   </div>
-  </div>
-  <div class="hero-image">
-   <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1100&q=85" alt="Atención odontológica">
-   <div class="hero-label"><strong>OdontoSmile Pasco</strong><p>Una nueva experiencia dental</p></div>
-  </div>
- </div>
-</section>
+  <div class="container hero" id="inicio">
+    <div>
+      <span class="eyebrow">ODONTOLOGÍA MODERNA EN PASCO</span>
+      <h1>Una sonrisa sana, <span>una vida mejor.</span></h1>
+      <p>
+        En OdontoSmile combinamos tecnología, experiencia y atención personalizada
+        para cuidar tu salud bucal y ayudarte a sonreír con confianza.
+      </p>
+      <div class="hero-actions">
+        <a href="contacto.html" class="btn btn-primary">Agendar una cita</a>
+        <a href="#tratamientos" class="btn btn-outline">Ver tratamientos</a>
+      </div>
+    </div>
 
-<div class="trust">
- <div class="container trust-grid">
-  <div class="trust-item"><strong>01</strong>Atención personalizada</div>
-  <div class="trust-item"><strong>02</strong>Tecnología moderna</div>
-  <div class="trust-item"><strong>03</strong>Cuidado de tu sonrisa</div>
- </div>
-</div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1000&q=85" alt="Atención odontológica profesional">
+      <div class="floating-info">
+        <strong>Tu sonrisa importa</strong>
+        <small>Cuidado dental con tecnología</small>
+      </div>
+    </div>
+  </div>
 
-<section class="content-section" id="tratamientos">
- <div class="container">
-  <div class="section-heading">
-   <span>NUESTROS SERVICIOS</span>
-   <h2>Tratamientos para cada sonrisa</h2>
-   <p>Conoce nuestras opciones de atención odontológica.</p>
-  </div>
-  <div class="cards">
-   <article class="card"><div class="card-icon">✦</div><h3>Limpieza dental</h3><p>Cuida tu salud bucal con una limpieza profesional y prevención.</p><a href="contacto.html#reservar">Solicitar información ↗</a></article>
-   <article class="card"><div class="card-icon">◇</div><h3>Blanqueamiento</h3><p>Mejora la apariencia de tu sonrisa mediante procedimientos adecuados.</p><a href="contacto.html#reservar">Solicitar información ↗</a></article>
-   <article class="card"><div class="card-icon">⌘</div><h3>Ortodoncia</h3><p>Atención orientada a mejorar la alineación dental y mordida.</p><a href="contacto.html#reservar">Solicitar información ↗</a></article>
-  </div>
- </div>
-</section>
+  <section id="tratamientos">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">NUESTROS SERVICIOS</span>
+        <h2>Tratamientos para <span>tu sonrisa</span></h2>
+        <p>Soluciones odontológicas pensadas para cuidar, recuperar y mejorar tu salud bucal.</p>
+      </div>
 
-<section class="content-section" id="especialidades">
- <div class="container">
-  <div class="section-heading">
-   <span>ATENCIÓN ODONTOLÓGICA</span>
-   <h2>Nuestras especialidades</h2>
-   <p>Servicios enfocados en el cuidado integral de tu salud bucal.</p>
-  </div>
-  <div class="cards">
-   <article class="card"><div class="card-icon">✧</div><h3>Odontología general</h3><p>Evaluación, diagnóstico y cuidado preventivo.</p></article>
-   <article class="card"><div class="card-icon">⌁</div><h3>Estética dental</h3><p>Alternativas para mejorar la apariencia de tu sonrisa.</p></article>
-   <article class="card"><div class="card-icon">✚</div><h3>Salud preventiva</h3><p>Orientación para mantener una boca saludable.</p></article>
-  </div>
- </div>
-</section>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">✦</div>
+          <h3>Limpieza dental</h3>
+          <p>Prevención y eliminación de placa y sarro para mantener una boca saludable.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">◈</div>
+          <h3>Ortodoncia</h3>
+          <p>Tratamientos para mejorar la alineación dental y la estética de tu sonrisa.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">✧</div>
+          <h3>Blanqueamiento</h3>
+          <p>Mejora el aspecto de tus dientes con procedimientos odontológicos adecuados.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">◇</div>
+          <h3>Endodoncia</h3>
+          <p>Atención especializada para tratar problemas que afectan la pulpa dental.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">✚</div>
+          <h3>Odontología general</h3>
+          <p>Evaluación, diagnóstico y cuidado integral para tu salud bucodental.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">◎</div>
+          <h3>Estética dental</h3>
+          <p>Alternativas para mejorar la apariencia y armonía de tu sonrisa.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section class="content-section" id="nosotros">
- <div class="container about-grid">
-  <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85" alt="Consultorio odontológico">
-  <div class="about-copy">
-   <span class="eyebrow">CONÓCENOS</span>
-   <h2>Tu bienestar es nuestra prioridad.</h2>
-   <p>OdontoSmile busca ofrecer una experiencia odontológica cercana, moderna y enfocada en las necesidades de cada paciente.</p>
-   <ul class="about-list">
-    <li>Atención centrada en cada paciente.</li>
-    <li>Información clara sobre los tratamientos.</li>
-    <li>Compromiso con la salud bucal.</li>
-   </ul>
-   <a href="contacto.html" class="btn btn-primary">Conoce más ↗</a>
-  </div>
- </div>
-</section>
+  <section id="nosotros">
+    <div class="container about">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85" alt="Consultorio odontológico moderno">
+      <div>
+        <span class="eyebrow">CONÓCENOS</span>
+        <h2>Tu salud dental es nuestra <span>prioridad.</span></h2>
+        <p>
+          En OdontoSmile trabajamos para ofrecer una experiencia odontológica
+          cómoda, moderna y cercana. Queremos que cada visita sea un paso hacia
+          una sonrisa más saludable.
+        </p>
+        <p>
+          Nuestro compromiso es brindarte información clara, atención responsable
+          y alternativas de tratamiento según tus necesidades.
+        </p>
+        <a href="contacto.html" class="btn btn-primary">Contáctanos</a>
+      </div>
+    </div>
+  </section>
 
-<section class="container" id="contacto">
- <div class="cta">
-  <span class="eyebrow">ESTAMOS PARA AYUDARTE</span>
-  <h2>Es momento de cuidar tu sonrisa</h2>
-  <p>Comunícate con nosotros y consulta sobre nuestros tratamientos.</p>
-  <a href="contacto.html#reservar" class="btn btn-primary">Agendar mi cita ↗</a>
- </div>
-</section>
+  <section id="contacto">
+    <div class="container">
+      <div class="cta">
+        <span class="eyebrow">ESTAMOS PARA AYUDARTE</span>
+        <h2>¡Es momento de cuidar tu sonrisa!</h2>
+        <p>Solicita una cita y comienza tu experiencia OdontoSmile.</p>
+        <a href="contacto.html" class="btn btn-primary">Solicitar cita</a>
+      </div>
+    </div>
+  </section>
 
-<!-- PANEL PRIVADO: NO SE MUESTRA EN EL INICIO PÚBLICO -->
-<section id="panelPrivado" class="panel-privado">
- <div class="container">
-  <div class="panel-cabecera">
-   <div>
-    <span class="panel-etiqueta">ÁREA PRIVADA</span>
-    <h2 id="tituloPanel">Mis citas</h2>
-    <p id="correoUsuario"></p>
-   </div>
-   <button class="btn-salir" onclick="cerrarSesion()">Cerrar sesión</button>
-  </div>
-  <div class="tabla-privada">
-   <table>
-    <thead><tr><th>Paciente</th><th>Correo</th><th>Teléfono</th><th>Tratamiento</th><th>Fecha</th><th>Hora</th><th>Mensaje</th></tr></thead>
-    <tbody id="misCitas"><tr><td colspan="7">Inicia sesión para consultar.</td></tr></tbody>
-   </table>
-  </div>
-  <p id="estadoPrivado"></p>
- </div>
-</section>
+  <section class="account-panel" id="panelCuenta">
+    <div class="container">
+      <h2 id="tituloPanel">Mis citas</h2>
+      <p id="descripcionPanel">Consulta tus citas registradas.</p>
+      <div class="account-actions">
+        <button class="btn btn-outline" onclick="cargarCitas()">Actualizar citas</button>
+        <button class="btn btn-primary" onclick="cerrarSesion()">Cerrar sesión</button>
+      </div>
+      <p class="message" id="estadoCitas"></p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Paciente</th>
+              <th>Correo</th>
+              <th>Teléfono</th>
+              <th>Tratamiento</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+            </tr>
+          </thead>
+          <tbody id="tablaCitas">
+            <tr><td colspan="6">Inicia sesión para consultar tus citas.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
- <div class="container">
-  <div class="footer-grid">
-   <div><a href="#inicio" class="logo"><span class="logo-icon">✚</span><span>Odonto<span>Smile</span></span></a><p style="margin-top:15px">Tecnología, confianza y cuidado para tu sonrisa en Pasco.</p></div>
-   <div><h3>Enlaces</h3><a href="#inicio">Inicio</a><a href="#tratamientos">Tratamientos</a><a href="#nosotros">Nosotros</a></div>
-   <div><h3>Contacto</h3><a href="contacto.html">Contáctanos</a><a href="contacto.html#reservar">Reservar una cita</a></div>
+  <div class="container">
+    <p>© 2026 OdontoSmile Pasco. Todos los derechos reservados.</p>
+    <p>Tecnología, confianza y sonrisas saludables.</p>
   </div>
-  <div class="copyright">© <span id="year"></span> OdontoSmile Pasco. Todos los derechos reservados.</div>
- </div>
 </footer>
 
-<!-- ACCESO A CLIENTES Y ADMINISTRADOR -->
-<div class="modal-acceso" id="modalAcceso">
- <div class="acceso-contenido">
-  <button class="cerrar-acceso" onclick="cerrarAcceso()">×</button>
-  <span class="acceso-icono">✚</span>
-  <h2 id="tituloAcceso">Mi cuenta</h2>
-  <p>Escribe tu correo electrónico y recibe un enlace seguro para ingresar.</p>
-  <input id="correoAcceso" type="email" placeholder="Correo electrónico">
-  <button class="btn btn-primary" id="btnEnviarAcceso" onclick="enviarAcceso()">Enviar enlace de acceso</button>
-  <p id="mensajeAcceso" aria-live="polite" style="margin-top:15px"></p>
- </div>
-</div>
-
-<!-- ASISTENTE VIRTUAL: SE CONSERVA -->
-<button class="chat-button" id="chatButton" aria-label="Abrir asistente">✧</button>
+<button class="floating-chat" onclick="toggleChat()" aria-label="Abrir asistente">✦</button>
 <div class="chat-box" id="chatBox">
- <div class="chat-head">Asistente OdontoSmile <button id="cerrarChat">×</button></div>
- <div class="chat-messages" id="chatMessages">
-  <div class="chat-message">¡Hola! Soy el asistente virtual de OdontoSmile. ¿En qué puedo ayudarte?</div>
- </div>
- <div class="chat-options">
-  <button data-question="¿Qué tratamientos ofrecen?">Tratamientos</button>
-  <button data-question="¿Cómo puedo reservar una cita?">Reservar cita</button>
-  <button data-question="¿Dónde están ubicados?">Ubicación</button>
- </div>
- <form class="chat-input" id="chatForm">
-  <input id="chatText" type="text" placeholder="Escribe tu pregunta..." autocomplete="off">
-  <button type="submit">➤</button>
- </form>
+  <div class="chat-header">Asistente OdontoSmile</div>
+  <div class="chat-content">
+    <p>¡Hola! Bienvenido a OdontoSmile. ¿En qué podemos ayudarte?</p>
+    <p style="margin-top:12px"><a href="contacto.html">Quiero agendar una cita</a></p>
+    <p style="margin-top:8px"><a href="#tratamientos" onclick="toggleChat()">Consultar tratamientos</a></p>
+  </div>
 </div>
 
-<a class="whatsapp" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp">◉</a>
+<div class="modal" id="modalCuenta">
+  <div class="modal-card">
+    <button class="close-modal" onclick="cerrarModal()" aria-label="Cerrar">×</button>
+    <h2>Bienvenido</h2>
+    <p>Ingresa para consultar tus citas de OdontoSmile.</p>
+
+    <div class="field">
+      <label for="correoLogin">Correo electrónico</label>
+      <input type="email" id="correoLogin" placeholder="tucorreo@gmail.com">
+    </div>
+
+    <div class="field" id="campoPassword">
+      <label for="passwordLogin">Contraseña (administrador)</label>
+      <input type="password" id="passwordLogin" placeholder="Tu contraseña">
+    </div>
+
+    <button class="btn btn-primary full" onclick="loginCliente()">Acceso de cliente por correo</button>
+    <button class="btn btn-outline full" style="margin-top:10px" onclick="loginAdmin()">Acceso administrador</button>
+    <p class="message" id="mensajeLogin"></p>
+  </div>
+</div>
 
 <script>
-/* MENÚ Y ELEMENTOS GENERALES */
-document.getElementById("year").textContent = new Date().getFullYear();
+  /*
+    CONFIGURACIÓN:
+    Se utiliza la conexión existente de js/supabase.js.
+    No se crea una conexión nueva aquí.
+  */
 
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+  const TABLA_CITAS = "citas";
+  const CORREO_ADMIN = "TU_CORREO_ADMIN@gmail.com";
 
-menuToggle.addEventListener("click", () => mainNav.classList.toggle("open"));
-mainNav.querySelectorAll("a").forEach(a => {
- a.addEventListener("click", () => mainNav.classList.remove("open"));
-});
+  let usuarioActual = null;
+  let esAdministrador = false;
 
-/* ASISTENTE VIRTUAL */
-const chatBox = document.getElementById("chatBox");
-const chatMessages = document.getElementById("chatMessages");
+  function obtenerClienteSupabase() {
+    if (window.supabaseClient) return window.supabaseClient;
+    if (window.supabase_client) return window.supabase_client;
 
-document.getElementById("chatButton").addEventListener("click", () => {
- chatBox.classList.toggle("visible");
-});
-document.getElementById("cerrarChat").addEventListener("click", () => {
- chatBox.classList.remove("visible");
-});
+    try {
+      if (typeof supabaseClient !== "undefined") return supabaseClient;
+    } catch (e) {}
 
-function responderChat(pregunta) {
- const p = pregunta.toLowerCase();
- let respuesta = "Gracias por escribirnos. Puedes comunicarte con OdontoSmile para recibir más información.";
+    try {
+      if (typeof clienteSupabase !== "undefined") return clienteSupabase;
+    } catch (e) {}
 
- if (p.includes("tratamiento")) {
-  respuesta = "Ofrecemos información sobre limpieza dental, blanqueamiento, ortodoncia y atención odontológica general.";
- } else if (p.includes("reserv")) {
-  respuesta = "Puedes solicitar tu cita desde el botón Agendar una cita o desde nuestra página de contacto.";
- } else if (p.includes("ubic")) {
-  respuesta = "Estamos en Pasco. Comunícate con nuestro equipo para confirmar la dirección y horarios.";
- } else if (p.includes("hola")) {
-  respuesta = "¡Hola! Bienvenido a OdontoSmile. ¿Qué información necesitas?";
- }
-
- const preguntaDiv = document.createElement("div");
- preguntaDiv.className = "chat-message";
- preguntaDiv.textContent = pregunta;
- chatMessages.appendChild(preguntaDiv);
-
- const respuestaDiv = document.createElement("div");
- respuestaDiv.className = "chat-message";
- respuestaDiv.textContent = respuesta;
- chatMessages.appendChild(respuestaDiv);
- chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-document.querySelectorAll(".chat-options button").forEach(button => {
- button.addEventListener("click", () => responderChat(button.dataset.question));
-});
-
-document.getElementById("chatForm").addEventListener("submit", event => {
- event.preventDefault();
- const input = document.getElementById("chatText");
- const pregunta = input.value.trim();
- if (!pregunta) return;
- responderChat(pregunta);
- input.value = "";
-});
-
-/* AUTENTICACIÓN Y PANEL PRIVADO */
-const dbPrivado = window.supabaseClient;
-const CORREO_ADMIN = "TU_CORREO_ADMIN@gmail.com";
-let tipoAcceso = "cliente";
-
-function abrirAcceso(tipo) {
- tipoAcceso = tipo;
- document.getElementById("tituloAcceso").textContent =
-  tipo === "admin" ? "Acceso administrador" : "Mi cuenta";
- document.getElementById("mensajeAcceso").textContent = "";
- document.getElementById("modalAcceso").classList.add("visible");
-}
-function cerrarAcceso() {
- document.getElementById("modalAcceso").classList.remove("visible");
-}
-
-async function enviarAcceso() {
- const correo = document.getElementById("correoAcceso").value.trim();
- const mensaje = document.getElementById("mensajeAcceso");
- const boton = document.getElementById("btnEnviarAcceso");
-
- if (!dbPrivado) {
-  mensaje.textContent = "No se encontró window.supabaseClient. Revisa js/supabase.js.";
-  return;
- }
- if (!correo) {
-  mensaje.textContent = "Escribe tu correo electrónico.";
-  return;
- }
- if (tipoAcceso === "admin" &&
-     correo.toLowerCase() !== CORREO_ADMIN.toLowerCase()) {
-  mensaje.textContent = "Este correo no corresponde al administrador.";
-  return;
- }
-
- boton.disabled = true;
- mensaje.textContent = "Enviando enlace...";
-
- try {
-  const { error } = await dbPrivado.auth.signInWithOtp({
-   email: correo,
-   options: {
-    emailRedirectTo: window.location.origin + window.location.pathname
-   }
-  });
-  if (error) throw error;
-  mensaje.textContent = "Enlace enviado. Revisa tu correo electrónico.";
- } catch (error) {
-  mensaje.textContent = "Error: " + error.message;
- } finally {
-  boton.disabled = false;
- }
-}
-
-async function cargarPanelPrivado() {
- const { data: { session }, error: sessionError } =
-  await dbPrivado.auth.getSession();
-
- if (sessionError || !session) return;
-
- const correo = session.user.email || "";
- const esAdmin = correo.toLowerCase() === CORREO_ADMIN.toLowerCase();
-
- document.getElementById("panelPrivado").classList.add("visible");
- document.getElementById("correoUsuario").textContent = correo;
- document.getElementById("tituloPanel").textContent =
-  esAdmin ? "Panel de administración: todas las citas" : "Mis citas";
-
- const tbody = document.getElementById("misCitas");
- tbody.innerHTML = '<tr><td colspan="7">Consultando registros...</td></tr>';
-
- try {
-  let consulta = dbPrivado
-   .from("citas")
-   .select("nombre, correo, telefono, tratamiento, fecha_cita, hora, mensaje, created_at");
-
-  if (!esAdmin) {
-   consulta = consulta.eq("correo", correo);
+    return null;
   }
 
-  const { data, error } = await consulta.order("created_at", { ascending: false });
-  if (error) throw error;
+  const db = obtenerClienteSupabase();
 
-  tbody.replaceChildren();
-
-  if (!data || data.length === 0) {
-   tbody.innerHTML = '<tr><td colspan="7">No se encontraron citas.</td></tr>';
-   document.getElementById("estadoPrivado").textContent = "";
-   return;
+  function abrirModal() {
+    document.getElementById("modalCuenta").classList.add("show");
+    document.getElementById("mensajeLogin").textContent = "";
   }
 
-  data.forEach(cita => {
-   const fila = document.createElement("tr");
-   [
-    cita.nombre, cita.correo, cita.telefono,
-    cita.tratamiento, cita.fecha_cita, cita.hora, cita.mensaje
-   ].forEach(valor => {
-    const celda = document.createElement("td");
-    celda.textContent = valor || "—";
-    fila.appendChild(celda);
-   });
-   tbody.appendChild(fila);
-  });
+  function cerrarModal() {
+    document.getElementById("modalCuenta").classList.remove("show");
+  }
 
-  document.getElementById("estadoPrivado").textContent =
-   "Registros encontrados: " + data.length;
+  function toggleChat() {
+    document.getElementById("chatBox").classList.toggle("open");
+  }
 
- } catch (error) {
-  tbody.innerHTML = '<tr><td colspan="7">No se pudieron cargar los registros.</td></tr>';
-  document.getElementById("estadoPrivado").textContent = error.message;
- }
-}
+  async function loginCliente() {
+    const correo = document.getElementById("correoLogin").value.trim();
+    const mensaje = document.getElementById("mensajeLogin");
 
-async function cerrarSesion() {
- if (!dbPrivado) return;
- await dbPrivado.auth.signOut();
- document.getElementById("panelPrivado").classList.remove("visible");
- document.getElementById("misCitas").innerHTML =
-  '<tr><td colspan="7">Inicia sesión para consultar.</td></tr>';
-}
+    if (!db) {
+      mensaje.textContent = "No se encontró la conexión. Revisa js/supabase.js.";
+      return;
+    }
 
-if (dbPrivado) {
- dbPrivado.auth.onAuthStateChange((event, session) => {
-  if (session) {
-   cargarPanelPrivado();
+    if (!correo) {
+      mensaje.textContent = "Escribe tu correo electrónico.";
+      return;
+    }
+
+    const { error } = await db.auth.signInWithOtp({
+      email: correo,
+      options: {
+        emailRedirectTo: window.location.href.split("#")[0]
+      }
+    });
+
+    if (error) {
+      mensaje.textContent = "Error: " + error.message;
+      return;
+    }
+
+    mensaje.textContent = "Te enviamos un enlace de acceso a tu correo. Ábrelo para iniciar sesión.";
+  }
+
+  async function loginAdmin() {
+    const correo = document.getElementById("correoLogin").value.trim();
+    const password = document.getElementById("passwordLogin").value;
+    const mensaje = document.getElementById("mensajeLogin");
+
+    if (!db) {
+      mensaje.textContent = "No se encontró la conexión. Revisa js/supabase.js.";
+      return;
+    }
+
+    if (!correo || !password) {
+      mensaje.textContent = "Completa tu correo y contraseña.";
+      return;
+    }
+
+    const { data, error } = await db.auth.signInWithPassword({
+      email: correo,
+      password: password
+    });
+
+    if (error) {
+      mensaje.textContent = "No se pudo iniciar sesión: " + error.message;
+      return;
+    }
+
+    if (correo.toLowerCase() !== CORREO_ADMIN.toLowerCase()) {
+      await db.auth.signOut();
+      mensaje.textContent = "Este correo no está autorizado como administrador.";
+      return;
+    }
+
+    usuarioActual = data.user;
+    esAdministrador = true;
+    cerrarModal();
+    mostrarPanel();
+    cargarCitas();
+  }
+
+  async function restaurarSesion() {
+    if (!db) return;
+
+    const { data, error } = await db.auth.getSession();
+    if (error || !data.session) return;
+
+    usuarioActual = data.session.user;
+    esAdministrador =
+      usuarioActual.email?.toLowerCase() === CORREO_ADMIN.toLowerCase();
+
+    mostrarPanel();
+    cargarCitas();
+  }
+
+  function mostrarPanel() {
+    const panel = document.getElementById("panelCuenta");
+    panel.classList.add("show");
+    document.getElementById("tituloPanel").textContent =
+      esAdministrador ? "Panel de administración" : "Mis citas";
+    document.getElementById("descripcionPanel").textContent =
+      esAdministrador
+        ? "Consulta los registros de citas disponibles para tu cuenta."
+        : "Aquí puedes consultar las citas asociadas a tu correo.";
+    panel.scrollIntoView({ behavior: "smooth" });
+  }
+
+  async function cargarCitas() {
+    const estado = document.getElementById("estadoCitas");
+    const tabla = document.getElementById("tablaCitas");
+
+    if (!db || !usuarioActual) {
+      estado.textContent = "No hay una sesión activa.";
+      return;
+    }
+
+    estado.textContent = "Consultando citas...";
+    tabla.innerHTML = "";
+
+    let consulta = db
+      .from(TABLA_CITAS)
+      .select("nombre, correo, telefono, tratamiento, fecha_cita, hora")
+      .order("created_at", { ascending: false });
+
+    if (!esAdministrador) {
+      consulta = consulta.eq("correo", usuarioActual.email);
+    }
+
+    const { data, error } = await consulta;
+
+    if (error) {
+      estado.textContent =
+        "No se pudieron consultar las citas: " + error.message +
+        ". Verifica el nombre de la tabla y los permisos RLS.";
+      tabla.innerHTML =
+        '<tr><td colspan="6">No se pudieron cargar los registros.</td></tr>';
+      return;
+    }
+
+    if (!data || data.length === 0) {
+      estado.textContent = "No se encontraron citas para mostrar.";
+      tabla.innerHTML =
+        '<tr><td colspan="6">Todavía no hay citas registradas.</td></tr>';
+      return;
+    }
+
+    estado.textContent = "Registros encontrados: " + data.length;
+
+    data.forEach(cita => {
+      const fila = document.createElement("tr");
+
+      [
+        cita.nombre,
+        cita.correo,
+        cita.telefono,
+        cita.tratamiento,
+        cita.fecha_cita,
+        cita.hora
+      ].forEach(valor => {
+        const celda = document.createElement("td");
+        celda.textContent = valor ?? "—";
+        fila.appendChild(celda);
+      });
+
+      tabla.appendChild(fila);
+    });
+  }
+
+  async function cerrarSesion() {
+    if (!db) return;
+
+    const { error } = await db.auth.signOut();
+
+    if (error) {
+      alert("No se pudo cerrar sesión: " + error.message);
+      return;
+    }
+
+    usuarioActual = null;
+    esAdministrador = false;
+    document.getElementById("panelCuenta").classList.remove("show");
+    document.getElementById("tablaCitas").innerHTML =
+      '<tr><td colspan="6">Inicia sesión para consultar tus citas.</td></tr>';
+    alert("Sesión cerrada correctamente.");
+  }
+
+  if (db) {
+    db.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_IN" && session?.user) {
+        usuarioActual = session.user;
+        esAdministrador =
+          usuarioActual.email?.toLowerCase() === CORREO_ADMIN.toLowerCase();
+
+        cerrarModal();
+        mostrarPanel();
+        cargarCitas();
+      }
+    });
+
+    restaurarSesion();
   } else {
-   document.getElementById("panelPrivado").classList.remove("visible");
+    console.error(
+      "No se encontró el cliente Supabase. Comprueba cómo se declara en js/supabase.js."
+    );
   }
- });
-}
 </script>
 
 </body>
